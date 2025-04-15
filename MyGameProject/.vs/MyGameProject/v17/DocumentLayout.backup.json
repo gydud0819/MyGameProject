@@ -1,13 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\",
+  "WorkspaceRootPath": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1BB83FD7-015A-40B2-A558-0186A520ADE2}|..\\..\\MyProject\\Project_Maze\\main.c\\main.c.vcxproj|C:\\Users\\Administrator\\Desktop\\MyProject\\Project_Maze\\main.c\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\MapBoder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|solutionrelative:main.c\\MapBoder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FFB98DC2-FCF0-4C26-89BF-A80E00C0C823}|MyGameProject\\MyGameProject.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\MyGameProject\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FFB98DC2-FCF0-4C26-89BF-A80E00C0C823}|MyGameProject\\MyGameProject.vcxproj|solutionrelative:MyGameProject\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|solutionrelative:main.c\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\MapBoder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|solutionrelative:main.c\\MapBoder.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|solutionrelative:main.c\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\Console.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|solutionrelative:main.c\\Console.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{39F92A0D-1CF4-46C4-B770-DBC686AEC06F}|main.c\\main.c.vcxproj|solutionrelative:main.c\\Player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,32 +34,88 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Console.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\Console.h",
+              "RelativeDocumentMoniker": "main.c\\Console.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\Console.h",
+              "RelativeToolTip": "main.c\\Console.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-15T12:28:44.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\Player.h",
+              "RelativeDocumentMoniker": "main.c\\Player.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\Player.h",
+              "RelativeToolTip": "main.c\\Player.h",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-15T12:13:25.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main.c",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyProject\\Project_Maze\\main.c\\main.c",
-              "RelativeDocumentMoniker": "..\\..\\MyProject\\Project_Maze\\main.c\\main.c",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyProject\\Project_Maze\\main.c\\main.c",
-              "RelativeToolTip": "..\\..\\MyProject\\Project_Maze\\main.c\\main.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-15T07:02:20.857Z",
+              "Title": "MapBoder.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\MapBoder.cpp",
+              "RelativeDocumentMoniker": "main.c\\MapBoder.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\MapBoder.cpp",
+              "RelativeToolTip": "main.c\\MapBoder.cpp",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAewF4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T12:09:54.681Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MapBoder.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\MapBoder.h",
+              "RelativeDocumentMoniker": "main.c\\MapBoder.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\MapBoder.h",
+              "RelativeToolTip": "main.c\\MapBoder.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-15T12:09:56.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\MyGameProject\\main.cpp",
-              "RelativeDocumentMoniker": "MyGameProject\\main.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\MyGameProject\\main.cpp",
-              "RelativeToolTip": "MyGameProject\\main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\main.cpp",
+              "RelativeDocumentMoniker": "main.c\\main.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\main.cpp",
+              "RelativeToolTip": "main.c\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-14T12:39:53.412Z",
+              "WhenOpened": "2025-04-15T11:35:59.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Player.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\Player.cpp",
+              "RelativeDocumentMoniker": "main.c\\Player.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\main.c\\Player.cpp",
+              "RelativeToolTip": "main.c\\Player.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-15T12:14:27.059Z",
               "EditorCaption": ""
             }
           ]

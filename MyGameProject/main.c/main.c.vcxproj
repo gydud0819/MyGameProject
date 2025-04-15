@@ -129,10 +129,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Console.c" />
-    <ClCompile Include="main.c" />
-    <ClCompile Include="MapBoder.c" />
-    <ClCompile Include="Random.c" />
-    <ClCompile Include="Player.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapBoder.cpp" />
+    <ClCompile Include="Random.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="StartScreen.c" />
   </ItemGroup>
   <ItemGroup>
