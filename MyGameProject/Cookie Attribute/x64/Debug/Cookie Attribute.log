@@ -1,0 +1,164 @@
+﻿  main.cpp
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(6,6): error C2011: 'ElementType': 'enum' 형식 재정의
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(12,6): error C2011: 'Rank': 'enum' 형식 재정의
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(51,54): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(51,68): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(52,54): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(52,65): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(53,54): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(53,68): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(54,54): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(54,68): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(55,54): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(55,68): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(66,40): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(69,40): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(72,40): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(75,40): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(78,40): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(99,32): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(101,32): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(103,32): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(105,32): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(107,32): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(109,33): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(114,25): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(115,25): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(116,25): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(117,25): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(118,25): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(119,25): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(120,25): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\CookieHandler.h(121,27): error C2027: 정의되지 않은 형식 'Rank'을(를) 사용했습니다.
+  (소스 파일 'main.cpp'을(를) 컴파일하는 중)
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(14,6):
+      'Rank' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\main.cpp(68,46): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
+C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\main.cpp(71,46): error C2027: 정의되지 않은 형식 'ElementType'을(를) 사용했습니다.
+      C:\Users\DPC\Desktop\MyGameProject\MyGameProject\Cookie Attribute\Cookie.h(8,6):
+      'ElementType' 선언을 참조하십시오.
+  
