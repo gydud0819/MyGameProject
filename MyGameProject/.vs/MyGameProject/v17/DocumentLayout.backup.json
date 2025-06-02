@@ -1,26 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\",
+  "WorkspaceRootPath": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|solutionrelative:Cookie Attribute\\Cookie.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|solutionrelative:Cookie Attribute\\CookieManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|solutionrelative:Cookie Attribute\\CookieManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|solutionrelative:Cookie Attribute\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|solutionrelative:Cookie Attribute\\Cookie.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|solutionrelative:Cookie Attribute\\CookieManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Common.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|solutionrelative:Cookie Attribute\\Common.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2F9A1378-99ED-4490-97A7-592C5D3FF47A}|Cookie Attribute\\Cookie Attribute.vcxproj|solutionrelative:Cookie Attribute\\CookieManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,28 +34,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Common.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Common.h",
+              "RelativeDocumentMoniker": "Cookie Attribute\\Common.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Common.h",
+              "RelativeToolTip": "Cookie Attribute\\Common.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-02T14:08:17.741Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Cookie.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.cpp",
               "RelativeDocumentMoniker": "Cookie Attribute\\Cookie.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.cpp",
               "RelativeToolTip": "Cookie Attribute\\Cookie.cpp",
-              "ViewState": "AgIAANIAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-22T11:35:23.194Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "CookieManager.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.cpp",
               "RelativeDocumentMoniker": "Cookie Attribute\\CookieManager.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.cpp",
               "RelativeToolTip": "Cookie Attribute\\CookieManager.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -62,24 +83,24 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Cookie.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.h",
               "RelativeDocumentMoniker": "Cookie Attribute\\Cookie.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\Cookie.h",
               "RelativeToolTip": "Cookie Attribute\\Cookie.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-22T11:34:54.485Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "CookieManager.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.h",
               "RelativeDocumentMoniker": "Cookie Attribute\\CookieManager.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\CookieManager.h",
               "RelativeToolTip": "Cookie Attribute\\CookieManager.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-05-22T11:34:18.435Z",
               "EditorCaption": ""
@@ -88,11 +109,11 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\main.cpp",
               "RelativeDocumentMoniker": "Cookie Attribute\\main.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\main.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Cookie Attribute\\main.cpp",
               "RelativeToolTip": "Cookie Attribute\\main.cpp",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAwwB8AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-22T11:33:28.355Z",
               "EditorCaption": ""
