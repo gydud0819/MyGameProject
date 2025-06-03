@@ -32,9 +32,9 @@ public:
 
 
 public:
-	void ShowCookieInfo();		// 같은 이름을 가진 함수를 찾아 사용해라라는 뜻
 	string GetElementString() const;
 	string GetRankString() const;
+	void ShowCookieInfo() const;		// 같은 이름을 가진 함수를 찾아 사용해라라는 뜻
 	/*string ReturnElementType();
 	string ReturnRank();*/
 

@@ -1,77 +1,124 @@
 #include "Cookie.h"
 
-ElementType Cookie::GetElementType() const
+const map<ElementType, string> Cookie::elementmap =
 {
-	return type;
-}
+	{불, "불"},
+	{물, "물"},
+	{독, "독"},
+	{빛, "빛"},
+	{땅, "땅"},
+	{얼음, "얼음"},
+	{전기, "전기"},
+	{어둠, "어둠"},
+	{바람, "바람"},
+	{강철, "강철"},
+};
 
-Rank Cookie::GetRank() const
+const map<Rank, string> Cookie::rankmap =
 {
-	return rank;
-}
+	{ANCIENT, "ANCIENT"},
+	{BEAST, "BEAST"},
+	{LEGENDARY, "LEGENDARY"},
+	{SUPER_EPIC, "SUPER_EPIC"},
+	{EPIC, "EPIC"},
+	{RARE, "RARE"},
+	{COMMON, "COMMON"},
+};
 
-void Cookie::ShowCookieInfo()
+
+
+//ElementType Cookie::GetElementType() const
+//{
+//	return type;
+//}
+//
+//Rank Cookie::GetRank() const
+//{
+//	return rank;
+//}
+
+void Cookie::ShowCookieInfo() const
 {
 	cout << "쿠키의 이름: " << name << endl;
-	cout << "쿠키의 속성: " << ReturnElementType() << endl;
-	cout << "쿠키의 등급: " << ReturnRank() << endl;
+	cout << "쿠키의 속성: " << GetElementString() << endl;
+	cout << "쿠키의 등급: " << GetRankString() << endl;
 }
 
-string Cookie::ReturnElementType()
+string Cookie::GetElementString() const
 {
-	switch (type)
+	auto it = elementmap.find(type);	// type에 해당하는 값만 찾는다.
+	if (it != elementmap.end())
 	{
-	case 불:
-		return "불";
-	case 물:
-		return "물";
-	case 독:
-		return "독";
-	case 빛:
-		return "빛";
-	case 땅:
-		return "땅";
-	case 얼음:
-		return "얼음";
-	case 전기:
-		return "전기";
-	case 어둠:
-		return "어둠";
-	case 바람:
-		return "바람";
-	case 강철:
-		return "강철";
-	case 무속성:
-		return "무속성";
-	default:
-		break;
+		return it->second;		// 속성에 저장된 데이터가 값이기에 찾으면 반환한다. 
 	}
+	return "찾지 못했다.";
 }
 
-string Cookie::ReturnRank()
+string Cookie::GetRankString() const
 {
-	switch (rank)
+	auto it = rankmap.find(rank);
+	if (it != rankmap.end())
 	{
-	case ANCIENT:
-		return "ANCIENT";
-	case BEAST:
-		return "BEAST";
-	case LEGENDARY:
-		return "LEGENDARY";
-	case DRAGON:
-		return "DRAGON";
-	case SUPER_EPIC:
-		return"SUPER_EPIC";
-	case EPIC:
-		return "EPIC";
-	case RARE:
-		return"RARE";
-	case COMMON:
-		return "COMMON";
-	default:
-		break;
+		return it->second;		// 등급에 저장된 데이터가 값이기에 찾으면 반환한다. 
 	}
+	return "찾지 못했다.";
 }
+
+//string Cookie::ReturnElementType()
+//{
+//	switch (type)
+//	{
+//	case 불:
+//		return "불";
+//	case 물:
+//		return "물";
+//	case 독:
+//		return "독";
+//	case 빛:
+//		return "빛";
+//	case 땅:
+//		return "땅";
+//	case 얼음:
+//		return "얼음";
+//	case 전기:
+//		return "전기";
+//	case 어둠:
+//		return "어둠";
+//	case 바람:
+//		return "바람";
+//	case 강철:
+//		return "강철";
+//	case 무속성:
+//		return "무속성";
+//	default:
+//		break;
+//	}
+//}
+//
+//string Cookie::ReturnRank()
+//{
+//	switch (rank)
+//	{
+//	case ANCIENT:
+//		return "ANCIENT";
+//	case BEAST:
+//		return "BEAST";
+//	case LEGENDARY:
+//		return "LEGENDARY";
+//	case DRAGON:
+//		return "DRAGON";
+//	case SUPER_EPIC:
+//		return"SUPER_EPIC";
+//	case EPIC:
+//		return "EPIC";
+//	case RARE:
+//		return"RARE";
+//	case COMMON:
+//		return "COMMON";
+//	default:
+//		break;
+//	}
+//}
 
 // 밑에 주석처리한 내용은 부모클래스의 함수와 똑같은 내용이기에 오버라이딩이 필요없다 판단하여 전부 주석처리를 했다.
 // 불 속성

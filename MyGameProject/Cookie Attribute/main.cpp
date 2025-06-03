@@ -1,11 +1,31 @@
 
-//#include "Cookie.h"
+#include "Cookie.h"
 //#include "CookieManager.h"
-#include "CookieHandler.h"
+//#include "CookieHandler.h"
 #include <conio.h>
 
 int main()
 {
+	while (true)
+	{
+	string name;
+	int typeInput, rankInput;
+
+	cout << "이름을 입력해주세요: ";
+	cin >> name;
+
+	cout << "속성 번호를 입력해주세요: ";
+	cin >> typeInput;
+
+	cout << "등급 번호를 입력해주세요: ";
+	cin >> rankInput;
+
+	system("cls");
+
+	Cookie cookie(name, static_cast<ElementType>(typeInput), static_cast<Rank>(rankInput));
+	cookie.ShowCookieInfo();
+
+	}
 	//CookieManager manager;
 	//int Choice;
 
@@ -58,7 +78,7 @@ int main()
 	//}
 
 
-	CookieMaker cookiemarker;
+	/*CookieMaker cookiemarker;
 
 	while (true)
 	{
@@ -68,6 +88,6 @@ int main()
 		cookiemarker.ShowCookieByType(ElementType::불);
 		_getch();
 	}
-		cookiemarker.ShowCookieByType(ElementType::불);
+		cookiemarker.ShowCookieByType(ElementType::불);*/
 
 }
