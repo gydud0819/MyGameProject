@@ -1,50 +1,53 @@
 #pragma once
 #include "Console.h"
+#include "Exit.h"
 
-/*
-* 구조체를 정의할 때 어떤 것을 먼저 선언해야하는지 잘 생각해야한다. 그렇지 않으면 먼저 선언한 구조체가 인식을 하지 못하는 경우가 발생하여 오류가 날 수 있다. 
-*/
+//struct Player	// 플레이어 구조체
+//{
+//	char* playerShape;		// -> string Shpae 바꿀 예정
+//	Pos playerPos;			// pos는 독자적으로 사용해야하니까 struct로 그대로 쓸 예정
+//	BOOL NextStage;			// 이건 그대로 냅둬야할듯
+//	BOOL mazeExit;			// 얘도 
+//	int heartCount;
+//	int starCount;
+//	int CurrentStage;
+//	int prevPosX;			// preX로 이름 변경예정
+//	int prevPosY;			// preY로 변수이름 변경예정
+//
+//	void MovePlayer();		// 이건 아마 밑에 있는 함수랑 같을거지만 public으로 선언은 해야함
+//};
 
-struct Pos		// 위치 구조체
+//void MovePlayer();		// 플레이어가 콘솔창 내에서 움직이는 함수, -> 함수 안 매개인자를 참조로 받아서 넘길예정)
+
+class Player
 {
-	int posX;
-	int posY;
-};
-
-struct Exit	// 출구 구조체
-{
-	Pos exitPos;
-	bool exit;
-};
-
-struct Stage
-{
-	Pos stagePos;
-	bool nextStage;
-};
-
-struct Item	// 아이템 구조체
-{
-	char* itemShape;
-	Exit itemExit;
-
-};
-
-struct Player	// 플레이어 구조체
-{
-	char* playerShape;
+private:
+	// 플레이어 모양
+	string Shape;
+	
+	// 플레이어 위치
 	Pos playerPos;
-	BOOL NextStage;
-	BOOL mazeExit;
+
+
 	int heartCount;
 	int starCount;
 	int CurrentStage;
-	int prevPosX;      
-	int prevPosY;      
+	int preX;			
+	int preY;
 
-	void MovePlayer();
+public:
+	// Has-A 플레이어가 이 동작을 하도록
+	BOOL NextStage;		// protected로 넘길수도 있음
+	BOOL mazeExit;
+
+public:
+	Player() = default;		// 생성자
+
+	Player(string Shape, Pos playerPos, int heartCount, int starCount, int CurrentStage, int preX, int preY) :
+		Shape(Shape), playerPos(playerPos), heartCount(5) /* 5로 초기화하는 이유는 맵 내부 아이템 개수가 5개라서*/, starCount(5), CurrentStage(CurrentStage),
+		preX(preX), preY(preY) { }
+
+	void MovePlayer(Player& playerptr, Pos& playerPos, const Exit& exitptr);		// Player랑 Exit는 참조로 받아와 넘겨야한다.
+	
 };
-
-void MovePlayer(Player* playerptr, const Exit* exitptr);		// 플레이어가 콘솔창 내에서 움직이는 함수
-
 

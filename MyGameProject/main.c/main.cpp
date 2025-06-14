@@ -10,7 +10,7 @@ int main()
 {
 	COORD stagePos = { 50,0 };
 	//ShowStage1(Stage1, stagePos);			// 미로 내부가 보이는 함수
-	ShowClearStage1(Stage1, stagePos);			// 미로 내부가 보이지 않는 함수
+	ShowClearStage1(*Stage1, stagePos);			// 미로 내부가 보이지 않는 함수
 	//ShowStage2();			// 두번째 스테이지 맵
 	HideCursor();
 
