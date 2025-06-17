@@ -1,6 +1,7 @@
 #pragma once
 #include "Console.h"
 #include "Exit.h"
+// 벡터 써도 되나? 
 
 //struct Player	// 플레이어 구조체
 //{
@@ -47,7 +48,7 @@ public:
 		Shape(Shape), playerPos(playerPos), heartCount(5) /* 5로 초기화하는 이유는 맵 내부 아이템 개수가 5개라서*/, starCount(5), CurrentStage(CurrentStage),
 		preX(preX), preY(preY) { }
 
-	void MovePlayer(Player& playerptr, Pos& playerPos, const Exit& exitptr);		// Player랑 Exit는 참조로 받아와 넘겨야한다.
+	void MovePlayer(Player& player, Pos& playerPos, const Exit& exitptr);		// Player랑 Exit는 참조로 받아와 넘겨야한다.
 	
 };
 
