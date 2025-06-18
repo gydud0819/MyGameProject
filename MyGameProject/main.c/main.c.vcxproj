@@ -130,6 +130,7 @@
   <ItemGroup>
     <ClCompile Include="Console.c" />
     <ClCompile Include="Exit.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MapBoder.cpp" />

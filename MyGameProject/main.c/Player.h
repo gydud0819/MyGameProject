@@ -38,8 +38,8 @@ private:
 
 public:
 	// Has-A 플레이어가 이 동작을 하도록
-	BOOL NextStage;		// protected로 넘길수도 있음
-	BOOL mazeExit;
+	//BOOL NextStage;		// protected로 넘길수도 있음
+	//BOOL mazeExit;
 
 public:
 	Player() = default;		// 생성자

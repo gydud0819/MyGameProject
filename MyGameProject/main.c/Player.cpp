@@ -279,7 +279,8 @@ void Player::MovePlayer(Player& player, Pos& playerPos, const Exit& exitptr)
 		Sleep(100);
 
 	}
-
+	
+	// 밑의 코드는 GameManager에다 구현할 예정
 	//if (player.CurrentStage == 1)
 	//{
 	//	if (player.heartCount >= 5)
