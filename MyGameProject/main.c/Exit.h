@@ -14,8 +14,8 @@ public:
 	bool mazeExit;
 };
 
-struct Exit	// 출구 구조체
-{
-	Pos exitPos;
-	bool exit;
-};
+//struct Exit	// 출구 구조체
+//{
+//	Pos exitPos;
+//	bool exit;
+//};

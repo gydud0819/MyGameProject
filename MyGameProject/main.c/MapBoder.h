@@ -1,6 +1,5 @@
 #pragma once
-#include <stdio.h>
-#include <stdbool.h>
+#include "Console.h"
 #include "Player.h"
 
 #define °¡·Î 30

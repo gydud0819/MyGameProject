@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClInclude Include="Console.h" />
     <ClInclude Include="Exit.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="MapBoder.h" />
     <ClInclude Include="Random.h" />

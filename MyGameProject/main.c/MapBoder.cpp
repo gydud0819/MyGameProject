@@ -1,5 +1,4 @@
 #include "MapBoder.h"
-#include "Console.h"
 
 // Stage 만들기
 // printf로만 미로를 구성하기엔 어려움을 느껴 배열을 사용하여 미로를 표현했다.

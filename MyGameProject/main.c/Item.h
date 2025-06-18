@@ -11,9 +11,9 @@ public:
 	Item(string itemShape, Exit& itemExit/* 여기도 일단 포인터로*/) : itemShape(itemShape), itemExit(itemExit) {}
 };
 
-struct Item	// 아이템 구조체
-{
-	char* itemShape;
-	Exit itemExit;
-
-};
+//struct Item	// 아이템 구조체
+//{
+//	char* itemShape;
+//	Exit itemExit;
+//
+//};
