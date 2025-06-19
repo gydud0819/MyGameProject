@@ -1,6 +1,2 @@
-﻿  MapBoder.cpp
-  Player.cpp
-  main.cpp
-C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\main.cpp(12,12): warning C4101: 'map1' :참조되지 않은 지역 변수입니다.
-  코드를 생성하고 있습니다...
-  main.c.vcxproj -> C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\x64\Debug\FirstGame.exe
+﻿  main.cpp
+  main.c.vcxproj -> C:\Users\DPC\Desktop\MyGameProject\MyGameProject\x64\Debug\FirstGame.exe

@@ -23,4 +23,12 @@ struct Pos		// 위치 구조체
 {
 	int posX;
 	int posY;
+
+	Pos& operator+=(const Pos& other)
+	{
+		posX += other.posX;
+		posY += other.posY;
+
+		return *this;	// 
+	}
 };

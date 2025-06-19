@@ -23,32 +23,14 @@
 class Player
 {
 private:
-	// 플레이어 모양이 필요한가?  -> 일단 보류
-	string Shape;
-	
 	// 플레이어 위치
 	Pos playerPos;
-
-
-	int heartCount;
-	int starCount;
-	int CurrentStage;
-	int preX;			
-	int preY;
-
-public:
-	// Has-A 플레이어가 이 동작을 하도록
-	//BOOL NextStage;		// protected로 넘길수도 있음
-	//BOOL mazeExit;
-
 public:
 	Player() = default;		// 생성자
 
-	Player(string Shape, Pos playerPos, int heartCount, int starCount, int CurrentStage, int preX, int preY) :
-		Shape(Shape), playerPos(playerPos), heartCount(heartCount) /* 5로 초기화하는 이유는 맵 내부 아이템 개수가 5개라서*/, starCount(starCount), CurrentStage(CurrentStage),
-		preX(preX), preY(preY) { }
+	Player(Pos playerPos) : playerPos(playerPos){} // Has - A 플레이어는 움직임을 가진다 == 플레이어는 움직인다
 
-	void MovePlayer(Player& player, Pos& playerPos);		// Player랑 Exit는 참조로 받아와 넘겨야한다.
-	
+	void Move(int dx, int dy);	// 이 함수는 플레이어가 이동할 거리를 측정하는 함수
+	Pos GetPos() const;
 };
 

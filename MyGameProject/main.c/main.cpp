@@ -8,14 +8,50 @@ extern int Map2[세로2][가로2 + 1];	// 미로의 크기
 
 int main()
 {
-	
-		MapBoder map1;
-		//map1.ShowStage1();
-		//map1.ShowClearStage1();
 
-		
-		
-	
+	MapBoder map1;
+	map1.InitMap();
+	map1.ShowStage1();
+	//map1.ShowClearStage1();
+
+	// 플레이어 테스트 
+	//Player player({ 12,1 });  // 시작 위치
+	//while (true)
+	//{
+	//	
+
+
+	//	if (_kbhit())
+	//	{
+	//		int dx = 0, dy = 0;		// 임시 좌표
+	//		switch (_getch())
+	//		{
+	//		case 72: dy = -1; break;  // ↑
+	//		case 80: dy = 1; break;   // ↓
+	//		case 75: dx = -1; break;  // ←
+	//		case 77: dx = 1; break;   // →
+	//		}
+
+	//		// 1. 현재 위치 저장
+	//		int prevX = player.GetPos().posX;
+	//		int prevY = player.GetPos().posY;
+
+	//		player.Move(dx, dy);  // 이동
+
+	//		// 기존 위치 지움
+	//		SetCurPosition(prevX, prevY);
+	//		cout << "  ";
+
+
+	//		SetCurPosition(player.GetPos().posX, player.GetPos().posY);
+	//		cout << "옷";
+	//	}
+
+	//	Sleep(50);
+	//}
+
+
+
 
 	//COORD stagePos = { 50,0 };
 	////ShowStage1(Stage1, stagePos);			// 미로 내부가 보이는 함수
