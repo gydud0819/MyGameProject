@@ -23,7 +23,7 @@
 class Player
 {
 private:
-	// 플레이어 모양
+	// 플레이어 모양이 필요한가?  -> 일단 보류
 	string Shape;
 	
 	// 플레이어 위치
@@ -45,10 +45,10 @@ public:
 	Player() = default;		// 생성자
 
 	Player(string Shape, Pos playerPos, int heartCount, int starCount, int CurrentStage, int preX, int preY) :
-		Shape(Shape), playerPos(playerPos), heartCount(5) /* 5로 초기화하는 이유는 맵 내부 아이템 개수가 5개라서*/, starCount(5), CurrentStage(CurrentStage),
+		Shape(Shape), playerPos(playerPos), heartCount(heartCount) /* 5로 초기화하는 이유는 맵 내부 아이템 개수가 5개라서*/, starCount(starCount), CurrentStage(CurrentStage),
 		preX(preX), preY(preY) { }
 
-	void MovePlayer(Player& player, Pos& playerPos, const Exit& exitptr);		// Player랑 Exit는 참조로 받아와 넘겨야한다.
+	void MovePlayer(Player& player, Pos& playerPos);		// Player랑 Exit는 참조로 받아와 넘겨야한다.
 	
 };
 

@@ -1,6 +1,6 @@
-﻿  Console.c
-  StartScreen.c
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.43.34808\include\yvals_core.h(23,1): error C1189: #error:  error STL1003: Unexpected compiler, expected C++ compiler.
-  (소스 파일 'Console.c'을(를) 컴파일하는 중)
-  
+﻿  MapBoder.cpp
+  Player.cpp
+  main.cpp
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\main.cpp(12,12): warning C4101: 'map1' :참조되지 않은 지역 변수입니다.
   코드를 생성하고 있습니다...
+  main.c.vcxproj -> C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\x64\Debug\FirstGame.exe

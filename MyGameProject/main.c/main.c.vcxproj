@@ -128,7 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Console.c" />
+    <ClCompile Include="Console.cpp" />
     <ClCompile Include="Exit.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Item.cpp" />
@@ -137,7 +137,6 @@
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Stage.cpp" />
-    <ClCompile Include="StartScreen.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Console.h" />
@@ -148,7 +147,6 @@
     <ClInclude Include="Random.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Stage.h" />
-    <ClInclude Include="StartScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
