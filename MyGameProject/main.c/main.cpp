@@ -1,18 +1,28 @@
 #include "MapBoder.h"
 #include "Console.h"
 #include "Player.h"
+#include "GameManager.h"
 
 
-extern int Map1[세로][가로 + 1];	// 미로의 크기 exturn 붙여주기 
-extern int Map2[세로2][가로2 + 1];	// 미로의 크기
+//extern int Map1[세로][가로 + 1];	// 미로의 크기 exturn 붙여주기 
+//extern int Map2[세로2][가로2 + 1];	// 미로의 크기
 
 int main()
 {
+	GameManager gm;
+	while (true)
+	{
+		gm.Play();
 
-	MapBoder map1;
+	}
+	/*MapBoder map1;
+	while (true)
+	{
 	map1.InitMap();
-	map1.ShowStage1();
-	//map1.ShowClearStage1();
+	map1.ShowClearStage1();
+
+	}*/
+	//map1.ShowStage1();
 
 	// 플레이어 테스트 
 	//Player player({ 12,1 });  // 시작 위치

@@ -1,11 +1,11 @@
 #include "Player.h"
 #include "MapBoder.h"
 
-extern int Map1 [세로][가로+1];		// 1번 스테이지의 크기
-extern int Map2 [세로2][가로2+1];	// 2번 스테이지의 크기
-
-Exit NextStage = { {29, 28 }, true };	// 스테이지2로 넘어가는 스테이지1 위치
-Exit gameExit = { {29, 2}, true }; // 스테이지2 출구 좌표
+//extern int Map1 [세로][가로+1];		// 1번 스테이지의 크기
+//extern int Map2 [세로2][가로2+1];	// 2번 스테이지의 크기
+//
+//Exit NextStage = { {29, 28 }, true };	// 스테이지2로 넘어가는 스테이지1 위치
+//Exit gameExit = { {29, 2}, true }; // 스테이지2 출구 좌표
 
 // 기존 C버전 
 //void MovePlayer(Player& player, Exit& exitptr)
@@ -339,6 +339,7 @@ void Player::Move(int dx, int dy)
 	playerPos += Pos{ dx, dy };
 	
 }
+
 
 Pos Player::GetPos() const
 {

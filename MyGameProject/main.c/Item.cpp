@@ -1,14 +1,18 @@
-//#include "Item.h"
-//
-//void Item::ShapeConverter()
-//{
-//	switch (ItemShape)
-//	{
-//	case ¢¾: return "¢¾"
-//		break;
-//	case ¢À:
-//		break;
-//	default:
-//		break;
-//	}
-//}
+#include "Item.h"
+
+void Item::Item1()
+{
+	switch (itemType)
+	{
+	case TILE_EMPTY: return " ";
+		break;
+	case TILE_WALL: return "¡á";
+		break;
+	case TILE_ITEM1:
+		break;
+	case TILE_ITEM2:
+		break;
+	default:
+		break;
+	}
+}
