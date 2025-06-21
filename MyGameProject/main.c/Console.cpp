@@ -1,4 +1,5 @@
 #include "Console.h"
+#include "Buffer.h"
 
 void SetColor(unsigned char _BackGroundColor, unsigned char _Textcolor)
 {
@@ -24,6 +25,24 @@ void HideCursor()
 	info.bVisible = false; // 안보이게
 	info.dwSize = 1; //커서의 크기값
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info);
+}
+
+void Startscreen()
+{
+	ClearBuffer();// 또는 ClearBuffer() + FlipBuffer()
+	FlipBuffer();
+
+	const char* title = "◆◆◆ Maze Escape ◆◆◆";
+	const char* prompt = "[ Press any key to start ]";
+
+	int x = (BufferWidth - strlen(title)) / 2;
+	int y = BufferHeight / 2 - 4;
+
+	WriteBuffer(x, y, title, 14);      // 노란색
+	WriteBuffer(x, y + 2, prompt, 7);  // 흰색
+	FlipBuffer();
+
+	_getch(); // 아무 키 누를 때까지 대기
 }
 
 

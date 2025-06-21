@@ -5,17 +5,27 @@
 #include "Item.h"
 #include "Stage.h"
 #include "MapBoder.h"
+#include "Buffer.h"
 
-class GameManager
+class GameManager /*: public MapBoder*/		// Is-a 관계 생각하기
 {
 	Stage stage;
-	//MapBoder map;
+	MapBoder mapboder;
 	Player player;
+	int currentStageIndex = 0;
+
+	Item item;
+
+	vector<vector<int>> currentMap;	// 현재 맵
 public:
 	GameManager() = default;
-	GameManager(Stage stage, Player player) : stage(stage), player(player) {}
+	GameManager(Player player) : player(player) {}
 public:
 	void Play();		// 메인 코드에서 이거만 호출해서 플레이 해야함
-	void ShowMap();		
-	void PlayerMove(Player& player, Stage& stage); // playerove안에 맵을 안벗어나게 처리를 해야 하나? 그럼 매개인자 받아야하는거 아닌가
+	void ShowMap();		// 맵 보여주는 함수
+	void PlayerMove(Player& player, vector<vector<int>>& map, Item& item); // 플레이어가 맵 내에서만 돌아다니도록 하는 함수
+	void RenderMap();
+	void CheckStageClear(Item& item);
+	void CountDown();
+	void LoadStage();
 };

@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Buffer.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="Exit.cpp" />
     <ClCompile Include="GameManager.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="Stage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Buffer.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="Exit.h" />
     <ClInclude Include="GameManager.h" />

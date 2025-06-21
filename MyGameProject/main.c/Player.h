@@ -16,5 +16,7 @@ public:
 	void Move(int dx, int dy);	// 이 함수는 플레이어가 이동할 거리를 측정하는 함수
 	
 	Pos GetPos() const;
+
+	void SetPos(const Pos& pos);
 };
 

@@ -345,3 +345,8 @@ Pos Player::GetPos() const
 {
 	return playerPos;
 }
+
+void Player::SetPos(const Pos& pos)
+{
+	playerPos = pos;
+}
