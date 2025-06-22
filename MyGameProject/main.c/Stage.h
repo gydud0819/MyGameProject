@@ -4,16 +4,14 @@
 #include "Buffer.h"
 class Stage 
 {
-	//Pos stagePos;
-	//bool nextStage;
+private:
+bool isReveal;	// 랜턴 처리하는거 == 맵 내부를 드러내는지 확인하는 체크하는거
 
 public:
 	Stage() = default;
 public:
-	//void Stage1(vector<vector<int>> map1);
-	//void Stage2(vector<vector<int>> map2);
 
-	void RenderMap(const vector<vector<int>> map, Player& player);
+	void RenderMap(const vector<vector<int>> map, Player& player, bool isReveal);
 };
 
 

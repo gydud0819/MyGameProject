@@ -36,6 +36,7 @@ void Item::Collect(int tileType)
 {
 	if (tileType == TILE_ITEM1) heartCount++;
 	else if (tileType == TILE_ITEM2) starCount++;
+	else if (tileType == TILE_ITEM4) cloverCount++;
 }
 
 int Item::GetItem1Count() const
@@ -52,6 +53,7 @@ void Item::Reset()
 {
 	heartCount = 0;
 	starCount = 0;
+	cloverCount = 0;
 }
 
 bool Item::IsStage1Clear() const
@@ -63,3 +65,10 @@ bool Item::IsStage2Clear() const
 {
 	return starCount >= 5;
 }
+
+bool Item::IsStage3Clear() const
+{
+	return cloverCount >= 3;
+}
+
+

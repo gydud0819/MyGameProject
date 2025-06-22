@@ -18,15 +18,17 @@ enum TileType			// 맵 모양을 enum으로
 	TILE_EMPTY = 0,		// 길
 	TILE_WALL,		// 벽
 	TILE_ITEM1,		// 아이템 1
-	TILE_ITEM2		// 아이템 2
+	TILE_ITEM2,		// 아이템 2
+	TILE_ITEM3,		// 아이템 3 -> 랜턴
+	TILE_ITEM4		// 아이템 4 -> 클로버
 };
 
 class MapBoder			// 나중에 벡터로 표현하기 tq
 {
 private:
 	vector<vector<vector<int>>> maps;	// 이중벡터를 써야함 벡터도 겨우 쓰는데 이중벡터를 쓰라니 미친게임 왜만들엇지? 
-	vector<vector<int>> map1;	// 이중벡터를 써야함 벡터도 겨우 쓰는데 이중벡터를 쓰라니 미친게임 왜만들엇지? 
-	vector<vector<int>> map2;	// 이중벡터를 써야함 벡터도 겨우 쓰는데 이중벡터를 쓰라니 미친게임 왜만들엇지? 
+	//vector<vector<int>> map1;	// 이중벡터를 써야함 벡터도 겨우 쓰는데 이중벡터를 쓰라니 미친게임 왜만들엇지? 
+	//vector<vector<int>> map2;	// 이중벡터를 써야함 벡터도 겨우 쓰는데 이중벡터를 쓰라니 미친게임 왜만들엇지? 
 	
 	
 public:

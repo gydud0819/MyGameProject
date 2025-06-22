@@ -5,6 +5,7 @@ class Item
 {
 	int heartCount = 0;		// stage1 ¿­¼è
 	int starCount = 0;		// stage2 ¿­¼è
+	int cloverCount = 0;	// stage3 ¿­¼è
 public:
 	//Item() = default;
 	//Item(string shape, TileType itemType) : shape(shape), itemType(itemType), count(0) {}
@@ -22,6 +23,7 @@ public:
 
 	bool IsStage1Clear() const;
 	bool IsStage2Clear() const;
+	bool IsStage3Clear() const;
 
 
 };

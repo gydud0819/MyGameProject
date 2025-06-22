@@ -17,6 +17,10 @@ class GameManager /*: public MapBoder*/		// Is-a 관계 생각하기
 	Item item;
 
 	vector<vector<int>> currentMap;	// 현재 맵
+
+	/*bool isRevealMap = false;
+	chrono::steady_clock::time_point revealStartTime;
+	int revealDuration = 0;*/		// 보여주는 시간 = revealDuration
 public:
 	GameManager() = default;
 	GameManager(Player player) : player(player) {}
@@ -28,4 +32,5 @@ public:
 	void CheckStageClear(Item& item);
 	void CountDown();
 	void LoadStage();
+	void Update();
 };

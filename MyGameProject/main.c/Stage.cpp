@@ -1,93 +1,22 @@
 #include "Stage.h"
 
-//void Stage::Stage1(vector<vector<int>> map1)
-//{
-//	for (int y = 0; y < map1.size(); y++)
-//	{
-//		for (int x = 0; x < map1[y].size(); x++)	// 현재 y행의 x칸들을 모두 탐색
-//		{
-//			SetCurPosition(x, y);
-//
-//			switch (map1[y][x])
-//			{
-//			case TILE_WALL:
-//
-//				SetColor(0, (x == 0 || x == 29 || y == 0 || y == 29) ? 15 : 0);
-//				cout << ("■");
-//				break;
-//
-//			case TILE_EMPTY:
-//				SetColor(0, (x == 0 || y == 0) ? 0 : 0);
-//				cout << (" ");
-//				break;
-//
-//			case TILE_ITEM1:
-//				SetColor(0, 4);
-//				cout << ("♥");
-//				SetColor(0, 15);
-//				break;
-//
-//			case TILE_ITEM2:
-//				SetColor(0, 6);			// 함수로 만들어서 따로 처리하기 나중에
-//				cout << ("★");
-//				SetColor(0, 15);
-//				break;
-//
-//			default:
-//				cout << "?"; // 디버깅용 표시
-//				break;
-//			}
-//		}
-//	}
-//}
-//
-//void Stage::Stage2(vector<vector<int>> map2)
-//{
-//	for (int y = 0; y < map2.size(); y++)
-//	{
-//		for (int x = 0; x < map2[y].size(); x++)	// 현재 y행의 x칸들을 모두 탐색
-//		{
-//			SetCurPosition(x, y);
-//
-//			switch (map2[y][x])
-//			{
-//			case TILE_WALL:
-//
-//				SetColor(0, (x == 0 || x == 29 || y == 0 || y == 29) ? 15 : 0);
-//				cout << ("■");
-//				break;
-//
-//			case TILE_EMPTY:
-//				SetColor(0, (x == 0 || y == 0) ? 0 : 0);
-//				cout << (" ");
-//				break;
-//
-//			case TILE_ITEM1:
-//				SetColor(0, 4);
-//				cout << ("♥");
-//				SetColor(0, 15);
-//				break;
-//
-//			case TILE_ITEM2:
-//				SetColor(0, 6);			// 함수로 만들어서 따로 처리하기 나중에
-//				cout << ("★");
-//				SetColor(0, 15);
-//				break;
-//
-//			default:
-//				cout << "?"; // 디버깅용 표시
-//				break;
-//			}
-//		}
-//	}
-//}
-
-void Stage::RenderMap(const vector<vector<int>> map, Player& player)
+void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReveal)
 {
 	for (int y = 0; y < map.size(); y++)
 	{
 		for (int x = 0; x < map[y].size(); x++)
 		{
+			// 랜턴 처리하는 코드 확실하지 않음
+			/*bool isOuterWall = (x == 0 || x == map[0].size() - 1 || y == 0 || y == map.size() - 1);
+			bool isItem = (map[y][x] == TILE_ITEM1 || map[y][x] == TILE_ITEM2 || map[y][x] == TILE_ITEM3);
+
+			if (!isReveal && !isOuterWall && !isItem)
+			{
+				int dx = abs(x - player.GetPos().posX);
+				int dy = abs(y - player.GetPos().posY);
+				if (dx > 2 || dy > 2) continue;
+			}*/
+
 			SetCurPosition(x, y);
 
 			if (player.GetPos().posX == x && player.GetPos().posY == y)
@@ -124,6 +53,16 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player)
 				SetColor(0, 15);*/
 				break;
 
+			case TILE_ITEM3:
+				WriteBuffer(x, y, "#", 6);
+				/*	SetColor(0, 6);
+					std::cout << "★";
+					SetColor(0, 15);*/
+				break;
+				
+			case TILE_ITEM4:
+				WriteBuffer(x, y, "♣", 12);
+				break;
 			default:
 				WriteBuffer(x, y, "?", 7); // 예외 디버깅
 				break;

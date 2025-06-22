@@ -1,7 +1,5 @@
 #pragma once
 #include "Console.h"
-#include "Exit.h"
-// 벡터 써도 되나? 
 
 class Player
 {

@@ -7,6 +7,8 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <chrono>
+#include <fstream>
 
 using namespace std;
 
@@ -25,7 +27,7 @@ struct Pos		// 위치 구조체
 	int posX;
 	int posY;
 
-	Pos& operator+=(const Pos& other)
+	Pos& operator+=(const Pos& other)	// 연산자 오버로딩
 	{
 		posX += other.posX;
 		posY += other.posY;

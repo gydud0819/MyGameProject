@@ -1,70 +1,86 @@
-#include "GameManager.h"
+ï»¿#include "GameManager.h"
 
 void GameManager::Play()
 {
-	
+	// ë§µ, í”Œë ˆì´ì–´, ì•„ì´í…œ ë‹¤ WriteBufferë¡œ ê·¸ë ¤ì£¼ê¸°
 
-	static bool isFirst = true;  // ÃÖÃÊ 1È¸¸¸ ½ÇÇà
-	static bool isBufferInit = false;  // ÃÖÃÊ 1È¸¸¸ ½ÇÇà
-	
+	static bool isFirst = true;			// ê²Œì„ ì‹œì‘í•  ë•Œ ë”± 1ë²ˆë§Œ ì‹¤í–‰ë˜ê²Œ ì„¤ì •
+	static bool isBufferInit = false;  // ë²„í¼ ì´ˆê¸°í™”ë„ ë”± 1ë²ˆë§Œ í•˜ê²Œ
 	if (!isBufferInit)
 	{
-		InitBuffer();
-		Startscreen();
+		InitBuffer();		// ì½˜ì†” ë²„í¼ ì´ˆê¸°í™” (ë”ë¸” ë²„í¼ êµ¬ì¡° ì¡ê¸°)
+		Startscreen();		// íƒ€ì´í‹€ í™”ë©´ ì¶œë ¥
 		isBufferInit = true;
 	}
 
-	CheckStageClear(item);
+	CheckStageClear(item);	// ì•„ì´í…œ ì¡°ê±´ ì¶©ì¡±í–ˆëŠ”ì§€ í™•ì¸í•´ì„œ ë‹¤ìŒ ìŠ¤í…Œì´ì§€ë¡œ ë„˜ì–´ê°ˆ ìˆ˜ ìˆê²Œ ì²˜ë¦¬
 
 	if (isFirst)
 	{
-		player.SetPos({ 1, 1 });
-		mapboder.InitMap();
-		currentMap = mapboder.GetMap(currentStageIndex);
-		isFirst = false;
+		player.SetPos({ 1, 1 });	// í”Œë ˆì´ì–´ ì‹œì‘ ìœ„ì¹˜ ì§€ì • (ì™¼ìª½ ìœ„) -> ë‚˜ì¤‘ì— ëœë¤ìœ¼ë¡œ ë°°ì¹˜í•˜ëŠ”ê²Œ ê°€ëŠ¥í•˜ë©´ í•  ì˜ˆì •
+		mapboder.InitMap();			 // ë§µ ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸°
+		currentMap = mapboder.GetMap(currentStageIndex);		// í˜„ì¬ ìŠ¤í…Œì´ì§€ ë§µ ê°€ì ¸ì˜¤ê¸°
+		isFirst = false;			// ì´í›„ì—” ë‹¤ì‹œ ì‹¤í–‰ë˜ì§€ ì•Šë„ë¡ falseì²˜ë¦¬í•˜ê¸° 
 	}
-	// 2. ÇÃ·¹ÀÌ¾î°¡ ¸Ê ¾È¿¡¼­¸¸ ¿òÁ÷ÀÌ´ÂÁö
+	// 2. í”Œë ˆì´ì–´ê°€ ë§µ ì•ˆì—ì„œë§Œ ì›€ì§ì´ëŠ”ì§€
 	
-	// 1. ¸Ê ³ª¿À´ÂÁö È®ÀÎ ¿Ï·á
-	//LoadStage();
-	ClearBuffer();     // ¹öÆÛ ÃÊ±âÈ­
-	RenderMap();
-	PlayerMove(player, currentMap, item);
-	FlipBuffer();      // ÃÖÁ¾ÀûÀ¸·Î ÇöÀç ¹öÆÛ¸¦ Ãâ·Â È­¸éÀ¸·Î ÀüÈ¯
+	// 1. ë§µ ë‚˜ì˜¤ëŠ”ì§€ í™•ì¸ ì™„ë£Œ
+	PlayerMove(player, currentMap, item);	// í”Œë ˆì´ì–´ ì´ë™ ì²˜ë¦¬ + ì•„ì´í…œ ë¨¹ê¸° ì²˜ë¦¬
+	Update();
+	ClearBuffer();     // ì¶œë ¥ ë²„í¼ ë¹„ìš°ê¸° (ë§¤ í”„ë ˆì„ ê¹”ë”í•˜ê²Œ ë§Œë“¤ê¸° ìœ„í•´ì„œ)
+	RenderMap();		// ë§µ, í”Œë ˆì´ì–´, ì•„ì´í…œ ë“± í™”ë©´ì— ì¶œë ¥ -> ë‚˜í•œí…Œ ì¢€ ì¤‘ìš”í•¨
+	FlipBuffer();      // ë²„í¼ êµì²´ â†’ ì§€ê¸ˆ ê·¸ë¦° í™”ë©´ì„ ì‹¤ì œë¡œ ë³´ì—¬ì¤Œ
 	
-	/*RenderMap();  */     // ¸Ê, ÇÃ·¹ÀÌ¾î, ¾ÆÀÌÅÛ ´Ù WriteBuffer·Î ±×·ÁÁÖ±â
+	     
 
 }
 
-void GameManager::RenderMap()
-{
-	stage.RenderMap(currentMap, player);
-}
+// ëœí„´ë•Œë¬¸ì— ì•ˆëŒì•„ê°€ë‹ˆê¹Œ ë‹¤ì‹œ í•´ë³´ê¸° 
+//void GameManager::RenderMap()
+//{
+//	stage.RenderMap(currentMap, player, isRevealMap);
+//}
 
-void GameManager::CountDown()
+void GameManager::CountDown()	// ìŠ¤í…Œì´ì§€ ë„˜ì–´ê°ˆë•Œ ì¹´ìš´íŠ¸ë‹¤ìš´ ë‚˜ì˜¤ëŠ” í•¨ìˆ˜ ì§„ì§œ êµ¬í˜„í•˜ê¸° ã…ˆã„´í˜ë“¤ì—ˆë‹¤ã… ã… 
 {
 	for (int i = 3; i > 0; --i)
 	{
 		ClearBuffer();
-		/*SetCurPosition(10, 10);
-		std::cout << i;*/
-		char countdown[10];
-		sprintf_s(countdown, "%d", i);
+	
+		char countdown[10];			// ë‚˜ì¤‘ì— stringìœ¼ë¡œ ë°”ê¿”ì„œ ì ìš©í•˜ê¸°
+		// ì •ìˆ˜ë¥¼ ë¬¸ìì—´ë¡œ ë³€í™˜í•´ì„œ ë²„í¼ì— ì €ì¥í•˜ëŠ” í•¨ìˆ˜ (ë²„í¼ ì˜¤ë²„í”Œë¡œìš° ë°©ì§€ìš©ìœ¼ë¡œ _s ì‚¬ìš©)
+		sprintf_s(countdown, "%d", i);	// ë²„í¼ë‘ ê´€ë ¨ëœ í•¨ìˆ˜ë¡œ ì´ê±¸ ì¨ì•¼ ë³€í™˜ì´ ëœë‹¤.
 		WriteBuffer(20, 10, countdown, 14);
 
 		FlipBuffer();
-		Sleep(700);
+		Sleep(1000);
 	}
-	ClearBuffer();	// ´Ù½Ã ÃÊ±âÈ­
+	ClearBuffer();	// ë‹¤ì‹œ ì´ˆê¸°í™”
 }
 
 void GameManager::LoadStage()
 {
-	mapboder.InitMap();  // ÀüÃ¼ ¸Ê ÃÊ±âÈ­
+	mapboder.InitMap();  // ì „ì²´ ë§µ ì´ˆê¸°í™”
 	currentMap = mapboder.GetMap(currentStageIndex);
-	player.SetPos({ 1, 1 });  // ÃÊ±â À§Ä¡
+	player.SetPos({ 1, 1 });  // ì´ˆê¸° ìœ„ì¹˜
 	RenderMap();
 }
+
+// ë§µ ë‚´ë¶€ ëœí„´ ì•„ì´í…œ ì²˜ë¦¬í•˜ëŠ” ì½”ë“œ ì˜¤ë¥˜ ê²ë‚˜ ë‚˜ë‹ˆê¹Œ ë‚´ì¼ ë‹¤ì‹œ ì†ë³´ê¸° 
+//void GameManager::Update()
+//{
+//	if (isRevealMap)
+//	{
+//		auto now = chrono::steady_clock::now();
+//		int elapsed = chrono::duration_cast<chrono::seconds>(now - revealStartTime).count();
+//
+//		if (elapsed >= revealDuration)
+//		{
+//			isRevealMap = false;
+//			//cout << "ëœí„´ íš¨ê³¼ ì¢…ë£Œ" << endl;
+//		}
+//	}
+//}
 
 void GameManager::CheckStageClear(Item& item)
 {
@@ -77,14 +93,29 @@ void GameManager::CheckStageClear(Item& item)
 	}
 	else if (currentStageIndex == 1 && item.IsStage2Clear())
 	{
+		//CountDown();
+		//ClearBuffer();
+		//WriteBuffer(10, 10, "ê²Œì„ í´ë¦¬ì–´!", 13);  // ë¶„í™ìƒ‰ ê°™ì€ ìƒ‰ìƒ
+		//FlipBuffer();
+		///*SetCurPosition(10, 10);
+		//std::cout << "ê²Œì„ í´ë¦¬ì–´!";*/
+		//Sleep(2000);
+		//exit(0);  // í”„ë¡œê·¸ë¨ ì¢…ë£Œ
+		CountDown();
+		item.Reset();
+		currentStageIndex++;
+		LoadStage();
+	}
+	else if (currentStageIndex == 2 && item.IsStage3Clear())
+	{
 		CountDown();
 		ClearBuffer();
-		WriteBuffer(10, 10, "°ÔÀÓ Å¬¸®¾î!", 13);  // ºĞÈ«»ö °°Àº »ö»ó
+		WriteBuffer(10, 10, "ê²Œì„ í´ë¦¬ì–´", 13);  // ë¶„í™ìƒ‰ ê°™ì€ ìƒ‰ìƒ
 		FlipBuffer();
 		/*SetCurPosition(10, 10);
-		std::cout << "°ÔÀÓ Å¬¸®¾î!";*/
+		std::cout << "ê²Œì„ í´ë¦¬ì–´!";*/
 		Sleep(2000);
-		exit(0);  // ÇÁ·Î±×·¥ Á¾·á
+		exit(0);  // í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 	}
 }
 
@@ -99,78 +130,81 @@ void GameManager::ShowMap()
 }
 
 
-// 2. ÇÃ·¹ÀÌ¾î°¡ ¸Ê¾È¿¡¼­¸¸ ¿òÁ÷ÀÌµµ·Ï ÇÏ±â
+// 2. í”Œë ˆì´ì–´ê°€ ë§µì•ˆì—ì„œë§Œ ì›€ì§ì´ë„ë¡ í•˜ê¸°
 void GameManager::PlayerMove(Player& player, vector<vector<int>>& map, Item& item)
 {
 	if (_kbhit())
 	{ 
 
-		int dx = 0, dy = 0;		// ÀÓ½Ã ÁÂÇ¥
+		int dx = 0, dy = 0;		// ì„ì‹œ ì¢Œí‘œ
 		switch (_getch())
 		{
-		case 72: dy = -1; break;  // ¡è
-		case 80: dy = 1; break;   // ¡é
-		case 75: dx = -1; break;  // ¡ç
-		case 77: dx = 1; break;   // ¡æ
+		case 72: dy = -1; break;  // â†‘
+		case 80: dy = 1; break;   // â†“
+		case 75: dx = -1; break;  // â†
+		case 77: dx = 1; break;   // â†’
 		}
 
-		Pos curr = player.GetPos();		// ÇÃ·¹ÀÌ¾î°¡ ¿òÁ÷ÀÌ´Â°Å 
+		Pos curr = player.GetPos();		// í”Œë ˆì´ì–´ê°€ ì›€ì§ì´ëŠ”ê±° 
 
-		// playerÃæµ¹Ã³¸®¸¦ ÇÏ·Á¸é Á÷Á¢ÀûÀÎ ÀÎÀÚ°¡ ÇÊ¿äÇÑµ¥ ÀÎÀÚ¸¦ ¸¸µé¾î¾ßÇÏ³ª? 
+		// playerì¶©ëŒì²˜ë¦¬ë¥¼ í•˜ë ¤ë©´ ì§ì ‘ì ì¸ ì¸ìê°€ í•„ìš”í•œë° ì¸ìë¥¼ ë§Œë“¤ì–´ì•¼í•˜ë‚˜? 
 
 		int nextX = curr.posX + dx;
 		int nextY = curr.posY + dy;
 
-		// player¶û mapÀÌ¶û À§Ä¡°¡ ¼­·Î 1ÀÏ¶§ Á¦ÀÚ¸®ÀÎ°ÅÃ³·³ ÇØ¾ßÇÏ´Ï±î
-		// ¸ÊÀ» ºÒ·¯¿Í¾ßÇÏ³ª? ºÒ·¯¿Ô´Âµ¥? ´ë°¡¸®±¼·Á¶ó 
-
-		//  ¸Ê ¹ş¾î³ªÁö ¾Ê°Ô ¿¹¿ÜÃ³¸®
+		//  ë§µ ë²—ì–´ë‚˜ì§€ ì•Šê²Œ ì˜ˆì™¸ì²˜ë¦¬
 		if (nextY < 0 || nextY >= map.size() || nextX < 0 || nextX >= map[0].size())
 			return;
 
-		//  º®ÀÌ ¾Æ´Ï¶ó¸é ÀÌµ¿
+		//  ë²½ì´ ì•„ë‹ˆë¼ë©´ ì´ë™
 		if (map[nextY][nextX] != TILE_WALL)
 		{
-			// ÀÌÀü À§Ä¡ Áö¿ì±â
+			// ì´ì „ ìœ„ì¹˜ ì§€ìš°ê¸°
 			WriteBuffer(curr.posX, curr.posY, " ", 0);
 
-		/*	SetCurPosition(curr.posX, curr.posY);
-			std::cout << "  ";*/
+			player.Move(dx, dy);	// ìœ„ì¹˜ ì—…ë°ì´íŠ¸
 
-			player.Move(dx, dy);	// À§Ä¡ ¾÷µ¥ÀÌÆ®
-
-			// »õ À§Ä¡¿¡ ÇÃ·¹ÀÌ¾î Ãâ·Â
+			// ìƒˆ ìœ„ì¹˜ì— í”Œë ˆì´ì–´ ì¶œë ¥
 			Pos newPos = player.GetPos();
-			/*SetCurPosition(newPos.posX, newPos.posY);
-			std::cout << "¢Â";*/
-			WriteBuffer(newPos.posX, newPos.posY, "¢Â", 15);  // ¹àÀº Èò»ö
+			WriteBuffer(newPos.posX, newPos.posY, "â—ˆ", 15);  // ë°ì€ í°ìƒ‰
 
 		}
 
-		if (map[nextY][nextX] == TILE_ITEM1 || map[nextY][nextX] == TILE_ITEM2)
+		if (map[nextY][nextX] == TILE_ITEM1 || map[nextY][nextX] == TILE_ITEM2 || map[nextY][nextX] == TILE_ITEM4)
 		{
-			item.Collect(map[nextY][nextX]);       // ¾ÆÀÌÅÛ È¹µæ Ã³¸®
-			map[nextY][nextX] = TILE_EMPTY;        // ¸ÔÀº ÀÚ¸® ºóÄ­ Ã³¸®
+			item.Collect(map[nextY][nextX]);       // ì•„ì´í…œ íšë“ ì²˜ë¦¬
+			map[nextY][nextX] = TILE_EMPTY;        // ë¨¹ì€ ìë¦¬ ë¹ˆì¹¸ ì²˜ë¦¬
 		}
+
+		// ëœí„´ ì²˜ë¦¬ ì½”ë“œ == ì•ˆëŒì•„ê° ë‹¤ì‹œ ì† ë³´ê¸° 
+		//if (map[nextY][nextX] == TILE_ITEM3)
+		//{
+		//	isRevealMap = true;
+		//	revealStartTime = chrono::steady_clock::now();
+		//	revealDuration = rand() % 3 + 3;  // 3~5ì´ˆ ì‚¬ì´
+		//	map[nextY][nextX] = TILE_EMPTY;
+
+		//	//cout << "ğŸŒŸ ëœí„´ ë°œë™! " << revealDuration << "ì´ˆê°„ ë°ì•„ì§‘ë‹ˆë‹¤!" << endl;
+		//}
 	}
 	Sleep(1);
 	/*SetCurPosition(0, map.size() + 1);
 	std::cout << "Heart: " << item.GetItem1Count() << " | Star: " << item.GetItem2Count() << "\n";*/
 	//char status[50];
 	//sprintf_s(status, "Heart: %d | Star: %d", item.GetItem1Count(), item.GetItem2Count());
-	//WriteBuffer(0, map.size() + 1, status, 11);  // ¹àÀº ÇÏ´Ã»ö µîÀ¸·Î »ö ÀÔÇôµµ µÊ
+	//WriteBuffer(0, map.size() + 1, status, 11);  // ë°ì€ í•˜ëŠ˜ìƒ‰ ë“±ìœ¼ë¡œ ìƒ‰ ì…í˜€ë„ ë¨
 
-	// GameManager.cpp ³» ÇÔ¼ö ¾È¿¡¼­
+	// GameManager.cpp ë‚´ í•¨ìˆ˜ ì•ˆì—ì„œ
 	int heartCount = item.GetItem1Count();
 	int starCount = item.GetItem2Count();
 
-	string heartBar = "Heart : ";
-	for (int i = 0; i < heartCount; ++i) heartBar += "¢¾";
+	string heart = "Heart : ";
+	for (int i = 0; i < heartCount; ++i) heart += "â™¥";
 
-	string starBar = "Star  : ";
-	for (int i = 0; i < starCount; ++i) starBar += "¡Ú";		// ½ºÅ×ÀÌÁö 2¿¡¼­¸¸ ³ª¿À°Ô ÇÏ±â 
+	string star = "Star  : ";
+	for (int i = 0; i < starCount; ++i) star += "â˜…";		// ìŠ¤í…Œì´ì§€ 2ì—ì„œë§Œ ë‚˜ì˜¤ê²Œ í•˜ê¸° 
 
-	WriteBuffer(0, map.size() + 1, heartBar.c_str(), 4); // »¡°£ ÇÏÆ®
-	WriteBuffer(0, map.size() + 2, starBar.c_str(), 6);  // ³ë¶õ º°
+	WriteBuffer(0, map.size() + 1, heart.c_str(), 4); // ë¹¨ê°„ í•˜íŠ¸
+	WriteBuffer(0, map.size() + 2, star.c_str(), 6);  // ë…¸ë€ ë³„
 
 }

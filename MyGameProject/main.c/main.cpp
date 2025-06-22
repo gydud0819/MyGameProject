@@ -4,9 +4,6 @@
 #include "GameManager.h"
 
 
-//extern int Map1[세로][가로 + 1];	// 미로의 크기 exturn 붙여주기 
-//extern int Map2[세로2][가로2 + 1];	// 미로의 크기
-
 int main()
 {
 	GameManager gm;
