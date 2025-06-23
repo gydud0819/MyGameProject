@@ -9,24 +9,10 @@ int main()
 	GameManager gm;
 	while (true)
 	{
+
 		gm.Play();
 
 	}
-	/*MapBoder map1;
-	while (true)
-	{
-	map1.InitMap();
-	map1.ShowClearStage1();
-
-	}*/
-	//map1.ShowStage1();
-
-	// 플레이어 테스트 
-	//Player player({ 12,1 });  // 시작 위치
-	//while (true)
-	//{
-	//	
-
 
 	//	if (_kbhit())
 	//	{

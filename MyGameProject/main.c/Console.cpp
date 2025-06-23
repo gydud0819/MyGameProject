@@ -10,7 +10,7 @@ void SetColor(unsigned char _BackGroundColor, unsigned char _Textcolor)
 }
 
 //커서 이동 함수
-void SetCurPosition(int x, int y)		// 이걸로 나중에 맵 위치 옮기기 
+void SetCurPosition(int x, int y)		// 이걸로 나중에 맵 위치 옮기기 -> ㅆ 왜안됨
 {
 	COORD pos;
 	pos.X = x * 2;	// x는 x2를 해야 한칸이 된다.
@@ -42,13 +42,13 @@ void WriteCenter(const char* text, int yOffset, int color = 7)
 	WriteBuffer(x, y, text, color);
 }
 
-void Startscreen()
+void Startscreen()		// 게임 설명 추가하기 
 {
 	ClearBuffer();// 또는 ClearBuffer() + FlipBuffer()
 	FlipBuffer();
 
-	WriteCenter("◆◆◆ Maze Escape ◆◆◆", -2, 14);       // 중앙보다 살짝 위
-	WriteCenter("[ Press any key to start ]", 1, 7);
+	WriteCenter("◆◆◆ Labyrinth¿ ◆◆◆", /*-2, 14*/ -10, 14);       // 중앙보다 살짝 위
+	WriteCenter("[ Press any key to start ]", /*1, 7*/-8, 7);
 
 	FlipBuffer();
 
@@ -60,3 +60,4 @@ void ClearScreen()		// 버퍼 사용을 모르던 시절 어떻게든 써보려고 한 함수
 	COORD cursorPosition = { 0, 0 };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cursorPosition);
 }
+

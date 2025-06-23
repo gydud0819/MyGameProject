@@ -12,15 +12,15 @@ class GameManager /*: public MapBoder*/		// Is-a 관계 생각하기
 	Stage stage;
 	MapBoder mapboder;
 	Player player;
-	int currentStageIndex = 0;
+	int currentStageIndex = 0;		// 현재 스테이지
 
 	Item item;
 
 	vector<vector<int>> currentMap;	// 현재 맵
 
-	/*bool isRevealMap = false;
-	chrono::steady_clock::time_point revealStartTime;
-	int revealDuration = 0;*/		// 보여주는 시간 = revealDuration
+	bool isRevealMap = false;		// 맵 보여주는걸 bool로 참 거짓 판단
+	chrono::steady_clock::time_point revealStartTime;		// 프로그램 내부에서 시간 측정을 하기위해 쓰는 함수 
+	int revealDuration = 0;		// 보여주는 시간 = revealDuration
 public:
 	GameManager() = default;
 	GameManager(Player player) : player(player) {}
@@ -33,4 +33,6 @@ public:
 	void CountDown();
 	void LoadStage();
 	void Update();
+	void MarkItem();
+	//void ItemUI();
 };

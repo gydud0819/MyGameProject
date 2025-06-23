@@ -11,4 +11,5 @@ void InitBuffer();
 void FlipBuffer();
 void ClearBuffer();
 void WriteBuffer(int x, int y, const char* shape, int color);
+void WriteBuffer(int x, int y);
 void ReleaseBuffer();

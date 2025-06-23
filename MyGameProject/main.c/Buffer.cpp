@@ -74,6 +74,13 @@ void WriteBuffer(int x, int y, const char* shape, int color)
     WriteFile(hBuffer[screenIndex], shape, strlen(shape), &dw, NULL);   // shape 문자열 출력
 }
 
+// 맵을 가운데로 옮기기 위한 임시 버퍼 함수 // 얘도안됨 시바꺼 진짜 
+void WriteBuffer(int x, int y)
+{
+    COORD pos = { x * 2, y };
+}
+
+
 // 프로그램 종료 시 콘솔 버퍼 자원 해제
 void ReleaseBuffer()
 {

@@ -1,42 +1,10 @@
 #include "Item.h"
-//#include "Item.h"
-//
-//void Item::Item1()
-//{
-//	switch (itemType)
-//	{
-//	case TILE_EMPTY: return " ";
-//		break;
-//	case TILE_WALL: return "бс";
-//		break;
-//	case TILE_ITEM1:
-//		break;
-//	case TILE_ITEM2:
-//		break;
-//	default:
-//		break;
-//	}
-//}
-//
-//void Item::CheckItem(Player& player, vector<vector<int>>& map)
-//{
-//	Pos pos = player.GetPos();
-//	int& tile = map[pos.posY][pos.posY];
-//
-//
-//
-//	if (tile == itemType)
-//	{
-//		count++;
-//
-//	}
-//}
 
-void Item::Collect(int tileType)
+void Item::Collect(int itemType)
 {
-	if (tileType == TILE_ITEM1) heartCount++;
-	else if (tileType == TILE_ITEM2) starCount++;
-	else if (tileType == TILE_ITEM4) cloverCount++;
+	if (itemType == TILE_ITEM1) heartCount++;
+	else if (itemType == TILE_ITEM2) starCount++;
+	else if (itemType == TILE_ITEM4) cloverCount++;
 }
 
 int Item::GetItem1Count() const
@@ -49,6 +17,11 @@ int Item::GetItem2Count() const
 	return starCount;
 }
 
+int Item::GetItem3Count() const
+{
+	return cloverCount;
+}
+
 void Item::Reset()
 {
 	heartCount = 0;
@@ -58,7 +31,7 @@ void Item::Reset()
 
 bool Item::IsStage1Clear() const
 {
-	return heartCount >= 5;
+	return heartCount >= 1;
 }
 
 bool Item::IsStage2Clear() const

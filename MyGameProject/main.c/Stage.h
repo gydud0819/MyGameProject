@@ -6,7 +6,8 @@ class Stage
 {
 private:
 bool isReveal;	// 랜턴 처리하는거 == 맵 내부를 드러내는지 확인하는 체크하는거
-
+bool isOuterWall;
+bool isItem; 
 public:
 	Stage() = default;
 public:

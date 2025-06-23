@@ -10,14 +10,12 @@ public:
 	//Item() = default;
 	//Item(string shape, TileType itemType) : shape(shape), itemType(itemType), count(0) {}
 public:
-	//void CheckItem(Player& player, vector<vector<int>>& map);		// void를 Pos로 받아올 수도 있음 
-	//int GetCount() const;
-	//TileType GetItemType() const;
 
 	void Collect(int tileType);
 
 	int GetItem1Count() const;
 	int GetItem2Count() const;
+	int GetItem3Count() const;
 
 	void Reset();
 
