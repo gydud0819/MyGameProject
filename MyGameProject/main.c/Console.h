@@ -22,6 +22,8 @@ void HideCursor();
 
 void Startscreen();		// 게임 시작 화면 함수 
 
+void ShowTitle(int offsetY = -8, int color = 15);
+
 struct Pos		// 위치 구조체
 {
 	int posX;

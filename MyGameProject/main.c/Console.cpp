@@ -47,12 +47,46 @@ void Startscreen()		// 게임 설명 추가하기
 	ClearBuffer();// 또는 ClearBuffer() + FlipBuffer()
 	FlipBuffer();
 
-	WriteCenter("◆◆◆ Labyrinth¿ ◆◆◆", /*-2, 14*/ -10, 14);       // 중앙보다 살짝 위
-	WriteCenter("[ Press any key to start ]", /*1, 7*/-8, 7);
-
+	ShowTitle();
+	//WriteCenter("◆◆◆ Labyrinth¿ ◆◆◆", /*-2, 14*/ -10, 14);       // 중앙보다 살짝 위
+	//WriteCenter("[ Press any key to start ]", /*1, 7*/-8, 7);
 	FlipBuffer();
 
 	_getch(); // 아무 키 누를 때까지 대기
+}
+
+void ShowTitle(int offsetY, int color)
+{
+	// ASCII 타이틀 줄별로 선언
+	//const char* title[] = 
+	//{
+	//"   ##        ####    #####    ##  ##   #####     ####    ##  ##   ######   ##  ##      #   ",				// #
+	//"   ##       ##  ##   ##  ##   ##  ##   ##  ##     ##     ### ##     ##     ##  ##           ",				// 	
+	//"   ##       ######   #####     ####    #####      ##     ######     ##     ######      #   ",				// #
+	//"   ##       ##  ##   ##  ##     ##     ## ##      ##     ## ###     ##     ##  ##       #  ",				// ##
+	//"   #####    ##  ##   #####      ##     ##  ##    ####    ##  ##     ##     ##  ##        #   "				// ###
+	//"																					   ###   "				// ###
+	//};
+
+	const char* title[] =
+	{
+		"   ##        ####    #####    ##  ##   #####     ####    ##  ##   ######   ##  ##      #   ",  // #
+		"   ##       ##  ##   ##  ##   ##  ##   ##  ##     ##     ### ##     ##     ##  ##           ",  //
+		"   ##       ######   #####     ####    #####      ##     ######     ##     ######      #   ",  // #
+		"   ##       ##  ##   ##  ##     ##     ## ##      ##     ## ###     ##     ##  ##       #  ",  // ##
+		"   #####    ##  ##   #####      ##     ##  ##    ####    ##  ##     ##     ##  ##        # ",  // ###
+		"                                                                                      ###  "   // ###
+	};
+
+	int numLines = sizeof(title) / sizeof(title[0]);
+
+	for (int i = 0; i < numLines; ++i)
+	{
+		WriteCenter(title[i], -8 + i, 15);  // y좌표를 위에서부터 점점 아래로, 색상은 15(흰색)
+	}
+
+	//WriteCenter("◆◆◆ Labyrinth¿ ◆◆◆", /*-2, 14*/ -10, 14);       // 중앙보다 살짝 위
+	//WriteCenter("[ Press any key to start ]", /*1, 7*/-8, 7);
 }
 
 void ClearScreen()		// 버퍼 사용을 모르던 시절 어떻게든 써보려고 한 함수

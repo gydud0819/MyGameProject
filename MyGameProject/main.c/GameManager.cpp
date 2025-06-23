@@ -17,21 +17,29 @@ void GameManager::Play()
 
 	if (isFirst)
 	{
+		//time.Start();
 		player.SetPos({ 1, 1 });	// 플레이어 시작 위치 지정 (왼쪽 위) -> 나중에 랜덤으로 배치하는게 가능하면 할 예정
 		mapboder.InitMap();			 // 맵 데이터 불러오기
 		currentMap = mapboder.GetMap(currentStageIndex);		// 현재 스테이지 맵 가져오기
+		stage.SetMap(currentMap);
 		isFirst = false;			// 이후엔 다시 실행되지 않도록 false처리하기 
 	}
 	// 2. 플레이어가 맵 안에서만 움직이는지
 
 	// 1. 맵 나오는지 확인 완료
-	PlayerMove(player, currentMap, item);	// 플레이어 이동 처리 + 아이템 먹기 처리
+	PlayerMove(player, item);	// 플레이어 이동 처리 + 아이템 먹기 처리
 	Update();
 	ClearBuffer();     // 출력 버퍼 비우기 (매 프레임 깔끔하게 만들기 위해서)
 	//MarkItem();				// PlayerMove안에 있으면안되나?
 	RenderMap();		// 맵, 플레이어, 아이템 등 화면에 출력 -> 나한테 좀 중요함
+	
+	//int offsetX = currentMap[0].size() * 2 + 4;  // 또는 BufferWidth - 25
+	//int offsetY = 1;
+
+	//time.DisplayPlayTime(/*BufferWidth - 25, 0*/ 80,20);  // 우측 상단에 표시
 	FlipBuffer();      // 버퍼 교체 → 지금 그린 화면을 실제로 보여줌
 
+	//Sleep(20);
 
 
 }
@@ -39,9 +47,20 @@ void GameManager::Play()
 // 랜턴때문에 안돌아가니까 다시 해보기 
 void GameManager::RenderMap()
 {
-   stage.RenderMap(currentMap, player, isRevealMap);
+	vector<vector<int>> map = stage.GetMap();
 
-   MarkItem();
+	if (map.empty()) return;
+
+	int mapWidth = map[0].size();
+	int mapHeight = map.size();
+
+	int offsetX =  ((BufferWidth / 2) - mapWidth) / 2; /*(BufferWidth - mapWidth * 2) / 2;*/
+	int offsetY = (BufferHeight - mapHeight) / 2;
+
+
+   stage.RenderMap(map, player, isRevealMap, offsetX, offsetY);
+
+   MarkItem(offsetX, offsetY, mapHeight);
 }
 
 void GameManager::CountDown()	// 스테이지 넘어갈때 카운트다운 나오는 함수 진짜 구현하기 ㅈㄴ힘들었다ㅠㅠ
@@ -49,11 +68,13 @@ void GameManager::CountDown()	// 스테이지 넘어갈때 카운트다운 나�
 	for (int i = 3; i > 0; --i)
 	{
 		ClearBuffer();
+		WriteBuffer(25, 10, "다음 스테이지로 넘어갑니다...", 11);  // 연두색
 
 		char countdown[10];			// 나중에 string으로 바꿔서 적용하기
 		// 정수를 문자열로 변환해서 버퍼에 저장하는 함수 (버퍼 오버플로우 방지용으로 _s 사용)
-		//cout << "다음 스테이지로 넘어갑니다.";		// tq 
+			
 		sprintf_s(countdown, "%d", i);	// 버퍼랑 관련된 함수로 이걸 써야 변환이 된다.
+		WriteBuffer(35, 12, "   ", 14);  // 숫자 지울 공간 확보
 		WriteBuffer(40, 10, countdown, 14);
 
 		FlipBuffer();
@@ -66,7 +87,7 @@ void GameManager::LoadStage()	// 맵 가져오기
 {
 	mapboder.InitMap();  // 전체 맵 초기화
 	currentMap = mapboder.GetMap(currentStageIndex);
-	
+	stage.SetMap(currentMap);
 	player.SetPos({ 1, 1 });  // 초기 위치 -> 나중에 랜덤으로 시도해보기 
 	RenderMap();
 }
@@ -88,7 +109,7 @@ void GameManager::Update()
 }
 
 //// 아이템 먹은거 확인하는 UI함수 
-void GameManager::MarkItem()		
+void GameManager::MarkItem(int offsetX, int offsetY, int mapHeight)
 {
 	// GameManager.cpp 내 함수 안에서
 	int heartCount = item.GetItem1Count();
@@ -104,9 +125,23 @@ void GameManager::MarkItem()
 	string clover = "Clover : ";
 	for (int i = 0; i < cloverCount; ++i) clover += "♣";
 
-	WriteBuffer(0, 30, "Heart : ", 4); // 빨간 하트
-	WriteBuffer(0, 32, "Star  : ", 6);  // 노란 별
-	WriteBuffer(0, 34, "Clover : ", 13);  // 클로버 tlqkf
+	int uiX = offsetX + currentMap[0].size() + 2; // 맵 오른쪽 옆에 출력 (두 칸 띄움)
+	int uiY = offsetY; // 맵 맨 위 기준
+	if (currentStageIndex == 0)
+	{
+		WriteBuffer(45, uiY + 32, heart.c_str(), 4); // 빨간 하트
+	}
+	else if (currentStageIndex == 1)
+	{
+	WriteBuffer(45, uiY + 32, star.c_str(), 6);  // 노란 별
+
+	}
+	else if (currentStageIndex == 2)
+	{
+		WriteBuffer(45, uiY + 32, clover.c_str(), 13);  // 클로버 tlqkf
+
+	}
+	
 
 }
 
@@ -115,6 +150,10 @@ void GameManager::CheckStageClear(Item& item)
 	if (currentStageIndex == 0 && item.IsStage1Clear())
 	{
 		CountDown();
+		ClearBuffer();
+		FlipBuffer();
+		Sleep(1000);  // 잠깐 정지
+
 		item.Reset();
 		currentStageIndex++;
 		
@@ -122,22 +161,19 @@ void GameManager::CheckStageClear(Item& item)
 	}
 	else if (currentStageIndex == 1 && item.IsStage2Clear())
 	{
-		//CountDown();
-		//ClearBuffer();
-		//WriteBuffer(10, 10, "게임 클리어!", 13);  // 분홍색 같은 색상
-		//FlipBuffer();
-		///*SetCurPosition(10, 10);
-		//std::cout << "게임 클리어!";*/
-		//Sleep(2000);
-		//exit(0);  // 프로그램 종료
 		CountDown();
+		ClearBuffer();
+		//WriteBuffer(25, 10, "다음 스테이지로 넘어갑니다...", 11);
+		FlipBuffer();
+		Sleep(1000);  // 잠깐 정지
+
 		item.Reset();
 		currentStageIndex++;
 		LoadStage();
 	}
 	else if (currentStageIndex == 2 && item.IsStage3Clear())
 	{
-		CountDown();
+		//CountDown();
 		ClearBuffer();
 		WriteBuffer(30, 20, "게임 클리어", 7);  // 분홍색 같은 색상
 		FlipBuffer();
@@ -161,20 +197,29 @@ void GameManager::ShowMap()
 
 
 // 2. 플레이어가 맵안에서만 움직이도록 하기
-void GameManager::PlayerMove(Player& player, vector<vector<int>>& map, Item& item)
+void GameManager::PlayerMove(Player& player, /*vector<vector<int>>& map,*/ Item& item)
 {
-	
+	vector<vector<int>>& map = stage.GetMutableMap();
 	if (_kbhit())
 	{
 
 		int dx = 0, dy = 0;		// 임시 좌표
+		//switch (_getch())
+		//{
+		//case 72: dy = -1; break;  // ↑ 방향키 모양 ▲ ▼ ◀	▶ 로 누를때마다 할 예정 
+		//case 80: dy = 1; break;   // ↓ 
+		//case 75: dx = -1; break;  // ←
+		//case 77: dx = 1; break;   // →
+		//}
+
 		switch (_getch())
 		{
-		case 72: dy = -1; break;  // ↑ 방향키 모양 ▲ ▼ ◀	▶ 로 누를때마다 할 예정 
-		case 80: dy = 1; break;   // ↓ 
-		case 75: dx = -1; break;  // ←
-		case 77: dx = 1; break;   // →
+		case 72: dy = -1; player.SetDirection(Direction::Up); break;
+		case 80: dy = 1;  player.SetDirection(Direction::Down); break;
+		case 75: dx = -1; player.SetDirection(Direction::Left); break;
+		case 77: dx = 1;  player.SetDirection(Direction::Right); break;
 		}
+
 
 		Pos curr = player.GetPos();		// 플레이어가 움직이는거 
 
@@ -191,13 +236,13 @@ void GameManager::PlayerMove(Player& player, vector<vector<int>>& map, Item& ite
 		if (map[nextY][nextX] != TILE_WALL)
 		{
 			// 이전 위치 지우기
-			WriteBuffer(curr.posX, curr.posY, " ", 0);
+			//WriteBuffer(curr.posX, curr.posY, " ", 0);
 
 			player.Move(dx, dy);	// 위치 업데이트
 
 			// 새 위치에 플레이어 출력
 			Pos newPos = player.GetPos();
-			WriteBuffer(newPos.posX, newPos.posY, "◈", 15);  // 밝은 흰색
+			//WriteBuffer(newPos.posX, newPos.posY, "◈", 15);  // 밝은 흰색
 		}
 
 		if (map[nextY][nextX] == TILE_ITEM1 || map[nextY][nextX] == TILE_ITEM2 || map[nextY][nextX] == TILE_ITEM4)

@@ -4,12 +4,11 @@
 extern HANDLE hBuffer[2];
 extern int screenIndex;
 
-const int BufferWidth = 200;
-const int BufferHeight = 200;
+const int BufferWidth = 150;
+const int BufferHeight = 60;
 
 void InitBuffer();
 void FlipBuffer();
 void ClearBuffer();
 void WriteBuffer(int x, int y, const char* shape, int color);
-void WriteBuffer(int x, int y);
 void ReleaseBuffer();

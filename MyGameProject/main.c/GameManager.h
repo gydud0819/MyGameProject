@@ -6,6 +6,7 @@
 #include "Stage.h"
 #include "MapBoder.h"
 #include "Buffer.h"
+#include "Time.h"
 
 class GameManager /*: public MapBoder*/		// Is-a 관계 생각하기
 {
@@ -21,18 +22,19 @@ class GameManager /*: public MapBoder*/		// Is-a 관계 생각하기
 	bool isRevealMap = false;		// 맵 보여주는걸 bool로 참 거짓 판단
 	chrono::steady_clock::time_point revealStartTime;		// 프로그램 내부에서 시간 측정을 하기위해 쓰는 함수 
 	int revealDuration = 0;		// 보여주는 시간 = revealDuration
+	Time time;
 public:
 	GameManager() = default;
 	GameManager(Player player) : player(player) {}
 public:
 	void Play();		// 메인 코드에서 이거만 호출해서 플레이 해야함
 	void ShowMap();		// 맵 보여주는 함수
-	void PlayerMove(Player& player, vector<vector<int>>& map, Item& item); // 플레이어가 맵 내에서만 돌아다니도록 하는 함수
+	void PlayerMove(Player& player,/* vector<vector<int>>& map,*/ Item& item); // 플레이어가 맵 내에서만 돌아다니도록 하는 함수
 	void RenderMap();
 	void CheckStageClear(Item& item);
 	void CountDown();
 	void LoadStage();
 	void Update();
-	void MarkItem();
+	void MarkItem(int offsetX, int offsetY, int mapHeight);
 	//void ItemUI();
 };
