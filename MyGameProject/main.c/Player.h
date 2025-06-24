@@ -3,10 +3,10 @@
 
 enum class Direction
 {
-	Up,
-	Down,
-	Left,
-	Right
+	Up,		// ¡ã
+	Down,	// ¡å
+	Left,	// ¢¸
+	Right	// ¢º
 };
 
 class Player

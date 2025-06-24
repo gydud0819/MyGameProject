@@ -58,16 +58,7 @@ void Startscreen()		// 게임 설명 추가하기
 void ShowTitle(int offsetY, int color)
 {
 	// ASCII 타이틀 줄별로 선언
-	//const char* title[] = 
-	//{
-	//"   ##        ####    #####    ##  ##   #####     ####    ##  ##   ######   ##  ##      #   ",				// #
-	//"   ##       ##  ##   ##  ##   ##  ##   ##  ##     ##     ### ##     ##     ##  ##           ",				// 	
-	//"   ##       ######   #####     ####    #####      ##     ######     ##     ######      #   ",				// #
-	//"   ##       ##  ##   ##  ##     ##     ## ##      ##     ## ###     ##     ##  ##       #  ",				// ##
-	//"   #####    ##  ##   #####      ##     ##  ##    ####    ##  ##     ##     ##  ##        #   "				// ###
-	//"																					   ###   "				// ###
-	//};
-
+	
 	const char* title[] =
 	{
 		"   ##        ####    #####    ##  ##   #####     ####    ##  ##   ######   ##  ##      #   ",  // #
@@ -82,16 +73,19 @@ void ShowTitle(int offsetY, int color)
 
 	for (int i = 0; i < numLines; ++i)
 	{
-		WriteCenter(title[i], -8 + i, 15);  // y좌표를 위에서부터 점점 아래로, 색상은 15(흰색)
+		WriteCenter(title[i], -8 + i, 8);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
 	}
 
-	//WriteCenter("◆◆◆ Labyrinth¿ ◆◆◆", /*-2, 14*/ -10, 14);       // 중앙보다 살짝 위
-	//WriteCenter("[ Press any key to start ]", /*1, 7*/-8, 7);
-}
+	// 나중에 처리하기 
+	//int selected;
+	//cin >> selected;
 
-void ClearScreen()		// 버퍼 사용을 모르던 시절 어떻게든 써보려고 한 함수
-{
-	COORD cursorPosition = { 0, 0 };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cursorPosition);
+	//WriteCenter("◆◆◆ Labyrinth¿ ◆◆◆", /*-2, 14*/ -10, 14);       // 중앙보다 살짝 위 -> 임시 타이틀
+	//WriteCenter("[        게임시작        ]", 12, 7);
+	//WriteCenter("[        게임설명        ]", 14, 7);
+	//WriteCenter("[        게임종료        ]", 16, 7);
+	WriteCenter("[        Game Start      ]", 12, 7);		// 오른쪽으로 좀만 더 가면될거같은데 
+	WriteCenter("[        Game Rule       ]", 14, 7);
+	WriteCenter("[          Exit          ]", 16, 7);
+	WriteCenter("[ Press any key to start ]", 18, 7);
 }
-

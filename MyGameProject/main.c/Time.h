@@ -12,3 +12,5 @@ public:
 	int GetElapsedSeconds() const;	// 경과 초
 	void DisplayPlayTime(int offsetX, int offsetY) const; // 콘솔에 시간 출력
 };
+
+void CountDown();	// 스테이지 넘어갈때 카운트다운 나오는 함수 

@@ -1,2 +1,35 @@
-﻿  Player.cpp
-  main.c.vcxproj -> C:\Users\DPC\Desktop\MyGameProject\MyGameProject\x64\Debug\FirstGame.exe
+﻿  Buffer.cpp
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Buffer.cpp(69,21): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Buffer.cpp(69,26): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Buffer.cpp(75,50): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Console.cpp
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Console.cpp(39,8): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GameManager.cpp
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\GameManager.cpp(41,14): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\GameManager.cpp(59,15): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\GameManager.cpp(60,16): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\GameManager.cpp(88,15): warning C4244: '초기화 중': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\GameManager.cpp(88,15): warning C4244:         with
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\GameManager.cpp(88,15): warning C4244:         [
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\GameManager.cpp(88,15): warning C4244:             _Rep=__int64
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\GameManager.cpp(88,15): warning C4244:         ]
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\GameManager.cpp(115,10): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Item.cpp
+  MapBoder.cpp
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\MapBoder.cpp(103,18): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Player.cpp
+  Stage.cpp
+  Time.cpp
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(16,83): warning C4244: 'return': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(16,83): warning C4244:         with
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(16,83): warning C4244:         [
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(16,83): warning C4244:             _Rep=__int64
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(16,83): warning C4244:         ]
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(24,17): warning C4244: '초기화 중': '_Rep'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(24,17): warning C4244:         with
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(24,17): warning C4244:         [
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(24,17): warning C4244:             _Rep=__int64
+C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\main.c\Time.cpp(24,17): warning C4244:         ]
+  main.cpp
+  코드를 생성하고 있습니다...
+  main.c.vcxproj -> C:\Users\Administrator\Desktop\MyGameProject\MyGameProject\x64\Debug\FirstGame.exe

@@ -5,7 +5,6 @@
 #include <time.h>
 #include <conio.h>
 #include <vector>
-#include <map>
 #include <algorithm>
 #include <chrono>
 #include <fstream>
@@ -16,13 +15,13 @@ using namespace std;
 void SetColor(unsigned char _BackGroundColor, unsigned char _Textcolor);
 
 
-void SetCurPosition(int x, int y);
-
-void HideCursor();
+void SetCurPosition(int x, int y); // 커서 위치 옮기는 함수
+	
+void HideCursor();		// 커서 숨기는 함수
 
 void Startscreen();		// 게임 시작 화면 함수 
 
-void ShowTitle(int offsetY = -8, int color = 15);
+void ShowTitle(int offsetY = -8, int color = 15);		// 타이틀 그려놓은거 
 
 struct Pos		// 위치 구조체
 {

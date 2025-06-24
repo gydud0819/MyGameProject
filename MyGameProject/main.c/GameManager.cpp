@@ -1,11 +1,17 @@
 ﻿#include "GameManager.h"
 
+// GameManager.cpp가 모든걸 총괄하긴 하지만 너무 몰빵한 느낌이 듦
+GameManager::~GameManager()
+{
+
+}
+
 void GameManager::Play()
 {
 	// 맵, 플레이어, 아이템 다 WriteBuffer로 그려주기
 
-	static bool isFirst = true;			// 게임 시작할 때 딱 1번만 실행되게 설정
-	static bool isBufferInit = false;  // 버퍼 초기화도 딱 1번만 하게
+	static bool isFirst = true;			// 게임 시작할 때 딱 1번만 실행되게 설정		 여기도 gameManager.h에 private로 선언해서 빼줘도 될듯
+	static bool isBufferInit = false;  // 버퍼 초기화도 딱 1번만 하게				   	 여기도 gameManager.h에 private로 선언해서 빼줘도 될듯
 	if (!isBufferInit)
 	{
 		InitBuffer();		// 콘솔 버퍼 초기화 (더블 버퍼 구조 잡기)
@@ -28,18 +34,18 @@ void GameManager::Play()
 
 	// 1. 맵 나오는지 확인 완료
 	PlayerMove(player, item);	// 플레이어 이동 처리 + 아이템 먹기 처리
-	Update();
+	Update();		   // 랜턴 아이템 처리하는 코드
 	ClearBuffer();     // 출력 버퍼 비우기 (매 프레임 깔끔하게 만들기 위해서)
-	//MarkItem();				// PlayerMove안에 있으면안되나?
 	RenderMap();		// 맵, 플레이어, 아이템 등 화면에 출력 -> 나한테 좀 중요함
 	
+	// 타이머 띄우기 == 초기화 안됨 
 	//int offsetX = currentMap[0].size() * 2 + 4;  // 또는 BufferWidth - 25
 	//int offsetY = 1;
 
 	//time.DisplayPlayTime(/*BufferWidth - 25, 0*/ 80,20);  // 우측 상단에 표시
 	FlipBuffer();      // 버퍼 교체 → 지금 그린 화면을 실제로 보여줌
 
-	//Sleep(20);
+	//Sleep(20);		// 임시 주석
 
 
 }
@@ -63,25 +69,7 @@ void GameManager::RenderMap()
    MarkItem(offsetX, offsetY, mapHeight);
 }
 
-void GameManager::CountDown()	// 스테이지 넘어갈때 카운트다운 나오는 함수 진짜 구현하기 ㅈㄴ힘들었다ㅠㅠ
-{
-	for (int i = 3; i > 0; --i)
-	{
-		ClearBuffer();
-		WriteBuffer(25, 10, "다음 스테이지로 넘어갑니다...", 11);  // 연두색
 
-		char countdown[10];			// 나중에 string으로 바꿔서 적용하기
-		// 정수를 문자열로 변환해서 버퍼에 저장하는 함수 (버퍼 오버플로우 방지용으로 _s 사용)
-			
-		sprintf_s(countdown, "%d", i);	// 버퍼랑 관련된 함수로 이걸 써야 변환이 된다.
-		WriteBuffer(35, 12, "   ", 14);  // 숫자 지울 공간 확보
-		WriteBuffer(40, 10, countdown, 14);
-
-		FlipBuffer();
-		Sleep(1000);		// 여기선 Sleep을 무조건 써야함 
-	}
-	ClearBuffer();	// 다시 초기화
-}
 
 void GameManager::LoadStage()	// 맵 가져오기
 {
@@ -92,7 +80,7 @@ void GameManager::LoadStage()	// 맵 가져오기
 	RenderMap();
 }
 
- //맵 내부 랜턴 아이템 처리하는 코드 오류 겁나 나니까 내일 다시 손보기 == 일단 됨 
+ //맵 내부 랜턴 아이템 처리하는 코드 == 이거도 아이템 클래스로 빼도 될거 같음 
 void GameManager::Update()
 {
 	if (isRevealMap)
@@ -108,7 +96,7 @@ void GameManager::Update()
 	}
 }
 
-//// 아이템 먹은거 확인하는 UI함수 
+// 아이템 먹은거 확인하는 UI함수 == UI 헤더를 만들어서 따로 받아오던가 해야겠다 
 void GameManager::MarkItem(int offsetX, int offsetY, int mapHeight)
 {
 	// GameManager.cpp 내 함수 안에서
@@ -127,6 +115,7 @@ void GameManager::MarkItem(int offsetX, int offsetY, int mapHeight)
 
 	int uiX = offsetX + currentMap[0].size() + 2; // 맵 오른쪽 옆에 출력 (두 칸 띄움)
 	int uiY = offsetY; // 맵 맨 위 기준
+
 	if (currentStageIndex == 0)
 	{
 		WriteBuffer(45, uiY + 32, heart.c_str(), 4); // 빨간 하트
@@ -136,9 +125,9 @@ void GameManager::MarkItem(int offsetX, int offsetY, int mapHeight)
 	WriteBuffer(45, uiY + 32, star.c_str(), 6);  // 노란 별
 
 	}
-	else if (currentStageIndex == 2)
+	else if (currentStageIndex == 2)			// 직사각형이니까 좌표수정은 맵 수정하고 나서 하기 
 	{
-		WriteBuffer(45, uiY + 32, clover.c_str(), 13);  // 클로버 tlqkf
+		WriteBuffer(45, uiY + 32, clover.c_str(), 13);  // 클로버 
 
 	}
 	
@@ -147,6 +136,7 @@ void GameManager::MarkItem(int offsetX, int offsetY, int mapHeight)
 
 void GameManager::CheckStageClear(Item& item)
 {
+	// 이것도 for문 돌려서 해결할 수있을 거 같으니 일단 임시로 냅두기 
 	if (currentStageIndex == 0 && item.IsStage1Clear())
 	{
 		CountDown();
@@ -175,16 +165,35 @@ void GameManager::CheckStageClear(Item& item)
 	{
 		//CountDown();
 		ClearBuffer();
-		WriteBuffer(30, 20, "게임 클리어", 7);  // 분홍색 같은 색상
+		WriteBuffer(30, 20, "escape¿", 7);  // 분홍색 같은 색상
 		FlipBuffer();
-		/*SetCurPosition(10, 10);
-		std::cout << "게임 클리어!";*/
 		Sleep(2000);
 		exit(0);  // 프로그램 종료
 	}
 }
 
-
+// todo: 버퍼 구조때문인지 콘솔창 크게하면 잔상이 많이남음 
+//void GameManager::CountDown()
+//{
+//	for (int i = 3; i > 0; --i)
+//	{
+//		ClearBuffer();
+//		WriteBuffer(45, 30, "다음 스테이지로 넘어갑니다...", 8);  // 잔상 해결해야하는데 
+//		char countdown[10];			// 나중에 string으로 바꿔서 적용하기
+//		// 정수를 문자열로 변환해서 버퍼에 저장하는 함수 (버퍼 오버플로우 방지용으로 _s 사용)
+//		sprintf_s(countdown, "%d", i);	// 버퍼랑 관련된 함수로 이걸 써야 변환이 된다.
+//		WriteBuffer(/*35, 12*/61, 30, "   ", 14);  // 숫자 지울 공간 확보 -> 절반 해결 
+//		WriteBuffer(61, 30, countdown, 15);
+//		//ClearBuffer();
+//		FlipBuffer();
+//
+//
+//
+//		//FlipBuffer();
+//		Sleep(1000);		// 여기선 Sleep을 무조건 써야함 -> 시간 제어 해주는거 
+//	}
+//	ClearBuffer();	// 다시 초기화
+//}
 
 void GameManager::ShowMap()
 {
@@ -214,16 +223,14 @@ void GameManager::PlayerMove(Player& player, /*vector<vector<int>>& map,*/ Item&
 
 		switch (_getch())
 		{
-		case 72: dy = -1; player.SetDirection(Direction::Up); break;
-		case 80: dy = 1;  player.SetDirection(Direction::Down); break;
+		case 72: dy = -1; player.SetDirection(Direction::Up); break;	// ▲
+		case 80: dy = 1;  player.SetDirection(Direction::Down); break;	// ▼
 		case 75: dx = -1; player.SetDirection(Direction::Left); break;
 		case 77: dx = 1;  player.SetDirection(Direction::Right); break;
 		}
 
 
 		Pos curr = player.GetPos();		// 플레이어가 움직이는거 
-
-		// player충돌처리를 하려면 직접적인 인자가 필요한데 인자를 만들어야하나? 
 
 		int nextX = curr.posX + dx;
 		int nextY = curr.posY + dy;
@@ -251,41 +258,15 @@ void GameManager::PlayerMove(Player& player, /*vector<vector<int>>& map,*/ Item&
 			map[nextY][nextX] = TILE_EMPTY;        // 먹은 자리 빈칸 처리
 		}
 
-		// 랜턴 처리 코드 == 안돌아감 다시 손 보기 
+		// 랜턴 처리 코드
 		if (map[nextY][nextX] == TILE_ITEM3)
 		{
 			isRevealMap = true;
 			revealStartTime = chrono::steady_clock::now();	// 현재 시간을 가져오는 함수 근데 왜 안돼 
-			revealDuration = rand() % 3 + 3;  // 3~5초 사이		// rand() 함수 써서 3으로 나누면 
-			map[nextY][nextX] = TILE_EMPTY;		// 먹고나서 " " 가리키는거 맞는데? 
+			revealDuration = rand() % 3 + 3;  // 3~5초 == 5초간 맵 내부가 활성화된다는 멘트 추가하고 다시꺼질때 사라지게 하기 
+			map[nextY][nextX] = TILE_EMPTY;		// 먹고나서 빈칸 초기화 
 
-			// 먹고나서 속도가 좀 느려짐 얘도 손봐야할듯 
 		}
-
 	
-
-		//Sleep(10);	
-
-
-		//MarkItem(map);
-
-		//// GameManager.cpp 내 함수 안에서
-		//int heartCount = item.GetItem1Count();
-		//int starCount = item.GetItem2Count();
-		//int cloverCount = item.GetItem3Count();
-
-		//string heart = "Heart : ";
-		//for (int i = 0; i < heartCount; ++i) heart += "♥";
-
-		//string star = "Star  : ";
-		//for (int i = 0; i < starCount; ++i) star += "★";		// 스테이지 2에서만 나오게 하기 
-
-		//string clover = "Clover : ";
-		//for (int i = 0;i < cloverCount;++i) clover += "♣";
-
-		//WriteBuffer(0, map.size() + 1, heart.c_str(), 4); // 빨간 하트
-		//WriteBuffer(0, map.size() + 2, star.c_str(), 6);  // 노란 별
-		//WriteBuffer(0, map.size() + 2, clover.c_str(), 8);  // 클로버
-
 	}
 }

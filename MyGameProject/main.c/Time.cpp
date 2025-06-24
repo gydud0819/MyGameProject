@@ -32,3 +32,25 @@ void Time::DisplayPlayTime(int offsetX, int offsetY) const
 
     WriteBuffer(offsetX, offsetY, buffer, 15); // 콘솔에 출력, 색은 15 (흰색) 예시
 }
+
+void CountDown()
+{
+	for (int i = 3; i > 0; --i)
+	{
+		ClearBuffer();
+		WriteBuffer(45, 30, "다음 스테이지로 넘어갑니다...", 8);  // 잔상 해결해야하는데 
+		char countdown[10];			// 나중에 string으로 바꿔서 적용하기
+		// 정수를 문자열로 변환해서 버퍼에 저장하는 함수 (버퍼 오버플로우 방지용으로 _s 사용)
+		sprintf_s(countdown, "%d", i);	// 버퍼랑 관련된 함수로 이걸 써야 변환이 된다.
+		WriteBuffer(/*35, 12*/61, 30, "   ", 14);  // 숫자 지울 공간 확보 -> 절반 해결 
+		WriteBuffer(61, 30, countdown, 15);
+		//ClearBuffer();
+		FlipBuffer();
+
+
+
+		//FlipBuffer();
+		Sleep(1000);		// 여기선 Sleep을 무조건 써야함 -> 시간 제어 해주는거 
+	}
+	ClearBuffer();	// 다시 초기화
+}

@@ -1,4 +1,4 @@
-#include "Stage.h"
+ï»¿#include "Stage.h"
 
 void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReveal, int offsetX, int offsetY)
 {
@@ -6,24 +6,24 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 	{
 		for (int x = 0; x < map[y].size(); x++)
 		{
-			// ·£ÅÏ Ã³¸®ÇÏ´Â ÄÚµå È®½ÇÇÏÁö ¾ÊÀ½
+			// ëœí„´ ì²˜ë¦¬í•˜ëŠ” ì½”ë“œ í™•ì‹¤í•˜ì§€ ì•ŠìŒ
 			isOuterWall = (x == 0 || x == map[0].size() - 1 || y == 0 || y == map.size() - 1);
 			isItem = (map[y][x] == TILE_ITEM1 || map[y][x] == TILE_ITEM2 || map[y][x] == TILE_ITEM3||map[y][x] == TILE_ITEM4);
 
-			if (!isReveal && !isOuterWall && !isItem)	// ·£ÅÏÀ¸·Î ÇÃ·¹ÀÌ¾î ±âÁØ x,y 2Ä­¾¿¸¸ ¹àÇôÁÖ´Â ±âº» ±â´É 
+			if (!isReveal && !isOuterWall && !isItem)	// ëœí„´ìœ¼ë¡œ í”Œë ˆì´ì–´ ê¸°ì¤€ x,y 2ì¹¸ì”©ë§Œ ë°í˜€ì£¼ëŠ” ê¸°ë³¸ ê¸°ëŠ¥ 
 			{
 				int dx = abs(x - player.GetPos().posX);
 				int dy = abs(y - player.GetPos().posY);
-				if (dx > 2 || dy > 2) continue;
+				if (dx > 1 || dy > 1) continue;
 			}
 
-			int drawX = x + offsetX * 2;  // ÄÜ¼Ö °¡·Î´Â 2¹è Ã³¸®
+			int drawX = x + offsetX * 2;  // ì½˜ì†” ê°€ë¡œëŠ” 2ë°° ì²˜ë¦¬
 			int drawY = y + offsetY;
 
 
 			/*if (player.GetPos().posX == x && player.GetPos().posY == y)
 			{
-				WriteBuffer(drawX, drawY, "¢Â", 15);
+				WriteBuffer(drawX, drawY, "â—ˆ", 15);
 				continue;
 			}*/
 
@@ -33,7 +33,7 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 			switch (map[y][x])
 			{
 			case TILE_WALL:
-				WriteBuffer(drawX, drawY, "¡á", 15);
+				WriteBuffer(drawX, drawY, "â– ", 15);
 				break;
 
 			case TILE_EMPTY:
@@ -41,47 +41,47 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 				break;
 
 			case TILE_ITEM1:
-				WriteBuffer(drawX, drawY, "¢¾", 4);
+				WriteBuffer(drawX, drawY, "â™¥", 4);
 				break;
 
 			case TILE_ITEM2:
-				WriteBuffer(drawX, drawY, "¡Ú", 6);
+				WriteBuffer(drawX, drawY, "â˜…", 6);
 				break;
 
 			case TILE_ITEM3:
-				WriteBuffer(drawX, drawY, "#", 6);
+				WriteBuffer(drawX, drawY, "#"/*\u2600*/, 6);
 				break;
 				
 			case TILE_ITEM4:
-				WriteBuffer(drawX, drawY, "¢À", 12);
+				WriteBuffer(drawX, drawY, "â™£", 12);
 				break;
 			default:
-				WriteBuffer(drawX, drawY, "?", 7); // ¿¹¿Ü µğ¹ö±ë
+				WriteBuffer(drawX, drawY, "?", 7); // ì˜ˆì™¸ ë””ë²„ê¹… => ë‹¤ë¥¸ ì•„ì´í…œì„ ë„£ì—‡ì„ë•ŒğŸ”¨ğŸ”¨ğŸ”¨
 				break;
 			}
 		}
 	}
 
 	Pos p = player.GetPos();
-	const char* dirSymbol = "¢Â";  // ±âº»°ª
+	const char* dirSymbol = "â—ˆ";  // ê¸°ë³¸ ìºë¦­í„°
 
 	switch (player.GetDirection())
 	{
-	case Direction::Up:    dirSymbol = "¡ã"; break;
-	case Direction::Down:  dirSymbol = "¡å"; break;
-	case Direction::Left:  dirSymbol = "¢¸"; break;
-	case Direction::Right: dirSymbol = "¢º"; break;
+	case Direction::Up:    dirSymbol = "â–²"; break;
+	case Direction::Down:  dirSymbol = "â–¼"; break;
+	case Direction::Left:  dirSymbol = "â—€"; break;
+	case Direction::Right: dirSymbol = "â–¶"; break;
 	}
 
 	WriteBuffer(p.posX + offsetX * 2, p.posY + offsetY, dirSymbol, 15);
-	//                   ¡è ÄÜ¼Ö °¡·Î´Â 2¹è Ã³¸®
+	//                   â†‘ ì½˜ì†” ê°€ë¡œëŠ” 2ë°° ì²˜ë¦¬
 
 }
 
 vector<vector<int>>& Stage::GetMutableMap() 
 {
 	return map;
-	// TODO: ¿©±â¿¡ return ¹®À» »ğÀÔÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— return ë¬¸ì„ ì‚½ì…í•©ë‹ˆë‹¤.
 }
 
 void Stage::SetMap(const std::vector<std::vector<int>>& map)
@@ -92,5 +92,5 @@ void Stage::SetMap(const std::vector<std::vector<int>>& map)
 const std::vector<std::vector<int>>& Stage::GetMap() const
 {
 	return map;
-	// TODO: ¿©±â¿¡ return ¹®À» »ğÀÔÇÕ´Ï´Ù.
+	// TODO: ì—¬ê¸°ì— return ë¬¸ì„ ì‚½ì…í•©ë‹ˆë‹¤.
 }

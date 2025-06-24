@@ -1,0 +1,35 @@
+테스트 코드 정규 코드로 바꾸기
+
+정규화할 때 해야할 것들 
+<Console.h>
+- 타이틀 같은건 UI 헤더 만들어서 따로 빼기 == 밑에 현재 UI부분이랑 같은 내용 
+<Console.cpp>
+ 
+<Stage.h>
+- 여긴 딱히 손댈만한게 없어보임
+
+<Player.h>
+- 여기도 딱히 손댈게 안보임 
+
+<Item.h>
+- 각 아이템별로 상속 받아서 사용할 수 있도록 가독성 높이기
+
+<Buffer.h> => <DoubleBuffer.h> 이름 수정
+- 맵 위치와 아이템 UI 위치가  150x60 버퍼 기준으로 되어있음
+const int BufferWidth = 150;		// 기본 창은 240이지만 맵 정렬이 150x60으로 되어있기 때문에 얘도 추후 수정
+const int BufferHeight = 60;
+const int LogicalWidth = 150;		// 맵 정렬을 위한 고정한 가로 버퍼 
+위 변수 참고해서 전부 수정하기
+
+<GameManager.cpp>
+- 얘가 총괄인건 맞지만 너무 몰빵해놔서 조금 분리해야할듯 
+- 스테이지 넘어가는 카운트다운 함수를 time.h로 빼기 -> 일단 완료
+- 아이템 먹은거 확인하는 UI도 UI.h를 만들어서 따로 빼기 
+
+현재 UI
+- 다음 스테이지 넘어가는 거 및 321 카운트다운(TIme.h에 있음)
+- 게임 시작할때 타이틀 화면 (console.cpp, ShowTitle(int offsetY, int color)에 있음)
+- 아이템 먹은거 확인하는 UI (gameManager.cpp, MarkItem(int offsetX, int offsetY, int mapHeight)에 있음)
+- 종료되는 부분(gamemanager.cpp, CheckStageClear() 안에 있음)
+
+
