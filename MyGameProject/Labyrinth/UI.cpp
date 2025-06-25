@@ -5,15 +5,15 @@ MenuOption ShowMenu()
 	int selected = 0;
 	const int menuCount = 3;
 
-	const int menuYStart = 12;
-	const int menuX = 50;  // 메뉴 텍스트가 나올 X좌표
-	const int pointerX = menuX - 4;  // ▶ 포인터는 메뉴 왼쪽
+	const int menuYStart = 42;
+	const int menuX = 58;  // 메뉴 텍스트가 나올 X좌표
+	const int pointerX = menuX - 3;  // ▶ 포인터는 메뉴 왼쪽
 
 	const char* menuTexts[menuCount] = 
 	{
 		"[ Game Start ]",
-		"[ Game Rule  ]",
-		"[ Exit       ]"
+		"[ Game  Rule ]",
+		"[    Exit    ]"
 	};
 
 	while (true)
@@ -28,7 +28,8 @@ MenuOption ShowMenu()
 			WriteBuffer(menuX, y, menuTexts[i], 7);
 
 			if (i == selected)
-				WriteBuffer(pointerX, y, "▶ ", 15);  // ← 화살표는 왼쪽에
+				WriteBuffer(pointerX, y, "☞", 15);  // ← 화살표는 왼쪽에  // 화살표 표시안하고 감싸야겠다.
+				//WriteBuffer(pointerX, y, "┎───────┓", 15);  // ← 화살표는 왼쪽에  // 화살표 표시안하고 감싸야겠다.
 		}
 
 	
@@ -80,11 +81,11 @@ void ShowTitle(int offsetY, int color)
 
 	const char* title[] =
 	{
-		"   ##        ####    #####    ##  ##   #####     ####    ##  ##   ######   ##  ##      #   ",  // #
-		"   ##       ##  ##   ##  ##   ##  ##   ##  ##     ##     ### ##     ##     ##  ##           ",  //
-		"   ##       ######   #####     ####    #####      ##     ######     ##     ######      #   ",  // #
-		"   ##       ##  ##   ##  ##     ##     ## ##      ##     ## ###     ##     ##  ##       #  ",  // ##
-		"   #####    ##  ##   #####      ##     ##  ##    ####    ##  ##     ##     ##  ##        # ",  // ###
+		"    ##        ####    #####    ##  ##   #####     ####    ##  ##   ######   ##  ##      #   ",  // #
+		"    ##       ##  ##   ##  ##   ##  ##   ##  ##     ##     ### ##     ##     ##  ##           ",  //
+		"    ##       ######   #####     ####    #####      ##     ######     ##     ######      #   ",  // #
+		"    ##       ##  ##   ##  ##     ##     ## ##      ##     ## ###     ##     ##  ##       #  ",  // ##
+		"    #####    ##  ##   #####      ##     ##  ##    ####    ##  ##     ##     ##  ##        # ",  // ###
 		"                                                                                      ###  "   // ###
 	};
 
@@ -92,44 +93,64 @@ void ShowTitle(int offsetY, int color)
 
 	for (int i = 0; i < numLines; ++i)
 	{
-		WriteCenter(title[i], -8 + i, 8);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
+		WriteCenter(title[i], 2 + i, 8);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
 	}
-
-	//WriteCenter("◆◆◆ Labyrinth¿ ◆◆◆", /*-2, 14*/ -10, 14);       // 중앙보다 살짝 위 -> 임시 타이틀
-	//WriteCenter("[        게임시작        ]", 12, 7);
-	//WriteCenter("[        게임설명        ]", 14, 7);
-	//WriteCenter("[        게임종료        ]", 16, 7);
-	//WriteCenter("[        Game Start      ]", 12, 7);		// 오른쪽으로 좀만 더 가면될거같은데 
-	//WriteCenter("[        Game Rule       ]", 14, 7);
-	//WriteCenter("[          Exit          ]", 16, 7);
-	//WriteCenter("[ Press any key to start ]", 18, 7);
 }
+
+#pragma region 콘솔 색상 정리
+/*
+* 0 = 블랙
+* 1 = 딥블루
+* 2 = 그린
+* 3 = 라이트 블루	// 청록색
+* 4 = 레드
+* 5 = 자주색
+* 6 = 머스타드(이게 갈색?)
+* 7 = 회색같은 화이트
+* 8 = 다크 그레이
+* 9 = 밝은 블루
+* 10 = 밝은 초록
+* 11 = 민트와 하늘색 그 어딘가
+* 12 = 덜 레드
+* 13 = 밝은 보라(연보라는 아님)
+* 14 = 옐로우
+* 15 = 화이트
+*/
+#pragma endregion
+
+
 
 void ShowGameRule()
 {
 	ClearBuffer();
 
-	WriteCenter("● 미로를 탐험하며 모든 아이템을 모으세요.", 10, 11);
-	WriteCenter("● 방향키로 이동하고, 하트를 먼저 먹어야 합니다.", 12, 11);
-	WriteCenter("● 총 3개의 스테이지를 클리어하면 탈출 성공!", 14, 11);
-	WriteCenter("[ Press any key to return to menu ]", 18, 7);
+	WriteCenter("    [     게임 방법     ]                ", -4, 15);
+
+	WriteCenter("※   조작 방법 : 방향키  ← ↑ ↓ →         ", 2, 7);
+	WriteCenter("※   미로를 탐험하며 아이템을 모으세요.      ", 0, 7);
+	WriteCenter("※   내부를 밝혀주는 아이템이 존재합니다.    ", 4, 7);
+	WriteCenter("※   아이템이 곧 열쇠입니다.                ", 6, 7);
+	WriteCenter("※   무사 탈출을 기원합니다.                 ", 8, 7);
+
+	WriteCenter("  [     Press any key to return to menu     ]", 14, 7);
+	//WriteCenter("    [     돌아가기      ]                ", 14, 7);
 
 	FlipBuffer();
 	_getch();
 }
 
-
+// 3 2 1 카운트 다운 원하는 수 만큼 늘려도됨 
 void CountDown()
 {
-	for (int i = 3; i > 0; --i)
+	for (int i = 5; i > 0; --i)
 	{
 		ClearBuffer();
-		WriteBuffer(45, 30, "다음 스테이지로 넘어갑니다...", 8);  // 잔상 해결해야하는데 
+		WriteBuffer(54, 30, "다음 스테이지로 넘어갑니다...", 8);  //  
 		char countdown[10];			// 나중에 string으로 바꿔서 적용하기
 		// 정수를 문자열로 변환해서 버퍼에 저장하는 함수 (버퍼 오버플로우 방지용으로 _s 사용)
 		sprintf_s(countdown, "%d", i);	// 버퍼랑 관련된 함수로 이걸 써야 변환이 된다.
-		WriteBuffer(/*35, 12*/61, 30, "   ", 14);  // 숫자 지울 공간 확보 -> 절반 해결 
-		WriteBuffer(61, 30, countdown, 15);
+		WriteBuffer(/*35, 12*/71, 30, "   ", 14);  // 숫자 지울 공간 확보 -> 절반 해결 
+		WriteBuffer(71, 30, countdown, 15);
 		//ClearBuffer();
 		FlipBuffer();
 
@@ -139,4 +160,25 @@ void CountDown()
 		Sleep(1000);		// 여기선 Sleep을 무조건 써야함 -> 시간 제어 해주는거 
 	}
 	ClearBuffer();	// 다시 초기화
+}
+
+void EndingTitle(int offsetY, int color)
+{
+	const char* endtitle[] =
+	{
+		"    ##        ####    #####    ##  ##   #####     ####    ##  ##   ######   ##  ##      #   ",  // #
+		"    ##       ##  ##   ##  ##   ##  ##   ##  ##     ##     ### ##     ##     ##  ##           ",  //
+		"    ##       ######   #####     ####    #####      ##     ######     ##     ######      #   ",  // #
+		"    ##       ##  ##   ##  ##     ##     ## ##      ##     ## ###     ##     ##  ##       #  ",  // ##
+		"    #####    ##  ##   #####      ##     ##  ##    ####    ##  ##     ##     ##  ##        # ",  // ###
+		"                                                                                      ###  "   // ###
+	};
+
+	int numLines = sizeof(endtitle) / sizeof(endtitle[0]);
+
+	for (int i = 0; i < numLines; ++i)
+	{
+		WriteCenter(endtitle[i], 2 + i, 8);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
+	}
+	//WriteBuffer(30, 20, "escape¿", 7);  // 분홍색 같은 색상		==> UI로빼서 크게 해야겠다 
 }

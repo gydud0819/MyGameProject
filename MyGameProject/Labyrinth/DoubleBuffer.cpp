@@ -107,6 +107,7 @@ void ReleaseBuffer()
     CloseHandle(hBuffer[1]);
 }
 
+// 버퍼 중앙정렬 처리 함수
 void WriteCenter(const char* text, int yOffset, int color)
 {
     CONSOLE_SCREEN_BUFFER_INFO csbi;

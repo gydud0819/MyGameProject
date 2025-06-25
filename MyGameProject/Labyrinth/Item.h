@@ -11,8 +11,8 @@ private:
 protected:
 	//Pos pos;
 public:
+	Item() = default;		// 기본 생성자
 	//virtual ~Item() = default;
-	Item() = default;
 	//virtual ~Item() {}
 public:
 	//virtual void Collect() = 0;

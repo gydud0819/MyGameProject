@@ -1,11 +1,11 @@
 #include "Time.h"
 
-void Time::Start()
+void Time::Start()		// 시작시간
 {
 	startTime = std::chrono::steady_clock::now();
 }
 
-void Time::End()
+void Time::End()		// 종료 시간
 {
 	endTime = std::chrono::steady_clock::now();
 }

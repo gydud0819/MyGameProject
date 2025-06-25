@@ -27,6 +27,9 @@ class GameManager /*: public MapBoder*/		// Is-a 관계 생각하기
 	chrono::steady_clock::time_point revealStartTime;		// 프로그램 내부에서 시간 측정을 하기위해 쓰는 함수 
 	int revealDuration = 0;		// 보여주는 시간 = revealDuration
 	Time time;
+
+	/*static*/ bool isFirst = true;			// 게임 시작할 때 딱 1번만 실행되게 설정	
+	/*static*/ bool isBufferInit = false;  // 버퍼 초기화도 딱 1번만 하게				
 public:
 	GameManager() = default;
 	GameManager(Player player) : player(player) 

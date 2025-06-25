@@ -6,7 +6,7 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 	{
 		for (int x = 0; x < map[y].size(); x++)
 		{
-			// 랜턴 처리하는 코드 확실하지 않음
+			// 랜턴 처리하는 코드 (아이템 클래스로 따로 빼서 관리하기)
 			isOuterWall = (x == 0 || x == map[0].size() - 1 || y == 0 || y == map.size() - 1);
 			isItem = (map[y][x] == TILE_ITEM1 || map[y][x] == TILE_ITEM2 || map[y][x] == TILE_ITEM3 || map[y][x] == TILE_ITEM4);
 
@@ -20,44 +20,25 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 			int drawX = x + offsetX * 2;  // 콘솔 가로는 2배 처리
 			int drawY = y + offsetY;
 
-
-			/*if (player.GetPos().posX == x && player.GetPos().posY == y)
-			{
-				WriteBuffer(drawX, drawY, "◈", 15);
-				continue;
-			}*/
-
 			char symbol = ' ';
 			int color = 7;
 
 			switch (map[y][x])
 			{
-			case TILE_WALL:
-				WriteBuffer(drawX, drawY, "■", 15);
-				break;
-
-			case TILE_EMPTY:
-				WriteBuffer(drawX, drawY, " ", 0);
-				break;
-
-			case TILE_ITEM1:
-				WriteBuffer(drawX, drawY, "♥", 4);
-				break;
-
-			case TILE_ITEM2:
-				WriteBuffer(drawX, drawY, "★", 6);
-				break;
-
-			case TILE_ITEM3:
-				WriteBuffer(drawX, drawY, "#"/*\u2600*/, 6);
-				break;
-
-			case TILE_ITEM4:
-				WriteBuffer(drawX, drawY, "♣", 12);
-				break;
-			default:
-				WriteBuffer(drawX, drawY, "?", 7); // 예외 디버깅 => 다른 아이템을 넣엇을때??????
-				break;
+			case TILE_WALL: WriteBuffer(drawX, drawY, "#", 15); break;
+				
+			case TILE_EMPTY: WriteBuffer(drawX, drawY, " ", 0); break;
+				
+			case TILE_ITEM1: WriteBuffer(drawX, drawY, "♥", 4); break;
+			
+			case TILE_ITEM2: WriteBuffer(drawX, drawY, "★", 6); break;
+			
+			case TILE_ITEM3: WriteBuffer(drawX, drawY, "&", 14); break;
+			
+			case TILE_ITEM4: WriteBuffer(drawX, drawY, "♣", 12); break;
+			
+			default: WriteBuffer(drawX, drawY, "?", 7); break; // 예외 디버깅 => 다른 아이템을 넣엇을때
+				
 			}
 		}
 	}

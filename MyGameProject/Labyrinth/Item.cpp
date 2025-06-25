@@ -1,5 +1,6 @@
 #include "Item.h"
 
+// 상속으로 분리하기전 임시 코드 
 void Item::Collect(int itemType)
 {
 	if (itemType == TILE_ITEM1) heartCount++;
@@ -31,12 +32,12 @@ void Item::Reset()
 
 bool Item::IsStage1Clear() const
 {
-	return heartCount >= 5;
+	return heartCount >= 1;
 }
 
 bool Item::IsStage2Clear() const
 {
-	return starCount >= 5;
+	return starCount >= 1;
 }
 
 bool Item::IsStage3Clear() const

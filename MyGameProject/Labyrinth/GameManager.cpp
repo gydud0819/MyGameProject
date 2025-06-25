@@ -9,9 +9,6 @@ GameManager::~GameManager()
 bool GameManager::Play()
 {
 	// 맵, 플레이어, 아이템 다 WriteBuffer로 그려주기
-
-	static bool isFirst = true;			// 게임 시작할 때 딱 1번만 실행되게 설정		 여기도 gameManager.h에 private로 선언해서 빼줘도 될듯
-	static bool isBufferInit = false;  // 버퍼 초기화도 딱 1번만 하게				   	 여기도 gameManager.h에 private로 선언해서 빼줘도 될듯
 	if (!isBufferInit)
 	{
 		InitBuffer();		// 콘솔 버퍼 초기화 (더블 버퍼 구조 잡기)
@@ -23,26 +20,25 @@ bool GameManager::Play()
 
 	if (isFirst)
 	{
-		//time.Start();
+		time.Start();
 		player.SetPos({ 1, 1 });	// 플레이어 시작 위치 지정 (왼쪽 위) -> 나중에 랜덤으로 배치하는게 가능하면 할 예정
 		mapboder.InitMap();			 // 맵 데이터 불러오기
 		currentMap = mapboder.GetMap(currentStageIndex);		// 현재 스테이지 맵 가져오기
 		stage.SetMap(currentMap);
 		isFirst = false;			// 이후엔 다시 실행되지 않도록 false처리하기 
 	}
-	// 2. 플레이어가 맵 안에서만 움직이는지
 
-	// 1. 맵 나오는지 확인 완료
 	PlayerMove(player, item);	// 플레이어 이동 처리 + 아이템 먹기 처리
 	Update();		   // 랜턴 아이템 처리하는 코드
 	ClearBuffer();     // 출력 버퍼 비우기 (매 프레임 깔끔하게 만들기 위해서)
+	time.DisplayPlayTime(30, 14);  // 좌측 상단에 표시
 	RenderMap();		// 맵, 플레이어, 아이템 등 화면에 출력 -> 나한테 좀 중요함
 
 	// 타이머 띄우기 == 초기화 안됨 
 	//int offsetX = currentMap[0].size() * 2 + 4;  // 또는 BufferWidth - 25
 	//int offsetY = 1;
 
-	//time.DisplayPlayTime(/*BufferWidth - 25, 0*/ 80,20);  // 우측 상단에 표시
+	
 	FlipBuffer();      // 버퍼 교체 → 지금 그린 화면을 실제로 보여줌
 
 	//Sleep(20);		// 임시 주석
@@ -127,7 +123,8 @@ void GameManager::DrawItemUI(int offsetX, int offsetY, int mapHeight)
 	}
 	else if (currentStageIndex == 2)			// 직사각형이니까 좌표수정은 맵 수정하고 나서 하기 
 	{
-		WriteBuffer(45, uiY + 32, clover.c_str(), 13);  // 클로버 
+		//WriteBuffer(45, uiY + 32, clover.c_str(), 13);  // 클로버 
+		WriteBuffer(50, uiY + 18, clover.c_str(), 13);  // 클로버 
 
 	}
 
@@ -142,7 +139,7 @@ void GameManager::CheckStageClear(Item& item)
 		CountDown();
 		ClearBuffer();
 		FlipBuffer();
-		Sleep(1000);  // 잠깐 정지
+		Sleep(500);  // 잠깐 정지
 
 		item.Reset();
 		currentStageIndex++;
@@ -153,9 +150,8 @@ void GameManager::CheckStageClear(Item& item)
 	{
 		CountDown();
 		ClearBuffer();
-		//WriteBuffer(25, 10, "다음 스테이지로 넘어갑니다...", 11);
 		FlipBuffer();
-		Sleep(1000);  // 잠깐 정지
+		Sleep(500);  // 잠깐 정지
 
 		item.Reset();
 		currentStageIndex++;
@@ -163,9 +159,9 @@ void GameManager::CheckStageClear(Item& item)
 	}
 	else if (currentStageIndex == 2 && item.IsStage3Clear())
 	{
-		//CountDown();
 		ClearBuffer();
-		WriteBuffer(30, 20, "escape¿", 7);  // 분홍색 같은 색상
+		//EndingTitle();
+		WriteBuffer(30, 20, "escape¿", 7);  // 분홍색 같은 색상		==> UI로빼서 크게 해야겠다 
 		FlipBuffer();
 		Sleep(2000);
 		exit(0);  // 프로그램 종료

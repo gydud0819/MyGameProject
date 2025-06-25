@@ -13,3 +13,5 @@ void ShowTitle(int offsetY = -8, int color = 15);
 void ShowGameRule();
 
 void CountDown();
+
+void EndingTitle(int offsetY = -8, int color = 15);
