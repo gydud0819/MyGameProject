@@ -9,7 +9,7 @@ MenuOption ShowMenu()
 	const int menuX = 58;  // 메뉴 텍스트가 나올 X좌표
 	const int pointerX = menuX - 3;  // ▶ 포인터는 메뉴 왼쪽
 
-	const char* menuTexts[menuCount] = 
+	const char* menuTexts[menuCount] =
 	{
 		"[ Game Start ]",
 		"[ Game  Rule ]",
@@ -29,10 +29,10 @@ MenuOption ShowMenu()
 
 			if (i == selected)
 				WriteBuffer(pointerX, y, "☞", 15);  // ← 화살표는 왼쪽에  // 화살표 표시안하고 감싸야겠다.
-				//WriteBuffer(pointerX, y, "┎───────┓", 15);  // ← 화살표는 왼쪽에  // 화살표 표시안하고 감싸야겠다.
+			//WriteBuffer(pointerX, y, "┎───────┓", 15);  // ← 화살표는 왼쪽에  // 화살표 표시안하고 감싸야겠다.
 		}
 
-	
+
 		FlipBuffer();
 
 		int key = _getch();
@@ -69,7 +69,7 @@ void ShowTItle()
 	case MenuOption::Exit:
 		exit(0);         // 프로그램 종료
 	}
-	
+
 	FlipBuffer();
 
 	//_getch(); // 아무 키 누를 때까지 대기
@@ -77,23 +77,21 @@ void ShowTItle()
 
 void ShowTitle(int offsetY, int color)
 {
-	 //ASCII 타이틀 줄별로 선언
-
 	const char* title[] =
 	{
-		"    ##        ####    #####    ##  ##   #####     ####    ##  ##   ######   ##  ##      #   ",  // #
-		"    ##       ##  ##   ##  ##   ##  ##   ##  ##     ##     ### ##     ##     ##  ##           ",  //
-		"    ##       ######   #####     ####    #####      ##     ######     ##     ######      #   ",  // #
-		"    ##       ##  ##   ##  ##     ##     ## ##      ##     ## ###     ##     ##  ##       #  ",  // ##
-		"    #####    ##  ##   #####      ##     ##  ##    ####    ##  ##     ##     ##  ##        # ",  // ###
-		"                                                                                      ###  "   // ###
+		"     ##    ###   #####   ##  ##  #####   ####   ##  ##  ######  ##  ##  ",
+		"     ##   ## ##  ##  ##  ##  ##  ##  ##   ##    ### ##    ##    ##  ##  ",
+		"     ##   #####  #####    ####   #####    ##    ######    ##    ######  ",
+		"     ##   ## ##  ##  ##    ##    ## ##    ##    ## ###    ##    ##  ##  ",
+		"    ##### ## ##  #####     ##    ##  ##  ####   ##  ##    ##    ##  ##  ",
 	};
+
 
 	int numLines = sizeof(title) / sizeof(title[0]);
 
 	for (int i = 0; i < numLines; ++i)
 	{
-		WriteCenter(title[i], 2 + i, 8);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
+		WriteCenterAdjusted(title[i], -6 + i, 8, 4);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
 	}
 }
 
@@ -157,7 +155,7 @@ void CountDown()
 
 
 		//FlipBuffer();
-		Sleep(1000);		// 여기선 Sleep을 무조건 써야함 -> 시간 제어 해주는거 
+		Sleep(600);		// 여기선 Sleep을 무조건 써야함 -> 시간 제어 해주는거 
 	}
 	ClearBuffer();	// 다시 초기화
 }
@@ -166,19 +164,20 @@ void EndingTitle(int offsetY, int color)
 {
 	const char* endtitle[] =
 	{
-		"    ##        ####    #####    ##  ##   #####     ####    ##  ##   ######   ##  ##      #   ",  // #
-		"    ##       ##  ##   ##  ##   ##  ##   ##  ##     ##     ### ##     ##     ##  ##           ",  //
-		"    ##       ######   #####     ####    #####      ##     ######     ##     ######      #   ",  // #
-		"    ##       ##  ##   ##  ##     ##     ## ##      ##     ## ###     ##     ##  ##       #  ",  // ##
-		"    #####    ##  ##   #####      ##     ##  ##    ####    ##  ##     ##     ##  ##        # ",  // ###
-		"                                                                                      ###  "   // ###
+		"        #######   #     #   #######            #######    #     #  ######            ###        ",
+		"           #      #     #   #                  #          ##    #  #     #          #  ##       ",
+		"           #      #######   ####               ####       # ### #  #     #            ##        ",
+		"           #      #     #   #                  #          #    ##  #     #            #         ",
+		"           #      #     #   #######            #######    #     #  ######                      ",
+		"                                                                                        #        "
 	};
+
 
 	int numLines = sizeof(endtitle) / sizeof(endtitle[0]);
 
 	for (int i = 0; i < numLines; ++i)
 	{
-		WriteCenter(endtitle[i], 2 + i, 8);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
+		WriteCenterAdjusted(endtitle[i], -3 + i, 8, 6);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
 	}
-	//WriteBuffer(30, 20, "escape¿", 7);  // 분홍색 같은 색상		==> UI로빼서 크게 해야겠다 
 }
+

@@ -121,3 +121,48 @@ void WriteCenter(const char* text, int yOffset, int color)
 
     WriteBuffer(x, y, text, color);
 }
+
+void ResizeConsole()
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    COORD bufferSize = { 150, 60 }; // 너가 원래 쓰는 크기
+    SetConsoleScreenBufferSize(hConsole, bufferSize);
+
+    SMALL_RECT windowSize = { 0, 0, 149, 59 };
+    SetConsoleWindowInfo(hConsole, TRUE, &windowSize);
+}
+
+void WriteCenterAdjusted(const char* text, int yOffset, int color, int xAdjust)
+{
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+
+    int windowWidth = csbi.srWindow.Right - csbi.srWindow.Left + 1;
+    int windowHeight = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+
+    int x = (windowWidth - strlen(text)) / 2 + xAdjust;
+    int y = (windowHeight / 2) + yOffset;
+
+    // 콘솔 폭 초과하면 자르기
+    //if (x < 0) x = 0;
+    //if (x + strlen(text) > windowWidth)
+    //    x = windowWidth - strlen(text);  // 잘리지 않도록 위치 조정
+
+
+    WriteBuffer(x, y, text, color);
+}
+
+void WriteCenterDynamic(const char* text, int yOffset, int color)
+{
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
+
+    int windowWidth = csbi.srWindow.Right - csbi.srWindow.Left + 1;
+    int windowHeight = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
+
+    int x = (windowWidth - strlen(text)) / 2;
+    int y = (windowHeight / 2) + yOffset;
+
+    WriteBuffer(x, y, text, color);
+}

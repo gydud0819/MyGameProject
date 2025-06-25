@@ -16,3 +16,11 @@ void WriteBuffer(int x, int y, const char* shape, int color);
 void ReleaseBuffer();
 // 중앙 정렬로 WriteBuffer 해주는 함수
 void WriteCenter(const char* text, int yOffset, int color = 7);
+void ResizeConsole();
+void WriteCenterAdjusted(const char* text, int yOffset, int color, int xAdjust);
+void WriteCenterDynamic(const char* text, int yOffset, int color = 7);
+
+
+
+
+

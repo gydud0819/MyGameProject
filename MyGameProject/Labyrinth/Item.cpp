@@ -42,7 +42,7 @@ bool Item::IsStage2Clear() const
 
 bool Item::IsStage3Clear() const
 {
-	return cloverCount >= 3;
+	return cloverCount >= 1;
 }
 
 
