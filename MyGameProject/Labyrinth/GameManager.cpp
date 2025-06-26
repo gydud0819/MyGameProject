@@ -1,6 +1,8 @@
 ﻿#include "GameManager.h"
 
-// GameManager.cpp가 모든걸 총괄하긴 하지만 너무 몰빵한 느낌이 듦
+bool GameManager::isFirst = true;			// 게임 시작할 때 딱 1번만 실행되게 설정	
+bool GameManager::isBufferInit = false;		// 버퍼 초기화도 딱 1번만 하게		
+
 GameManager::~GameManager()
 {
 	// 미완성입니다
@@ -8,10 +10,8 @@ GameManager::~GameManager()
 
 bool GameManager::Play()	// 플레이 흐름을 관여하는 함수 <= 얘가 핵심 메인
 {
-
 	ResizeConsole();	// 콘솔창 안찌그러지게 제어해주는 함수
 	
-
 	// 맵, 플레이어, 아이템 다 WriteBuffer로 그려주기
 	if (!isBufferInit)
 	{
@@ -164,12 +164,46 @@ void GameManager::CheckStageClear(Item& item)
 		EndingTitle();
 		FlipBuffer();
 		Sleep(3000);
-		exit(0);  // 프로그램 종료 ==> 다시 타이틀로 돌아가야겠다.
-
+		
 		// 타이틀 화면으로 돌아가겠냐고 물은 다음 yes 하면 돌아가기
-		//WriteBuffer(4, 7, "타이틀 화면으로 돌아가시겠습니까?", 15);		// (4,7)은 임시 좌표
-		//
-		//ShowTItle();
+		ClearBuffer();  // 한 번 지우고 새 메시지
+		WriteBuffer(50, 30, "타이틀 화면으로 돌아가시겠습니까? (Y/N)", 15);		// (4,7)은 임시 좌표
+		FlipBuffer();   //  꼭 필요!!
+		
+		//  입력 버퍼 비우기
+		HANDLE hInput = GetStdHandle(STD_INPUT_HANDLE);
+		FlushConsoleInputBuffer(hInput);
+
+
+		while (true)
+		{
+			if (_kbhit())
+			{
+				char input = _getch();
+				if (input == 'y' || input == 'Y')
+				{
+					currentStageIndex = 0;
+					item.Reset();
+					FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));
+					
+
+					SetCurPosition(0, 0);
+					ClearBuffer();
+					ShowTItle();
+					FlipBuffer();
+					Sleep(1000);
+					break;  // 타이틀로 돌아감
+				}
+				else if (input == 'n' || input == 'N')
+				{
+					ClearBuffer();
+					WriteBuffer(35, 12, "게임을 종료합니다.", 7);
+					FlipBuffer();
+					Sleep(2000);
+					exit(0);  // 종료
+				}
+			}
+		}
 	}
 
 	// 위 switch 문을 좀더 간결하게 한 코드   일단 보류하기 

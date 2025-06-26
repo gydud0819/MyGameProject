@@ -1,50 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\",
+  "WorkspaceRootPath": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\Item.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\UI.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\DoubleBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Stage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\Stage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\MapBoder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\MapBoder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Stage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\Stage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\ConsoleUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\ConsoleUtil.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\ConsoleUtil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\ConsoleUtil.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\MapBoder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\MapBoder.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\UI.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\DoubleBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\Time.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\DoubleBuffer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\Time.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A8158C5F-EB8B-439E-951A-D8A0739ABE7B}|Labyrinth\\Labyrinth.vcxproj|solutionrelative:Labyrinth\\DoubleBuffer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,56 +62,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 10,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Time.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.cpp",
-              "RelativeDocumentMoniker": "Labyrinth\\Time.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.cpp",
-              "RelativeToolTip": "Labyrinth\\Time.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Stage.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Stage.cpp",
+              "RelativeDocumentMoniker": "Labyrinth\\Stage.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Stage.cpp",
+              "RelativeToolTip": "Labyrinth\\Stage.cpp",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-26T06:41:12.751Z",
+              "WhenOpened": "2025-06-26T05:18:52.771Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Time.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.h",
-              "RelativeDocumentMoniker": "Labyrinth\\Time.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.h",
-              "RelativeToolTip": "Labyrinth\\Time.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
+              "Title": "DoubleBuffer.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.cpp",
+              "RelativeDocumentMoniker": "Labyrinth\\DoubleBuffer.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.cpp",
+              "RelativeToolTip": "Labyrinth\\DoubleBuffer.cpp",
+              "ViewState": "AgIAAH8AAAAAAAAAAAAcwIcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-25T14:18:41.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GameManager.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.h",
+              "RelativeDocumentMoniker": "Labyrinth\\GameManager.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.h",
+              "RelativeToolTip": "Labyrinth\\GameManager.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAcwCkAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-26T06:41:00.152Z",
+              "WhenOpened": "2025-06-24T12:40:57.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GameManager.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.cpp",
+              "RelativeDocumentMoniker": "Labyrinth\\GameManager.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.cpp",
+              "RelativeToolTip": "Labyrinth\\GameManager.cpp",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAKYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-24T12:30:53.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConsoleUtil.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\ConsoleUtil.h",
+              "RelativeDocumentMoniker": "Labyrinth\\ConsoleUtil.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\ConsoleUtil.h",
+              "RelativeToolTip": "Labyrinth\\ConsoleUtil.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-26T14:43:15.525Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Item.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Item.cpp",
-              "RelativeDocumentMoniker": "Labyrinth\\Item.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Item.cpp",
-              "RelativeToolTip": "Labyrinth\\Item.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-26T06:31:45.48Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "UI.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.cpp",
               "RelativeDocumentMoniker": "Labyrinth\\UI.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.cpp",
               "RelativeToolTip": "Labyrinth\\UI.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAALAAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-26T06:28:55.184Z",
               "EditorCaption": ""
@@ -111,111 +149,87 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "UI.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.h",
-              "RelativeDocumentMoniker": "Labyrinth\\UI.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.h",
-              "RelativeToolTip": "Labyrinth\\UI.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-26T05:43:47.063Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "MapBoder.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\MapBoder.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\MapBoder.cpp",
               "RelativeDocumentMoniker": "Labyrinth\\MapBoder.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\MapBoder.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\MapBoder.cpp",
               "RelativeToolTip": "Labyrinth\\MapBoder.cpp",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAE0AAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-26T05:19:09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-26T05:19:09Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Stage.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Stage.cpp",
-              "RelativeDocumentMoniker": "Labyrinth\\Stage.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Stage.cpp",
-              "RelativeToolTip": "Labyrinth\\Stage.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAEAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "ConsoleUtil.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\ConsoleUtil.cpp",
+              "RelativeDocumentMoniker": "Labyrinth\\ConsoleUtil.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\ConsoleUtil.cpp",
+              "RelativeToolTip": "Labyrinth\\ConsoleUtil.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-26T05:18:52.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GameManager.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.cpp",
-              "RelativeDocumentMoniker": "Labyrinth\\GameManager.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.cpp",
-              "RelativeToolTip": "Labyrinth\\GameManager.cpp",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAAJMAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-24T12:30:53.696Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-26T14:43:52.485Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "DoubleBuffer.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.h",
-              "RelativeDocumentMoniker": "Labyrinth\\DoubleBuffer.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.h",
-              "RelativeToolTip": "Labyrinth\\DoubleBuffer.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
+              "Title": "UI.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.h",
+              "RelativeDocumentMoniker": "Labyrinth\\UI.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\UI.h",
+              "RelativeToolTip": "Labyrinth\\UI.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-25T14:18:25.458Z",
+              "WhenOpened": "2025-06-26T05:43:47.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Item.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Item.cpp",
+              "RelativeDocumentMoniker": "Labyrinth\\Item.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Item.cpp",
+              "RelativeToolTip": "Labyrinth\\Item.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAswBYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-26T06:31:45.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "DoubleBuffer.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.cpp",
-              "RelativeDocumentMoniker": "Labyrinth\\DoubleBuffer.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.cpp",
-              "RelativeToolTip": "Labyrinth\\DoubleBuffer.cpp",
-              "ViewState": "AgIAAGsAAAAAAAAAAAArwHwAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-25T14:18:41.95Z",
-              "EditorCaption": ""
+              "Title": "Time.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.h",
+              "RelativeDocumentMoniker": "Labyrinth\\Time.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.h",
+              "RelativeToolTip": "Labyrinth\\Time.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-26T06:41:00.152Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GameManager.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.h",
-              "RelativeDocumentMoniker": "Labyrinth\\GameManager.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.h",
-              "RelativeToolTip": "Labyrinth\\GameManager.h",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "Time.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.cpp",
+              "RelativeDocumentMoniker": "Labyrinth\\Time.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\Time.cpp",
+              "RelativeToolTip": "Labyrinth\\Time.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-26T06:41:12.751Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DoubleBuffer.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.h",
+              "RelativeDocumentMoniker": "Labyrinth\\DoubleBuffer.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\DoubleBuffer.h",
+              "RelativeToolTip": "Labyrinth\\DoubleBuffer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-24T12:40:57.3Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6d4078d1-5951-4ed1-ac0e-0a8099c1cce5}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "WhenOpened": "2025-06-25T14:18:25.458Z"
             }
           ]
         }

@@ -3,7 +3,7 @@
 #include "GameManager.h"
 #include "Item.h"
 
-enum class MenuOption { Start, Rule, Exit };
+enum class MenuOption { Start, Rule, Letter, Exit };
 
 MenuOption ShowMenu();
 
@@ -21,6 +21,6 @@ void EndingTitle(int offsetY = -8, int color = 15);		// ¿£µùÅ¸ÀÌÆ² ±×¸®±â À§ÇÑ Ç
 // void DrawItemUI(int offsetX, int offsetY, int mapHeight);
 
 
-//void Letter();
+void Letter();
 
 

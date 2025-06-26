@@ -3,52 +3,37 @@
 MenuOption ShowMenu()
 {
 	int selected = 0;
-	const int menuCount = 3;
+	const int menuCount = 4;
 
-	const int menuYStart = 42;
+	const int menuYStart = 34;
 	const int menuX = 58;  // 메뉴 텍스트가 나올 X좌표 == 하드코딩 같은데 그래도 어쩔 수 없음 콘솔창 기준 중앙정렬한 값이니까
-	const int pointerX = menuX - 3;  // ▶ 포인터는 메뉴 왼쪽
-
-	/*const char* menuTexts[menuCount] =
-	{
-		"[ Game Start ]",
-		"[ Game Rule  ]",
-		"[    Exit    ]"
-	};*/
+	const int pointerX = menuX - 4;  // ▶ 포인터는 메뉴 왼쪽
 
 	const char* menuTexts[menuCount] =
 	{
 		"[ 게임 시작 ]",
 		"[ 게임 방법 ]",
+		"[ 개발자의 편지 ]",
 		"[ 게임 종료 ]"
 	};
 
-	/*const char* menuTexts[menuCount] =
-	{
-		"[ 게임 시작 ]",
-		"[ 게임 방법 ]",
-		"[ 디렉터의 편지 ]",
-		"[ 게임 종료 ]"
-	};*/
 
 	while (true)
 	{
 		ClearBuffer();
 		ShowTitle(); // ASCII 타이틀
 
+
 		for (int i = 0; i < menuCount; ++i)
 		{
 			int y = menuYStart + i * 2;
+			WriteBuffer(menuX, y, "                              ", 0); // 충분히 긴 공백으로 덮기
 
-			WriteBuffer(menuX - 2, y, menuTexts[i], 7);
-
-			if (i == selected)
-				WriteBuffer(pointerX - 2, y, " →", 15);  // ← 화살표는 왼쪽에  // 화살표 표시안하고 감싸야겠다.
-			
+			int color = (i == selected) ? 15 : 8;
+			WriteBuffer(menuX, y, menuTexts[i], color);  // 포인터 없이 강조만
 		}
 
-
-		FlipBuffer();
+				FlipBuffer();
 
 		int key = _getch();
 		if (key == 224 || key == 0) key = _getch();		// 224, 75 == 방향키 아스키코드 
@@ -82,6 +67,11 @@ void ShowTItle()
 		ShowTItle();     // 다시 타이틀로 돌아오기
 		return;
 
+	case MenuOption::Letter:
+		Letter();		// 편지 내용
+		ShowTItle();     // 다시 타이틀로 돌아오기
+		return;
+
 	case MenuOption::Exit:
 		exit(0);         // 프로그램 종료
 	}
@@ -94,11 +84,11 @@ void ShowTitle(int offsetY, int color)
 {
 	const char* title[] =
 	{
-		"     ##    ###   #####   ##  ##  #####   ####  ##  ##  ######  ##  ##   ",
-		"     ##   ## ##  ##  ##  ##  ##  ##  ##   ##   ### ##    ##    ##  ##   ",
-		"     ##   #####  #####    ####   #####    ##   ######    ##    ######   ",
-		"     ##   ## ##  ##  ##    ##    ## ##    ##   ## ###    ##    ##  ##   ",
-		"     #### ## ##  #####     ##    ##  ##  ####  ##  ##    ##    ##  ##   ",
+		"     ##    ###   #####   ##  ##  #####   ####  ##  ##  ######  ##  ##    ",
+		"     ##   ## ##  ##  ##  ##  ##  ##  ##   ##   ### ##    ##    ##  ##    ",
+		"     ##   #####  #####    ####   #####    ##   ######    ##    ######    ",
+		"     ##   ## ##  ##  ##    ##    ## ##    ##   ## ###    ##    ##  ##    ",
+		"     #### ## ##  #####     ##    ##  ##  ####  ##  ##    ##    ##  ##    ",
 	};
 
 
@@ -184,7 +174,7 @@ void EndingTitle(int offsetY, int color)
 		"       ##     #######   #####        #####     ######  ##    ##     ##                 ",
 		"       ##     ##   ##   ##           ##        ## ###  ##    ##     #                  ",
 		"       ##     ##   ##   #######      #######   ##  ##  #######                         ",
-		"                                                                      #        "
+		"                                                                    #                  "
 	};
 
 
@@ -231,35 +221,63 @@ void EndingTitle(int offsetY, int color)
 //	}
 //}
 
-//void Letter()
-//{
-//	ClearBuffer();
-//
-//	vector<int> letter =
-//	{
-//		"누구나 인생에서 한 번쯤은",
-//		"출구가 보이지 않는 미로를 걷습니다.",
-//		"",
-//		"이 게임은 단순한 탈출 게임이 아닙니다.",
-//		"빛이 없는 어둠 속에서",
-//		"‘나’를 찾아가고, ‘길’을 스스로 만들어 가는 여정입니다.",
-//		"",
-//		"랜턴은 누군가가 아닌,",
-//		"자신의 눈으로 세상을 바라보게 하는 장치이고,",
-//		"당신이 움직일 때만 빛이 켜집니다.",
-//		"",
-//		"이 짧은 미로 속에서,",
-//		"당신이 조금이나마 자신을 마주할 수 있기를 바랍니다.",
-//		"",
-//		"? 디렉터 효 올림"
-//	};
-//
-//	int startY = offsetY;
-//	for (int i = 0; i < letter.size(); ++i)
-//	{
-//		// 가운데 정렬해서 출력
-//		int offsetX = (BufferWidth - letter[i].size()) / 2;
-//		WriteBuffer(offsetX, startY + i, letter[i].c_str(), 7);  // 흰색(7)
-//	}
-//}
+void Letter()
+{
+	ClearBuffer();
+
+	vector<string> letter =
+	{
+		"누구나 인생에서 한 번쯤은",
+		"출구가 보이지 않는 미로를 걷습니다.",
+		"  ",
+		"이 게임은 단순한 탈출 게임이 아닙니다.",
+		"빛이 없는 어둠 속에서",
+		"‘나’를 찾아가고 ‘길’을 스스로 만들어 가는 여정입니다.",
+		"",
+		"랜턴은 주변을 밝히는 도구일 뿐",			// 랜턴은 해결방법 중 일부  이걸 단어로 어떻게 표현하지
+		/*"자신의 눈으로 세상을 바라보게 하는 장치이고,",*/
+		"나아갈 방향은 당신이 선택해야 합니다.",
+		"",
+		"이 짧은 미로 속에서",
+		"조금이나마 자신을 마주할 수 있기를 바랍니다.",
+		"",
+		"디렉터 효 올림"
+	};
+
+	// 최대 길이 구하기
+	int maxLen = 0;
+	for (const auto& line : letter)
+		if (line.size() > maxLen) maxLen = line.size();
+
+	//int totalLines = letter.size();
+	//int startY = (BufferHeight - totalLines) / 2;  // 화면 가운데 줄부터 시작
+	// maxLen을 기준으로 화면 가운데 왼쪽 정렬 시작 위치 계산
+	int offsetX = (BufferWidth - maxLen) / 2;
+	int offsetY = (BufferHeight - letter.size()) / 2;
+
+	for (int i = 0; i < letter.size(); ++i)
+	{
+		WriteBuffer(offsetX, offsetY + i, letter[i].c_str(), 7);  // 왼쪽 정렬!
+	}
+
+	//for (int i = 0; i < letter.size(); ++i)
+	//{
+	//	int offsetX = (BufferWidth - letter[i].size()) / 2;  // 각 줄마다 다르게
+	//	WriteBuffer(offsetX, offsetY + i, letter[i].c_str(), 7);
+	//}
+	//for (int i = 0; i < letter.size(); ++i)
+	//{
+	//	// 가운데 정렬해서 출력
+	//	int offsetX = (BufferWidth - letter[i].size()) / 2;
+	//	WriteBuffer(offsetX, startY + i, letter[i].c_str(), 7);  // 흰색(7)
+	//}
+
+	FlipBuffer();  // 더블버퍼 갱신
+
+	// 엔터 입력 대기
+	while (true)
+	{
+		if (_kbhit() && _getch() == 13) break;  // Enter 누르면 종료
+	}
+}
 

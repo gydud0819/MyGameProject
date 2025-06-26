@@ -8,6 +8,8 @@
 #include <chrono>
 #include <fstream>
 #include <string>
+#include <cstdlib> // abs() 같은 함수는 여기에 포함!
+
 
 using namespace std;
 
@@ -24,3 +26,5 @@ struct Pos		// 위치 구조체
 		return *this;	// 
 	}
 };
+
+void SetCurPosition(int x, int y);

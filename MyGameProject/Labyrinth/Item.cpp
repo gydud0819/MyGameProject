@@ -32,17 +32,17 @@ void Item::Reset()
 
 bool Item::IsStage1Clear() const
 {
-	return heartCount >= 5;
+	return heartCount >= 1;
 }
 
 bool Item::IsStage2Clear() const
 {
-	return starCount >= 5;
+	return starCount >= 1;
 }
 
 bool Item::IsStage3Clear() const
 {
-	return cloverCount >= 4;
+	return cloverCount >= 1;
 }
 
 

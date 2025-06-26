@@ -14,22 +14,25 @@
 
 class GameManager 		// Is-a 관계 생각하기
 {
+	// 핵심 객체들
 	Stage stage;
 	MapBoder mapboder;
 	Player player;
-	int currentStageIndex = 0;		// 현재 스테이지
-
 	Item item;
 
+	// 게임 상태 관련 
+	bool isRevealMap = false;		// 맵 보여주는걸 bool로 참 거짓 판단
+	int currentStageIndex = 0;		// 현재 스테이지
+	int revealDuration = 0;		// 보여주는 시간 = revealDuration
+	chrono::steady_clock::time_point revealStartTime;		// 프로그램 내부에서 시간 측정을 하기위해 쓰는 함수 
+
+
+	Time time;
 	vector<vector<int>> currentMap;	// 현재 맵
 
-	bool isRevealMap = false;		// 맵 보여주는걸 bool로 참 거짓 판단
-	chrono::steady_clock::time_point revealStartTime;		// 프로그램 내부에서 시간 측정을 하기위해 쓰는 함수 
-	int revealDuration = 0;		// 보여주는 시간 = revealDuration
-	Time time;
 
-	/*static*/ bool isFirst = true;			// 게임 시작할 때 딱 1번만 실행되게 설정	
-	/*static*/ bool isBufferInit = false;  // 버퍼 초기화도 딱 1번만 하게				
+	static bool isFirst;			// 게임 시작할 때 딱 1번만 실행되게 설정	
+	static bool isBufferInit;  // 버퍼 초기화도 딱 1번만 하게				
 public:
 	GameManager() = default;
 	GameManager(Player player) : player(player) {}

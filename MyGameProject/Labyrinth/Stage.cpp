@@ -6,14 +6,19 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 	{
 		for (int x = 0; x < map[y].size(); x++)
 		{
-			// 랜턴 처리하는 코드 (아이템 클래스로 따로 빼서 관리하기)
+			// 외곽 벽 또는 아이템 여부를 판단 (항상 표시되어야 하므로 예외 처리)
 			isOuterWall = (x == 0 || x == map[0].size() - 1 || y == 0 || y == map.size() - 1);
 			isItem = (map[y][x] == TILE_ITEM1 || map[y][x] == TILE_ITEM2 || map[y][x] == TILE_ITEM3 || map[y][x] == TILE_ITEM4);
 
-			if (!isReveal && !isOuterWall && !isItem)	// 랜턴으로 플레이어 기준 x,y 2칸씩만 밝혀주는 기본 기능 ==> 2x2인지 3x3 인지 1x1인지 확인하기
+			// 랜턴이 없는 상태일 때, 플레이어 주변 3x3 범위만 출력 (어둠 표현용 제한 시야)
+			// 외곽 벽, 아이템이 아닌 경우 → 즉, 플레이어가 실제로 이동할 수 있는 '길'일 때만 시야 제한 적용
+			if (!isReveal && !isOuterWall && !isItem)	
 			{
+				// 현재 좌표와 플레이어 위치 간의 거리 차이 계산
 				int dx = abs(x - player.GetPos().posX);
 				int dy = abs(y - player.GetPos().posY);
+
+				// 거리 차이가 1칸 이상이면(3x3 바깥이면) 출력 제외 -> 시야에서 제외됨
 				if (dx > 1 || dy > 1) continue;
 			}
 
