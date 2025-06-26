@@ -30,5 +30,5 @@ void Player::SetDirection(Direction dir)
 
 Direction Player::GetDirection() const
 {
-	return direction;
+	return direction;		// enum으로 설정한 방향 반환
 }

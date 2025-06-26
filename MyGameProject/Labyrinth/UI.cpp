@@ -6,15 +6,30 @@ MenuOption ShowMenu()
 	const int menuCount = 3;
 
 	const int menuYStart = 42;
-	const int menuX = 58;  // 메뉴 텍스트가 나올 X좌표
+	const int menuX = 58;  // 메뉴 텍스트가 나올 X좌표 == 하드코딩 같은데 그래도 어쩔 수 없음 콘솔창 기준 중앙정렬한 값이니까
 	const int pointerX = menuX - 3;  // ▶ 포인터는 메뉴 왼쪽
+
+	/*const char* menuTexts[menuCount] =
+	{
+		"[ Game Start ]",
+		"[ Game Rule  ]",
+		"[    Exit    ]"
+	};*/
 
 	const char* menuTexts[menuCount] =
 	{
-		"[ Game Start ]",
-		"[ Game  Rule ]",
-		"[    Exit    ]"
+		"[ 게임 시작 ]",
+		"[ 게임 방법 ]",
+		"[ 게임 종료 ]"
 	};
+
+	/*const char* menuTexts[menuCount] =
+	{
+		"[ 게임 시작 ]",
+		"[ 게임 방법 ]",
+		"[ 디렉터의 편지 ]",
+		"[ 게임 종료 ]"
+	};*/
 
 	while (true)
 	{
@@ -25,21 +40,22 @@ MenuOption ShowMenu()
 		{
 			int y = menuYStart + i * 2;
 
-			WriteBuffer(menuX, y, menuTexts[i], 7);
+			WriteBuffer(menuX - 2, y, menuTexts[i], 7);
 
 			if (i == selected)
-				WriteBuffer(pointerX, y, "☞", 15);  // ← 화살표는 왼쪽에  // 화살표 표시안하고 감싸야겠다.
-			//WriteBuffer(pointerX, y, "┎───────┓", 15);  // ← 화살표는 왼쪽에  // 화살표 표시안하고 감싸야겠다.
+				WriteBuffer(pointerX - 2, y, " →", 15);  // ← 화살표는 왼쪽에  // 화살표 표시안하고 감싸야겠다.
+			
 		}
 
 
 		FlipBuffer();
 
 		int key = _getch();
-		if (key == 224 || key == 0) key = _getch();
+		if (key == 224 || key == 0) key = _getch();		// 224, 75 == 방향키 아스키코드 
 
 		if (key == 72) selected = (selected + menuCount - 1) % menuCount; // ↑
 		else if (key == 80) selected = (selected + 1) % menuCount;        // ↓
+		else if (key == 27); // 뒤로가기 esc
 		else if (key == 13) break; // Enter
 	}
 
@@ -48,7 +64,7 @@ MenuOption ShowMenu()
 
 void ShowTItle()
 {
-	ClearBuffer();// 또는 ClearBuffer() + FlipBuffer()
+	ClearBuffer();		// 또는 ClearBuffer() + FlipBuffer()
 	FlipBuffer();
 
 	ShowTitle();
@@ -72,24 +88,23 @@ void ShowTItle()
 
 	FlipBuffer();
 
-	//_getch(); // 아무 키 누를 때까지 대기
 }
 
 void ShowTitle(int offsetY, int color)
 {
 	const char* title[] =
 	{
-		"     ##    ###   #####   ##  ##  #####   ####   ##  ##  ######  ##  ##  ",
-		"     ##   ## ##  ##  ##  ##  ##  ##  ##   ##    ### ##    ##    ##  ##  ",
-		"     ##   #####  #####    ####   #####    ##    ######    ##    ######  ",
-		"     ##   ## ##  ##  ##    ##    ## ##    ##    ## ###    ##    ##  ##  ",
-		"    ##### ## ##  #####     ##    ##  ##  ####   ##  ##    ##    ##  ##  ",
+		"     ##    ###   #####   ##  ##  #####   ####  ##  ##  ######  ##  ##   ",
+		"     ##   ## ##  ##  ##  ##  ##  ##  ##   ##   ### ##    ##    ##  ##   ",
+		"     ##   #####  #####    ####   #####    ##   ######    ##    ######   ",
+		"     ##   ## ##  ##  ##    ##    ## ##    ##   ## ###    ##    ##  ##   ",
+		"     #### ## ##  #####     ##    ##  ##  ####  ##  ##    ##    ##  ##   ",
 	};
 
 
 	int numLines = sizeof(title) / sizeof(title[0]);
 
-	for (int i = 0; i < numLines; ++i)
+	for (int i = 0; i < numLines; ++i)		// 전위로 사용한 이유 : 
 	{
 		WriteCenterAdjusted(title[i], -6 + i, 8, 4);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
 	}
@@ -122,16 +137,16 @@ void ShowGameRule()
 {
 	ClearBuffer();
 
-	WriteCenter("    [     게임 방법     ]                ", -4, 15);
+	WriteCenter("    [     게임 방법     ]                ", -12, 15);
 
-	WriteCenter("※   조작 방법 : 방향키  ← ↑ ↓ →         ", 2, 7);
-	WriteCenter("※   미로를 탐험하며 아이템을 모으세요.      ", 0, 7);
-	WriteCenter("※   내부를 밝혀주는 아이템이 존재합니다.    ", 4, 7);
-	WriteCenter("※   아이템이 곧 열쇠입니다.                ", 6, 7);
-	WriteCenter("※   무사 탈출을 기원합니다.                 ", 8, 7);
+	WriteCenter("※   조작 방법 : 방향키  ← ↑ ↓ →         ", -8, 7);
+	WriteCenter("※   어두운 내부를 기본으로 주어진 빛에 의지해야합니다.           ", -4, 7);
+	WriteCenter("※   내부를 밝혀주는 아이템이 존재합니다.    ", 0, 7);
+	//WriteCenter("※   아이템이 곧 열쇠입니다.                ", 2, 7);
+	WriteCenter("※   무사 탈출을 기원합니다.                 ", 4, 7);
 
-	WriteCenter("  [     Press any key to return to menu     ]", 14, 7);
-	//WriteCenter("    [     돌아가기      ]                ", 14, 7);
+	WriteCenter("  [     Press any key to return to menu     ]", 10, 15);		// 거슬리네 
+	//WriteCenter("    [     돌아가기      ]                ", 10, 15);
 
 	FlipBuffer();
 	_getch();
@@ -140,10 +155,10 @@ void ShowGameRule()
 // 3 2 1 카운트 다운 원하는 수 만큼 늘려도됨 
 void CountDown()
 {
-	for (int i = 5; i > 0; --i)
+	for (int i = 3; i > 0; --i)
 	{
 		ClearBuffer();
-		WriteBuffer(54, 30, "다음 스테이지로 넘어갑니다...", 8);  //  
+		WriteBuffer(54, 30, "다음 스테이지로 넘어갑니다...", 8);  //  얘도 함수로 빼서 할까  아니야 하지말자 
 		char countdown[10];			// 나중에 string으로 바꿔서 적용하기
 		// 정수를 문자열로 변환해서 버퍼에 저장하는 함수 (버퍼 오버플로우 방지용으로 _s 사용)
 		sprintf_s(countdown, "%d", i);	// 버퍼랑 관련된 함수로 이걸 써야 변환이 된다.
@@ -164,12 +179,12 @@ void EndingTitle(int offsetY, int color)
 {
 	const char* endtitle[] =
 	{
-		"        #######   #     #   #######            #######    #     #  ######            ###        ",
-		"           #      #     #   #                  #          ##    #  #     #          #  ##       ",
-		"           #      #######   ####               ####       # ### #  #     #            ##        ",
-		"           #      #     #   #                  #          #    ##  #     #            #         ",
-		"           #      #     #   #######            #######    #     #  ######                      ",
-		"                                                                                        #        "
+		"     ######   ##   ##   #######      #######   ##  ##  #######     ###                 ",
+		"       ##     ##   ##   ##           ##        ### ##  ##    ##   #  ##                ",
+		"       ##     #######   #####        #####     ######  ##    ##     ##                 ",
+		"       ##     ##   ##   ##           ##        ## ###  ##    ##     #                  ",
+		"       ##     ##   ##   #######      #######   ##  ##  #######                         ",
+		"                                                                      #        "
 	};
 
 
@@ -180,4 +195,71 @@ void EndingTitle(int offsetY, int color)
 		WriteCenterAdjusted(endtitle[i], -3 + i, 8, 6);  // y좌표를 위에서부터 점점 아래로, 색상은 8(회색)
 	}
 }
+
+//void DrawItemUI(int offsetX, int offsetY, int mapHeight)
+//{
+//	// GameManager.cpp 내 함수 안에서
+//	int heartCount = item.GetItem1Count();
+//	int starCount = item.GetItem2Count();
+//	int cloverCount = item.GetItem3Count();
+//
+//	string heart = "Heart : ";
+//	for (int i = 0; i < heartCount; ++i) heart += "♥";
+//
+//	string star = "Star  : ";
+//	for (int i = 0; i < starCount; ++i) star += "★";		// 스테이지 2에서만 나오게 하기 
+//
+//	string clover = "Clover : ";
+//	for (int i = 0; i < cloverCount; ++i) clover += "♣";
+//
+//	int uiX = offsetX + currentMap[0].size() + 2; // 맵 오른쪽 옆에 출력 (두 칸 띄움)
+//	int uiY = offsetY; // 맵 맨 위 기준
+//
+//	if (currentStageIndex == 0)
+//	{
+//		WriteBuffer(44, uiY + 32, heart.c_str(), 4); // 빨간 하트
+//	}
+//	else if (currentStageIndex == 1)
+//	{
+//		WriteBuffer(44, uiY + 32, star.c_str(), 14);  // 노란 별
+//
+//	}
+//	else if (currentStageIndex == 2)			// 직사각형이니까 좌표수정은 맵 수정하고 나서 하기 
+//	{
+//		WriteBuffer(50, uiY + 18, clover.c_str(), 10);  // 클로버 
+//
+//	}
+//}
+
+//void Letter()
+//{
+//	ClearBuffer();
+//
+//	vector<int> letter =
+//	{
+//		"누구나 인생에서 한 번쯤은",
+//		"출구가 보이지 않는 미로를 걷습니다.",
+//		"",
+//		"이 게임은 단순한 탈출 게임이 아닙니다.",
+//		"빛이 없는 어둠 속에서",
+//		"‘나’를 찾아가고, ‘길’을 스스로 만들어 가는 여정입니다.",
+//		"",
+//		"랜턴은 누군가가 아닌,",
+//		"자신의 눈으로 세상을 바라보게 하는 장치이고,",
+//		"당신이 움직일 때만 빛이 켜집니다.",
+//		"",
+//		"이 짧은 미로 속에서,",
+//		"당신이 조금이나마 자신을 마주할 수 있기를 바랍니다.",
+//		"",
+//		"? 디렉터 효 올림"
+//	};
+//
+//	int startY = offsetY;
+//	for (int i = 0; i < letter.size(); ++i)
+//	{
+//		// 가운데 정렬해서 출력
+//		int offsetX = (BufferWidth - letter[i].size()) / 2;
+//		WriteBuffer(offsetX, startY + i, letter[i].c_str(), 7);  // 흰색(7)
+//	}
+//}
 

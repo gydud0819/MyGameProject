@@ -126,7 +126,7 @@ void ResizeConsole()
 {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    COORD bufferSize = { 150, 60 }; // 너가 원래 쓰는 크기
+    COORD bufferSize = { 150, 60 }; // 원래 쓰는 크기
     SetConsoleScreenBufferSize(hConsole, bufferSize);
 
     SMALL_RECT windowSize = { 0, 0, 149, 59 };
@@ -153,6 +153,7 @@ void WriteCenterAdjusted(const char* text, int yOffset, int color, int xAdjust)
     WriteBuffer(x, y, text, color);
 }
 
+// 콘솔창 크게 맞는 중앙 정렬 함수
 void WriteCenterDynamic(const char* text, int yOffset, int color)
 {
     CONSOLE_SCREEN_BUFFER_INFO csbi;

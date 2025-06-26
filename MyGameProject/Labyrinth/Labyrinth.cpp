@@ -6,8 +6,8 @@ int main()
 	while (true)
 	{
 		gm.Play();
+		
 	}
-		//EndingTitle();
 
 	return 0;
 }

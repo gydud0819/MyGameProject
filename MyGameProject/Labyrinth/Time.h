@@ -6,7 +6,7 @@
 class Time
 {
 	chrono::steady_clock::time_point startTime;
-	chrono::time_point<std::chrono::steady_clock> endTime;
+	chrono::time_point<chrono::steady_clock> endTime;
 public:
 	void Start(); // 시작 시간 기록
 	void End();		// 종료 시간 기록

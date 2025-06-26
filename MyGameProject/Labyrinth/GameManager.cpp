@@ -3,10 +3,10 @@
 // GameManager.cpp가 모든걸 총괄하긴 하지만 너무 몰빵한 느낌이 듦
 GameManager::~GameManager()
 {
-
+	// 미완성입니다
 }
 
-bool GameManager::Play()
+bool GameManager::Play()	// 플레이 흐름을 관여하는 함수 <= 얘가 핵심 메인
 {
 
 	ResizeConsole();	// 콘솔창 안찌그러지게 제어해주는 함수
@@ -25,27 +25,27 @@ bool GameManager::Play()
 	if (isFirst)
 	{
 		time.Start();
-		player.SetPos({ 1, 1 });	// 플레이어 시작 위치 지정 (왼쪽 위) -> 나중에 랜덤으로 배치하는게 가능하면 할 예정
-		mapboder.InitMap();			 // 맵 데이터 불러오기
-		currentMap = mapboder.GetMap(currentStageIndex);		// 현재 스테이지 맵 가져오기
+		player.SetPos({ 1, 1 });									// 플레이어 시작 위치 지정 (왼쪽 위) -> 나중에 랜덤으로 배치하는게 가능하면 할 예정
+		mapboder.InitMap();											// 맵 데이터 불러오기
+		currentMap = mapboder.GetMap(currentStageIndex);			// 현재 스테이지 맵 가져오기
 		stage.SetMap(currentMap);
-		isFirst = false;			// 이후엔 다시 실행되지 않도록 false처리하기 
+		isFirst = false;											// 이후엔 다시 실행되지 않도록 false처리하기 
 	}
 
-	PlayerMove(player, item);	// 플레이어 이동 처리 + 아이템 먹기 처리
-	Update();		   // 랜턴 아이템 처리하는 코드
-	ClearBuffer();     // 출력 버퍼 비우기 (매 프레임 깔끔하게 만들기 위해서)
-	time.DisplayPlayTime(30, 14);  // 좌측 상단에 표시
-	RenderMap();		// 맵, 플레이어, 아이템 등 화면에 출력 -> 나한테 좀 중요함
+	PlayerMove(player, item);										// 플레이어 이동 처리 + 아이템 먹기 처리
+	Update();														// 랜턴 아이템 처리하는 코드
+	ClearBuffer();													// 출력 버퍼 비우기 (매 프레임 깔끔하게 만들기 위해서)
+	time.DisplayPlayTime(32, 14);									// 좌측 상단에 표시
+	RenderMap();													// 맵, 플레이어, 아이템 등 화면에 출력 -> 나한테 좀 중요함
 
 	// 타이머 띄우기 == 초기화 안됨 
-	//int offsetX = currentMap[0].size() * 2 + 4;  // 또는 BufferWidth - 25
+	//int offsetX = currentMap[0].size() * 2 + 4;					// 또는 BufferWidth - 25
 	//int offsetY = 1;
 
 	
-	FlipBuffer();      // 버퍼 교체 → 지금 그린 화면을 실제로 보여줌
+	FlipBuffer();													// 버퍼 교체 → 지금 그린 화면을 실제로 보여줌
 
-	//Sleep(20);		// 임시 주석
+	//Sleep(20);													// 임시 주석
 
 	return true;
 }
@@ -63,7 +63,6 @@ void GameManager::RenderMap()
 	int offsetX = ((BufferWidth / 2) - mapWidth) / 2; /*(BufferWidth - mapWidth * 2) / 2;*/
 	int offsetY = (BufferHeight - mapHeight) / 2;
 
-
 	stage.RenderMap(map, player, isRevealMap, offsetX, offsetY);
 
 	DrawItemUI(offsetX, offsetY, mapHeight);
@@ -76,7 +75,7 @@ void GameManager::LoadStage()	// 맵 가져오기
 	mapboder.InitMap();  // 전체 맵 초기화
 	currentMap = mapboder.GetMap(currentStageIndex);
 	stage.SetMap(currentMap);
-	player.SetPos({ 1, 1 });  // 초기 위치 -> 나중에 랜덤으로 시도해보기 
+	player.SetPos({ 1, 1 });  // 초기 위치 -> 나중에 랜덤으로 시도해보기 -> 아니지 랜덤으로 돌릴려면 맵 크기, 맵 내부 벽 다 계산해야하는데 발표 이후에 할 수 있으면 해보기 
 	RenderMap();
 }
 
@@ -88,7 +87,7 @@ void GameManager::Update()
 		auto now = chrono::steady_clock::now();
 		int elapsed = chrono::duration_cast<chrono::seconds>(now - revealStartTime).count();
 
-		if (elapsed >= revealDuration)	// 공개한 시간보다 오버됐을때 
+		if (elapsed >= revealDuration)	// 공개한 시간보다 오버됐을 때 
 		{
 			isRevealMap = false;		// 다시 어둡게 돌아간다
 
@@ -118,16 +117,16 @@ void GameManager::DrawItemUI(int offsetX, int offsetY, int mapHeight)
 
 	if (currentStageIndex == 0)
 	{
-		WriteBuffer(45, uiY + 32, heart.c_str(), 4); // 빨간 하트
+		WriteBuffer(44, uiY + 32, heart.c_str(), 4); // 빨간 하트
 	}
 	else if (currentStageIndex == 1)
 	{
-		WriteBuffer(45, uiY + 32, star.c_str(), 6);  // 노란 별
+		WriteBuffer(44, uiY + 32, star.c_str(), 14);  // 노란 별
 
 	}
 	else if (currentStageIndex == 2)			// 직사각형이니까 좌표수정은 맵 수정하고 나서 하기 
 	{
-		WriteBuffer(50, uiY + 18, clover.c_str(), 13);  // 클로버 
+		WriteBuffer(50, uiY + 18, clover.c_str(), 10);  // 클로버 
 
 	}
 
@@ -142,11 +141,10 @@ void GameManager::CheckStageClear(Item& item)
 		CountDown();
 		ClearBuffer();
 		FlipBuffer();
-		Sleep(500);  // 잠깐 정지
+		Sleep(1000);  // 잠깐 정지
 
 		item.Reset();
 		currentStageIndex++;
-
 		LoadStage();
 	}
 	else if (currentStageIndex == 1 && item.IsStage2Clear())
@@ -154,7 +152,7 @@ void GameManager::CheckStageClear(Item& item)
 		CountDown();
 		ClearBuffer();
 		FlipBuffer();
-		Sleep(500);  // 잠깐 정지
+		Sleep(1000);  // 잠깐 정지
 
 		item.Reset();
 		currentStageIndex++;
@@ -164,11 +162,50 @@ void GameManager::CheckStageClear(Item& item)
 	{
 		ClearBuffer();
 		EndingTitle();
-		//WriteBuffer(30, 20, "escape¿", 7);  // 분홍색 같은 색상		==> UI로빼서 크게 해야겠다 
 		FlipBuffer();
-		Sleep(5000);
-		exit(0);  // 프로그램 종료
+		Sleep(3000);
+		exit(0);  // 프로그램 종료 ==> 다시 타이틀로 돌아가야겠다.
+
+		// 타이틀 화면으로 돌아가겠냐고 물은 다음 yes 하면 돌아가기
+		//WriteBuffer(4, 7, "타이틀 화면으로 돌아가시겠습니까?", 15);		// (4,7)은 임시 좌표
+		//
+		//ShowTItle();
 	}
+
+	// 위 switch 문을 좀더 간결하게 한 코드   일단 보류하기 
+	//void GameManager::CheckStageClear(Item & item)
+	//{
+	//	using ClearFunc = bool (Item::*)() const;
+	//	ClearFunc clearFuncs[] = {
+	//		&Item::IsStage1Clear,
+	//		&Item::IsStage2Clear,
+	//		&Item::IsStage3Clear
+	//	};
+	//
+	//	if (currentStageIndex < 3 && (item.*clearFuncs[currentStageIndex])())
+	//	{
+	//		CountDown();
+	//		ClearBuffer();
+	//		FlipBuffer();
+	//		Sleep(500);
+	//
+	//		if (currentStageIndex < 2)
+	//		{
+	//			item.Reset();
+	//			currentStageIndex++;
+	//			LoadStage();
+	//		}
+	//		else if (currentStageIndex == 2)
+	//		{
+	//			ClearBuffer();
+	//			EndingTitle();
+	//			FlipBuffer();
+	//			Sleep(5000);
+	//			exit(0);
+	//		}
+	//	}
+	//}
+
 }
 
 void GameManager::ShowMap()
@@ -182,7 +219,7 @@ void GameManager::ShowMap()
 
 
 // 2. 플레이어가 맵안에서만 움직이도록 하기
-void GameManager::PlayerMove(Player& player, /*vector<vector<int>>& map,*/ Item& item)
+void GameManager::PlayerMove(Player& player, Item& item)
 {
 	vector<vector<int>>& map = stage.GetMutableMap();
 	if (_kbhit())
@@ -192,10 +229,10 @@ void GameManager::PlayerMove(Player& player, /*vector<vector<int>>& map,*/ Item&
 	
 		switch (_getch())
 		{
-		case 72: dy = -1; player.SetDirection(Direction::Up); break;	// ▲
-		case 80: dy = 1;  player.SetDirection(Direction::Down); break;	// ▼
-		case 75: dx = -1; player.SetDirection(Direction::Left); break;
-		case 77: dx = 1;  player.SetDirection(Direction::Right); break;
+		case 72: dy = -1; player.SetDirection(Direction::Up); break;	// 상 
+		case 80: dy = 1;  player.SetDirection(Direction::Down); break;	// 하
+		case 75: dx = -1; player.SetDirection(Direction::Left); break;	// 좌
+		case 77: dx = 1;  player.SetDirection(Direction::Right); break;	// 우
 		}
 
 

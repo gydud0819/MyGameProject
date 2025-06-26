@@ -12,7 +12,7 @@
 #include "StarItem.h"
 #include "CloverItem.h"
 
-class GameManager /*: public MapBoder*/		// Is-a 관계 생각하기
+class GameManager 		// Is-a 관계 생각하기
 {
 	Stage stage;
 	MapBoder mapboder;
@@ -32,18 +32,16 @@ class GameManager /*: public MapBoder*/		// Is-a 관계 생각하기
 	/*static*/ bool isBufferInit = false;  // 버퍼 초기화도 딱 1번만 하게				
 public:
 	GameManager() = default;
-	GameManager(Player player) : player(player) 
-	{
-	}
+	GameManager(Player player) : player(player) {}
 
-	~GameManager();
+	~GameManager();		//  일단 냅두자 
 public:
 	bool Play();		// 메인 코드에서 이거만 호출해서 플레이 해야함
 	void ShowMap();		// 맵 보여주는 함수
-	void PlayerMove(Player& player,/* vector<vector<int>>& map,*/ Item& item); // 플레이어가 맵 내에서만 돌아다니도록 하는 함수
-	void RenderMap();
+	void PlayerMove(Player& player, Item& item); // 플레이어가 맵 내에서만 돌아다니도록 하는 함수
+	void RenderMap();		// 
 	void CheckStageClear(Item& item);
-	void LoadStage();
+	void LoadStage();	// 다음 스테이지 불러오는 함수
 	void Update();
 	void DrawItemUI(int offsetX, int offsetY, int mapHeight);
 

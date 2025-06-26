@@ -10,7 +10,7 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 			isOuterWall = (x == 0 || x == map[0].size() - 1 || y == 0 || y == map.size() - 1);
 			isItem = (map[y][x] == TILE_ITEM1 || map[y][x] == TILE_ITEM2 || map[y][x] == TILE_ITEM3 || map[y][x] == TILE_ITEM4);
 
-			if (!isReveal && !isOuterWall && !isItem)	// 랜턴으로 플레이어 기준 x,y 2칸씩만 밝혀주는 기본 기능 
+			if (!isReveal && !isOuterWall && !isItem)	// 랜턴으로 플레이어 기준 x,y 2칸씩만 밝혀주는 기본 기능 ==> 2x2인지 3x3 인지 1x1인지 확인하기
 			{
 				int dx = abs(x - player.GetPos().posX);
 				int dy = abs(y - player.GetPos().posY);
@@ -25,7 +25,7 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 
 			switch (map[y][x])
 			{
-			case TILE_WALL: WriteBuffer(drawX, drawY, "#", 15); break;
+			case TILE_WALL: WriteBuffer(drawX, drawY, "#", 7); break;
 				
 			case TILE_EMPTY: WriteBuffer(drawX, drawY, " ", 0); break;
 				
@@ -35,7 +35,7 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 			
 			case TILE_ITEM3: WriteBuffer(drawX, drawY, "&", 14); break;
 			
-			case TILE_ITEM4: WriteBuffer(drawX, drawY, "♣", 12); break;
+			case TILE_ITEM4: WriteBuffer(drawX, drawY, "♣", 10); break;
 			
 			default: WriteBuffer(drawX, drawY, "?", 7); break; // 예외 디버깅 => 다른 아이템을 넣엇을때
 				
@@ -65,12 +65,12 @@ vector<vector<int>>& Stage::GetMutableMap()
 	// TODO: 여기에 return 문을 삽입합니다.
 }
 
-void Stage::SetMap(const std::vector<std::vector<int>>& map)
+void Stage::SetMap(const vector<vector<int>>& map)
 {
 	this->map = map;
 }
 
-const std::vector<std::vector<int>>& Stage::GetMap() const
+const vector<vector<int>>& Stage::GetMap() const
 {
 	return map;
 	// TODO: 여기에 return 문을 삽입합니다.
