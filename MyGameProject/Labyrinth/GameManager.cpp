@@ -5,7 +5,7 @@ bool GameManager::isBufferInit = false;		// 버퍼 초기화도 딱 1번만 하�
 
 GameManager::~GameManager()
 {
-	// 미완성입니다
+	// 진지하게하는건맞는데 무게 잡아서 근엄하게 해야하냐는건가 
 }
 
 bool GameManager::Play()	// 플레이 흐름을 관여하는 함수 <= 얘가 핵심 메인
@@ -20,7 +20,7 @@ bool GameManager::Play()	// 플레이 흐름을 관여하는 함수 <= 얘가 �
 		isBufferInit = true;
 	}
 
-	CheckStageClear(item);	// 아이템 조건 충족했는지 확인해서 다음 스테이지로 넘어갈 수 있게 처리
+	//CheckStageClear(item);		// 아이템 조건 충족했는지 확인해서 다음 스테이지로 넘어갈 수 있게 처리, 원래 여기있었음 
 
 	if (isFirst)
 	{
@@ -32,42 +32,34 @@ bool GameManager::Play()	// 플레이 흐름을 관여하는 함수 <= 얘가 �
 		isFirst = false;											// 이후엔 다시 실행되지 않도록 false처리하기 
 	}
 
+	CheckStageClear(item);	// 여기잇어도 돌아가는이유가 머지 
 	PlayerMove(player, item);										// 플레이어 이동 처리 + 아이템 먹기 처리
 	Update();														// 랜턴 아이템 처리하는 코드
 	ClearBuffer();													// 출력 버퍼 비우기 (매 프레임 깔끔하게 만들기 위해서)
 	time.DisplayPlayTime(32, 14);									// 좌측 상단에 표시
 	RenderMap();													// 맵, 플레이어, 아이템 등 화면에 출력 -> 나한테 좀 중요함
 
-	// 타이머 띄우기 == 초기화 안됨 
-	//int offsetX = currentMap[0].size() * 2 + 4;					// 또는 BufferWidth - 25
-	//int offsetY = 1;
-
-	
 	FlipBuffer();													// 버퍼 교체 → 지금 그린 화면을 실제로 보여줌
-
-	//Sleep(20);													// 임시 주석
-
+	
 	return true;
 }
 
-// 랜턴때문에 안돌아가니까 다시 해보기 
 void GameManager::RenderMap()
 {
 	vector<vector<int>> map = stage.GetMap();
 
 	if (map.empty()) return;
 
-	int mapWidth = map[0].size();
-	int mapHeight = map.size();
+	int mapWidth = map[0].size(); 
+	int mapHeight = map.size(); 
 
-	int offsetX = ((BufferWidth / 2) - mapWidth) / 2; /*(BufferWidth - mapWidth * 2) / 2;*/
-	int offsetY = (BufferHeight - mapHeight) / 2;
+	int offsetX = ((BufferWidth / 2) - mapWidth) / 2; 
+	int offsetY = (BufferHeight - mapHeight) / 2; 
 
 	stage.RenderMap(map, player, isRevealMap, offsetX, offsetY);
 
 	DrawItemUI(offsetX, offsetY, mapHeight);
 }
-
 
 
 void GameManager::LoadStage()	// 맵 가져오기
@@ -95,21 +87,22 @@ void GameManager::Update()
 	}
 }
 
- //아이템 먹은거 확인하는 UI
+ //아이템 먹은거 확인하는 UI == UI.h로 분리 못한 이유 
 void GameManager::DrawItemUI(int offsetX, int offsetY, int mapHeight)
 {
 	// GameManager.cpp 내 함수 안에서
 	int heartCount = item.GetItem1Count();
 	int starCount = item.GetItem2Count();
 	int cloverCount = item.GetItem3Count();
+	int AllItemCount = item.IsStage4Clear();
 
-	string heart = "Heart : ";
+	string heart = "Key : ";
 	for (int i = 0; i < heartCount; ++i) heart += "♥";
 
-	string star = "Star  : ";
+	string star = "Key : ";
 	for (int i = 0; i < starCount; ++i) star += "★";		// 스테이지 2에서만 나오게 하기 
 
-	string clover = "Clover : ";
+	string clover = "Key : ";
 	for (int i = 0; i < cloverCount; ++i) clover += "♣";
 
 	int uiX = offsetX + currentMap[0].size() + 2; // 맵 오른쪽 옆에 출력 (두 칸 띄움)
@@ -117,11 +110,11 @@ void GameManager::DrawItemUI(int offsetX, int offsetY, int mapHeight)
 
 	if (currentStageIndex == 0)
 	{
-		WriteBuffer(44, uiY + 32, heart.c_str(), 4); // 빨간 하트
+		WriteBuffer(45, uiY + 32, heart.c_str(), 4); // 빨간 하트
 	}
 	else if (currentStageIndex == 1)
 	{
-		WriteBuffer(44, uiY + 32, star.c_str(), 14);  // 노란 별
+		WriteBuffer(45, uiY + 32, star.c_str(), 14);  // 노란 별
 
 	}
 	else if (currentStageIndex == 2)			// 직사각형이니까 좌표수정은 맵 수정하고 나서 하기 
@@ -129,8 +122,12 @@ void GameManager::DrawItemUI(int offsetX, int offsetY, int mapHeight)
 		WriteBuffer(50, uiY + 18, clover.c_str(), 10);  // 클로버 
 
 	}
-
-
+	else if (currentStageIndex == 3)
+	{
+		WriteBuffer(45, uiY + 32, heart.c_str(), 4);		// 이거 안될거같은ㄷ 
+		WriteBuffer(45, uiY + 33, star.c_str(), 14);		// 이거 안될거같은ㄷ 
+		WriteBuffer(45, uiY + 34, clover.c_str(), 10);		// 이거 안될거같은ㄷ 
+	}
 }
 
 void GameManager::CheckStageClear(Item& item)
@@ -158,7 +155,19 @@ void GameManager::CheckStageClear(Item& item)
 		currentStageIndex++;
 		LoadStage();
 	}
+
 	else if (currentStageIndex == 2 && item.IsStage3Clear())
+	{
+		CountDown();
+		ClearBuffer();
+		FlipBuffer();
+		Sleep(1000);  // 잠깐 정지
+
+		item.Reset();
+		currentStageIndex++;
+		LoadStage();
+	}
+	else if (currentStageIndex == 3 && item.IsStage4Clear())
 	{
 		ClearBuffer();
 		EndingTitle();
@@ -167,7 +176,7 @@ void GameManager::CheckStageClear(Item& item)
 		
 		// 타이틀 화면으로 돌아가겠냐고 물은 다음 yes 하면 돌아가기
 		ClearBuffer();  // 한 번 지우고 새 메시지
-		WriteBuffer(50, 30, "타이틀 화면으로 돌아가시겠습니까? (Y/N)", 15);		// (4,7)은 임시 좌표
+		WriteBuffer(50, 30, "타이틀 화면으로 돌아가시겠습니까? (Y/N)", 15);		// Y/N 선택창 띄워야하나 아니야 하지말자 
 		FlipBuffer();   //  꼭 필요!!
 		
 		//  입력 버퍼 비우기
@@ -205,40 +214,6 @@ void GameManager::CheckStageClear(Item& item)
 			}
 		}
 	}
-
-	// 위 switch 문을 좀더 간결하게 한 코드   일단 보류하기 
-	//void GameManager::CheckStageClear(Item & item)
-	//{
-	//	using ClearFunc = bool (Item::*)() const;
-	//	ClearFunc clearFuncs[] = {
-	//		&Item::IsStage1Clear,
-	//		&Item::IsStage2Clear,
-	//		&Item::IsStage3Clear
-	//	};
-	//
-	//	if (currentStageIndex < 3 && (item.*clearFuncs[currentStageIndex])())
-	//	{
-	//		CountDown();
-	//		ClearBuffer();
-	//		FlipBuffer();
-	//		Sleep(500);
-	//
-	//		if (currentStageIndex < 2)
-	//		{
-	//			item.Reset();
-	//			currentStageIndex++;
-	//			LoadStage();
-	//		}
-	//		else if (currentStageIndex == 2)
-	//		{
-	//			ClearBuffer();
-	//			EndingTitle();
-	//			FlipBuffer();
-	//			Sleep(5000);
-	//			exit(0);
-	//		}
-	//	}
-	//}
 
 }
 
@@ -300,7 +275,7 @@ void GameManager::PlayerMove(Player& player, Item& item)
 		{
 			isRevealMap = true;
 			revealStartTime = chrono::steady_clock::now();	// 현재 시간을 가져오는 함수 근데 왜 안돼 
-			revealDuration = rand() % 3 + 3;  // 3~5초 == 5초간 맵 내부가 활성화된다는 멘트 추가하고 다시꺼질때 사라지게 하기 
+			revealDuration = rand() % 3 + 3;  // 3~5초 == 5초간 맵 내부가 활성화된다는 멘트 추가하고 다시꺼질때 사라지게 하기 == 넣어야하나
 			map[nextY][nextX] = TILE_EMPTY;		// 먹고나서 빈칸 초기화 
 		}
 

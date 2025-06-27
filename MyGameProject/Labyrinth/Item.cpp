@@ -45,5 +45,10 @@ bool Item::IsStage3Clear() const
 	return cloverCount >= 1;
 }
 
+bool Item::IsStage4Clear() const
+{
+	return heartCount >= 2 && starCount >= 2 && cloverCount >= 2;
+}
+
 
 

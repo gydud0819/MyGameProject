@@ -1,0 +1,22 @@
+플레이 흐름 디버깅하는 방법
+
+// Step 1
+F9: isBufferInit 조건 안에서 => InitBuffer(), ShowTItle()
+
+// Step 2
+F9: if (isFirst) 조건 안에서 => player.SetPos(), stage.SetMap()
+
+// Step 3
+F9: CheckStageClear(item) 안으로 F11 들어가서 조건 확인
+
+// Step 4
+F9: PlayerMove() 안에서 _getch(), 이동 처리, 아이템 먹기 확인
+
+// Step 5
+F9: Update() → 랜턴 획득 여부에 따른 밝기 변화 로직
+
+// Step 6
+F9: RenderMap() → 실제 화면에 출력되는 값들 (맵, 플레이어, 아이템)
+
+// Step 7
+F9: FlipBuffer() → 버퍼 바뀌는 시점

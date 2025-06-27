@@ -7,8 +7,7 @@ MenuOption ShowMenu()
 
 	const int menuYStart = 34;
 	const int menuX = 58;  // 메뉴 텍스트가 나올 X좌표 == 하드코딩 같은데 그래도 어쩔 수 없음 콘솔창 기준 중앙정렬한 값이니까
-	const int pointerX = menuX - 4;  // ▶ 포인터는 메뉴 왼쪽
-
+	
 	const char* menuTexts[menuCount] =
 	{
 		"[ 게임 시작 ]",
@@ -16,7 +15,6 @@ MenuOption ShowMenu()
 		"[ 개발자의 편지 ]",
 		"[ 게임 종료 ]"
 	};
-
 
 	while (true)
 	{
@@ -54,8 +52,7 @@ void ShowTItle()
 
 	ShowTitle();
 	MenuOption option = ShowMenu();
-	//ShowMenu();
-
+	
 	switch (option)
 	{
 	case MenuOption::Start:
@@ -73,6 +70,7 @@ void ShowTItle()
 		return;
 
 	case MenuOption::Exit:
+		// 종료하겠냐는거 띄우기 
 		exit(0);         // 프로그램 종료
 	}
 
@@ -127,15 +125,15 @@ void ShowGameRule()
 {
 	ClearBuffer();
 
-	WriteCenter("    [     게임 방법     ]                ", -12, 15);
+	WriteCenter("    [     게임 방법     ]                    ", -12, 15);
 
-	WriteCenter("※   조작 방법 : 방향키  ← ↑ ↓ →         ", -8, 7);
-	WriteCenter("※   어두운 내부를 기본으로 주어진 빛에 의지해야합니다.           ", -4, 7);
-	WriteCenter("※   내부를 밝혀주는 아이템이 존재합니다.    ", 0, 7);
-	//WriteCenter("※   아이템이 곧 열쇠입니다.                ", 2, 7);
-	WriteCenter("※   무사 탈출을 기원합니다.                 ", 4, 7);
+	WriteCenter("※   조작 방법 : 방향키  ← ↑ ↓ →           ", -8, 7);
+	WriteCenter("※   주어진 빛에 의지해야 합니다.              ", -4, 7);
+	WriteCenter("※   내부를 밝혀주는 아이템이 존재합니다.     ", 0, 7);
+	WriteCenter("※   열쇠라고 생각되면 먹으면 됩니다.         ", 4, 7);
+	//WriteCenter("※   무사 탈출을 기원합니다.                 ", 4, 7);
 
-	WriteCenter("  [     Press any key to return to menu     ]", 10, 15);		// 거슬리네 
+	WriteCenter("  [     Press any key to return to menu     ]    ", 10, 15);		// 거슬리네 
 	//WriteCenter("    [     돌아가기      ]                ", 10, 15);
 
 	FlipBuffer();
@@ -152,29 +150,25 @@ void CountDown()
 		char countdown[10];			// 나중에 string으로 바꿔서 적용하기
 		// 정수를 문자열로 변환해서 버퍼에 저장하는 함수 (버퍼 오버플로우 방지용으로 _s 사용)
 		sprintf_s(countdown, "%d", i);	// 버퍼랑 관련된 함수로 이걸 써야 변환이 된다.
-		WriteBuffer(/*35, 12*/71, 30, "   ", 14);  // 숫자 지울 공간 확보 -> 절반 해결 
+		WriteBuffer(71, 30, "   ", 14);  // 숫자 지울 공간 확보 -> 절반 해결 
 		WriteBuffer(71, 30, countdown, 15);
-		//ClearBuffer();
 		FlipBuffer();
 
-
-
-		//FlipBuffer();
 		Sleep(600);		// 여기선 Sleep을 무조건 써야함 -> 시간 제어 해주는거 
 	}
 	ClearBuffer();	// 다시 초기화
 }
 
-void EndingTitle(int offsetY, int color)
+void EndingTitle(int offsetY, int color)		// 가운데 정렬이 안맞는거같은데 ㅣㅇㄹ일단 보류
 {
 	const char* endtitle[] =
 	{
-		"     ######   ##   ##   #######      #######   ##  ##  #######     ###                 ",
-		"       ##     ##   ##   ##           ##        ### ##  ##    ##   #  ##                ",
-		"       ##     #######   #####        #####     ######  ##    ##     ##                 ",
-		"       ##     ##   ##   ##           ##        ## ###  ##    ##     #                  ",
-		"       ##     ##   ##   #######      #######   ##  ##  #######                         ",
-		"                                                                    #                  "
+		"      ######   ##   ##   #######      #######   ##  ##  #######     ###                 ",
+		"        ##     ##   ##   ##           ##        ### ##  ##    ##   #  ##                ",
+		"        ##     #######   #####        #####     ######  ##    ##     ##                 ",
+		"        ##     ##   ##   ##           ##        ## ###  ##    ##     #                  ",
+		"        ##     ##   ##   #######      #######   ##  ##  #######                         ",
+		"                                                                     #                  "
 	};
 
 
@@ -186,6 +180,7 @@ void EndingTitle(int offsetY, int color)
 	}
 }
 
+#pragma region 분리할 수 있으면 나중에 분리하기
 //void DrawItemUI(int offsetX, int offsetY, int mapHeight)
 //{
 //	// GameManager.cpp 내 함수 안에서
@@ -220,6 +215,7 @@ void EndingTitle(int offsetY, int color)
 //
 //	}
 //}
+#pragma endregion
 
 void Letter()
 {
@@ -235,13 +231,13 @@ void Letter()
 		"‘나’를 찾아가고 ‘길’을 스스로 만들어 가는 여정입니다.",
 		"",
 		"랜턴은 주변을 밝히는 도구일 뿐",			// 랜턴은 해결방법 중 일부  이걸 단어로 어떻게 표현하지
-		/*"자신의 눈으로 세상을 바라보게 하는 장치이고,",*/
+		"",
 		"나아갈 방향은 당신이 선택해야 합니다.",
 		"",
 		"이 짧은 미로 속에서",
 		"조금이나마 자신을 마주할 수 있기를 바랍니다.",
 		"",
-		"디렉터 효 올림"
+		"개발자 효 올림"
 	};
 
 	// 최대 길이 구하기

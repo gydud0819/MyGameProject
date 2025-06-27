@@ -39,5 +39,6 @@ public:
 	bool IsStage1Clear() const;
 	bool IsStage2Clear() const;
 	bool IsStage3Clear() const;
+	bool IsStage4Clear() const;
 
 };

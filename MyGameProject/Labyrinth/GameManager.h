@@ -1,16 +1,16 @@
 #pragma once
 
 #include "ConsoleUtil.h"
-#include "Player.h"
-#include "Item.h"
-#include "Stage.h"
-#include "MapBoder.h"
 #include "DoubleBuffer.h"
+#include "MapBoder.h"
+#include "Player.h"
+#include "Stage.h"
+#include "Item.h"
 #include "Time.h"
 #include "UI.h"
-#include "HeartItem.h"
-#include "StarItem.h"
-#include "CloverItem.h"
+//#include "HeartItem.h"
+//#include "StarItem.h"
+//#include "CloverItem.h"
 
 class GameManager 		// Is-a 관계 생각하기
 {
