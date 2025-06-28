@@ -32,7 +32,7 @@ bool GameManager::Play()	// 플레이 흐름을 관여하는 함수 <= 얘가 �
 		isFirst = false;											// 이후엔 다시 실행되지 않도록 false처리하기 
 	}
 
-	CheckStageClear(item);	// 여기잇어도 돌아가는이유가 머지 
+	CheckStageClear(item);											// 여기잇어도 돌아가는이유가 머지 
 	PlayerMove(player, item);										// 플레이어 이동 처리 + 아이템 먹기 처리
 	Update();														// 랜턴 아이템 처리하는 코드
 	ClearBuffer();													// 출력 버퍼 비우기 (매 프레임 깔끔하게 만들기 위해서)
@@ -170,9 +170,18 @@ void GameManager::CheckStageClear(Item& item)
 	else if (currentStageIndex == 3 && item.IsStage4Clear())
 	{
 		ClearBuffer();
-		EndingTitle();
 		FlipBuffer();
 		Sleep(3000);
+		
+		ClearBuffer();
+		EndingTitle();
+		FlipBuffer();
+		
+		while (true)
+		{
+			if (_kbhit() && _getch() == 13)  // Enter 키
+				break;
+		}
 		
 		// 타이틀 화면으로 돌아가겠냐고 물은 다음 yes 하면 돌아가기
 		ClearBuffer();  // 한 번 지우고 새 메시지

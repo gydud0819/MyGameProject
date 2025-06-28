@@ -28,3 +28,5 @@ struct Pos		// 위치 구조체
 };
 
 void SetCurPosition(int x, int y);
+
+void HideCursor();
