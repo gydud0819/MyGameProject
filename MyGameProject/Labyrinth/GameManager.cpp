@@ -124,9 +124,9 @@ void GameManager::DrawItemUI(int offsetX, int offsetY, int mapHeight)
 	}
 	else if (currentStageIndex == 3)
 	{
-		WriteBuffer(45, uiY + 32, heart.c_str(), 4);		// 이거 안될거같은ㄷ 
-		WriteBuffer(45, uiY + 33, star.c_str(), 14);		// 이거 안될거같은ㄷ 
-		WriteBuffer(45, uiY + 34, clover.c_str(), 10);		// 이거 안될거같은ㄷ 
+		WriteBuffer(45, uiY + 24, heart.c_str(), 4);		// 이거 안될거같은ㄷ 
+		WriteBuffer(45, uiY + 26, star.c_str(), 14);		// 이거 안될거같은ㄷ 
+		WriteBuffer(45, uiY + 28, clover.c_str(), 10);		// 이거 안될거같은ㄷ 
 	}
 }
 

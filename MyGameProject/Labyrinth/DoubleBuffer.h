@@ -16,7 +16,8 @@ void ReleaseBuffer();																// 버퍼 실행 종료
 void WriteCenter(const char* text, int yOffset, int color = 7);						// 중앙 정렬로 WriteBuffer 해주는 함수
 void ResizeConsole();																// 
 void WriteCenterAdjusted(const char* text, int yOffset, int color, int xAdjust);
-void WriteCenterDynamic(const char* text, int yOffset, int color = 7);				// 콘솔창 기준 문자열 중앙 정렬 함수
+void WriteCenterDynamic(const char* text, int yOffset, int color = 7);	
+
 
 
 

@@ -124,17 +124,12 @@ void ShowTitle(int offsetY, int color)
 void ShowGameRule()
 {
 	ClearBuffer();
-
 	WriteCenter("    [     게임 방법     ]                    ", -10, 15);
-
-	WriteCenter("※   조작 방법 : 방향키  ← ↑ ↓ →           ", -6, 7);
-	WriteCenter("※   어둠 속에서 제한된 시야로 움직입니다.     ", -3, 7);
-	WriteCenter("※   잠시나마 빛을 밝히는 무언가 존재합니다.   ", 0, 7);
-	WriteCenter("※   길을 열어주는 '열쇠' 아이템이 있습니다.   ", 3, 7);
-	WriteCenter("※   어디든, 나아가야만 출구를 만납니다.       ", 6, 7);
-
-	WriteCenter("  [     Press any key to return to menu     ]    ", 12, 15);		// 거슬리네 
-	//WriteCenter("    [     돌아가기      ]                ", 10, 15);
+	WriteCenter("※    조작 방법 : 방향키  ← ↑ ↓ →           ", -6, 7);
+	WriteCenter("※    어둠 속에서 제한된 시야로 움직입니다.     ", -3, 7);
+	WriteCenter("※    짧은 시간 주변을 밝히는 무언가 존재합니다.", 0, 7);
+	WriteCenter("※    키를 모으면 다음 스테이지로 갈 수 있습니다.", 3, 7);
+	WriteCenter("※    출구는 있을 수도 없을 수도 있습니다.       ", 6, 7);
 
 	FlipBuffer();
 	_getch();
@@ -154,64 +149,41 @@ void CountDown()
 		WriteBuffer(71, 30, countdown, 15);
 		FlipBuffer();
 
-		Sleep(600);		// 여기선 Sleep을 무조건 써야함 -> 시간 제어 해주는거 
+		Sleep(1000);		// 여기선 Sleep을 무조건 써야함 -> 시간 제어 해주는거 
 	}
 	ClearBuffer();	// 다시 초기화
 }
 
 void EndingTitle(int offsetY, int color)		// 가운데 정렬이 안맞는거같은데 ㅣㅇㄹ일단 보류
 {
-	/*const char* endtitle[] =
-	{
-		"      ######   ##   ##   #######      #######   ##  ##  #######     ###                 ",
-		"        ##     ##   ##   ##           ##        ### ##  ##    ##   #  ##                ",
-		"        ##     #######   #####        #####     ######  ##    ##     ##                 ",
-		"        ##     ##   ##   ##           ##        ## ###  ##    ##     #                  ",
-		"        ##     ##   ##   #######      #######   ##  ##  #######                         ",
-		"                                                                     #                  "
-	};*/
 
 	vector<string> endingLetter =
 	{
-		"누구나 인생에서 한 번쯤은",
-		"출구가 보이지 않는 미로를 걷습니다.",
+		"인생에서 누구나 한 번쯤은    ",
+		"출구가 보이지 않는 미로를 방황합니다.",
 		"  ",
 		"이 게임은 단순한 탈출 게임이 아닙니다.",
 		"빛이 없는 어둠 속에서",
 		"‘나’를 찾아가고 ‘길’을 스스로 만들어 가는 여정입니다.",
 		"",
-		"랜턴은 주변을 밝히는 도구일 뿐",			// 랜턴은 해결방법 중 일부  이걸 단어로 어떻게 표현하지
-		"",
-		"나아갈 방향은 당신이 선택해야 합니다.",
-		"",
-		"이 짧은 미로 속에서",
-		"조금이나마 자신을 마주할 수 있기를 바랍니다.",
+		"짧고 어두운 미로 속에서",
+		"당신만의 길을 찾을 수 있기를 바랍니다.",
 
 		
 	};
 
-	// 최대 길이 구하기
-	//int maxLen = 0;
-	//for (const auto& line : endingLetter)
-	//	if (line.size() > maxLen) maxLen = line.size();
+	int maxLen = 0;
+	for (const auto& line : endingLetter)
+		if (line.size() > maxLen) maxLen = line.size();
 
-	////int totalLines = letter.size();
-	////int startY = (BufferHeight - totalLines) / 2;  // 화면 가운데 줄부터 시작
-	//// maxLen을 기준으로 화면 가운데 왼쪽 정렬 시작 위치 계산
-	//int offsetX2 = (BufferWidth - maxLen) / 2;
-	//int offsetY2 = (BufferHeight - endingLetter.size()) / 2;
+	// 2. 중앙 기준 좌측 정렬
+	int offsetX = (BufferWidth - maxLen) / 2;
+	offsetY = (BufferHeight - endingLetter.size()) / 2;
 
-	//for (int i = 0; i < endingLetter.size(); ++i)
-	//{
-	//	WriteBuffer(offsetX2, offsetY + i, endingLetter[i].c_str(), 7);  // 왼쪽 정렬!
-	//}
-
-	int offsetY2 = (BufferHeight - endingLetter.size()) / 2 + 2;
-
+	// 3. 출력
 	for (int i = 0; i < endingLetter.size(); ++i)
 	{
-		int offsetX = (BufferWidth - endingLetter[i].size()) / 2;  // ⭐ 각 줄마다 중앙 정렬
-		WriteBuffer(offsetX, offsetY2 + i + offsetY, endingLetter[i].c_str(), color);
+		WriteBuffer(offsetX, offsetY + i, endingLetter[i].c_str(), 7);
 	}
 
 }
@@ -261,39 +233,17 @@ void Letter()
 	{
 		"To. Player",
 		"",
-		"이 게임을 만든 시간은, 나에게도 하나의 미로였습니다.",
-		"불안한 마음과 감정, 그리고 두려움은 아직도 내 안에 남아 있습니다.",
-		"하지만 그렇다고 해서, 내가 걸어온 길이 틀렸다고는 생각하지 않습니다.",
-		"방황하고 흔들려도, 나는 내가 만든 이 길 위에 서 있습니다.",
-		"누군가에게 이 이야기가 닿기를 바라는 마음으로, 나는 계속 만들어 갑니다.",
+		"하트는 믿음, 별은 나를 지지하는 희망, ",
+		"클로버는 앞으로의 길에 있을 행운 같은 의미를 지닙니다.",
+		"우리가 정말 필요한 건 자기 자신을 믿고",
+		"한 걸음 내딛는 용기라고 생각합니다."
+		"이 해석이 정답은 아니에요.",
+		"여러분 겪은 걸 바탕으로 해석해도 충분합니다.",
+		"별건 아니지만 누군가에게 작은 위로가 되기를 바랍니다.",
 		"",
-		"이 게임에는 나의 개인적인 심리와 철학이 담겨 있습니다.",
-		"누군가에게는 쉽게 이해되지 않을 수도 있습니다.",
-		"그래도 괜찮습니다. 모두가 한 번쯤은 겪는 성장통이라 믿습니다.",
-		"이 짧은 여정이 누군가에게 작은 위로가 되기를 바랍니다.",
-		"",
-		"                                                     개발자 효 올림"
-	};
+		"                                                         개발자 효 올림"
 
-	//vector<string> developerLetter =
-	//{
-	//	"이 게임을 만든 시간은, 나에게도 하나의 미로였습니다.",
-	//	"불안한 마음과 감정, 그리고 두려움은 아직도 내 안에 남아 있습니다.",
-	//	"",
-	//	"어떤 날은 한 줄의 코드도 쓰지 못한 채, 멍하니 시간을 보낸 적도 많았습니다.",
-	//	"무언가에 쫓기듯 만들었지만, 그 안엔 분명 내 감정이 담겨 있었습니다.",
-	//	"그래서 이 게임은 단순한 기능 구현이 아닌, 나 자신과의 대화이기도 했습니다.",
-	//	"",
-	//	"하지만 그렇다고 해서, 내가 걸어온 길이 틀렸다고는 생각하지 않습니다.",
-	//	"방황하고 흔들려도, 나는 내가 만든 이 길 위에 서 있습니다.",
-	//	"",
-	//	"이 게임에는 나의 개인적인 심리와 철학이 담겨 있습니다.",
-	//	"누군가에게는 쉽게 이해되지 않을 수도 있습니다.",
-	//	"그래도 괜찮습니다. 모두가 한 번쯤은 겪는 성장통이라 믿습니다.",
-	//	"이 짧은 여정이 누군가에게 작은 위로가 되기를 바랍니다.",
-	//	"",
-	//	"개발자 효 올림"
-	//};
+	};
 
 
 	// 최대 길이 구하기
@@ -305,24 +255,12 @@ void Letter()
 	//int startY = (BufferHeight - totalLines) / 2;  // 화면 가운데 줄부터 시작
 	// maxLen을 기준으로 화면 가운데 왼쪽 정렬 시작 위치 계산
 	int offsetX = (BufferWidth - maxLen) / 2;
-	int offsetY = (BufferHeight - letter.size()) / 2;
+	int offsetY2 = (BufferHeight - letter.size()) / 2;
 
 	for (int i = 0; i < letter.size(); ++i)
 	{
-		WriteBuffer(offsetX, offsetY + i, letter[i].c_str(), 7);  // 왼쪽 정렬!
+		WriteBuffer(offsetX, offsetY2 + i, letter[i].c_str(), 7);  // 왼쪽 정렬!
 	}
-
-	//for (int i = 0; i < letter.size(); ++i)
-	//{
-	//	int offsetX = (BufferWidth - letter[i].size()) / 2;  // 각 줄마다 다르게
-	//	WriteBuffer(offsetX, offsetY + i, letter[i].c_str(), 7);
-	//}
-	//for (int i = 0; i < letter.size(); ++i)
-	//{
-	//	// 가운데 정렬해서 출력
-	//	int offsetX = (BufferWidth - letter[i].size()) / 2;
-	//	WriteBuffer(offsetX, startY + i, letter[i].c_str(), 7);  // 흰색(7)
-	//}
 
 	FlipBuffer();  // 더블버퍼 갱신
 
