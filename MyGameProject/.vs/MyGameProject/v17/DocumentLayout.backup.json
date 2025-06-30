@@ -50,8 +50,7 @@
               "RelativeToolTip": "Labyrinth\\UI.cpp",
               "ViewState": "AgIAAI0AAAAAAAAAAAAAAK0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-30T14:56:52.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T14:56:52.233Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "Labyrinth\\Item.h",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACYAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-06-30T14:38:25.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T14:38:25.849Z"
             },
             {
               "$type": "Document",
@@ -76,8 +74,7 @@
               "RelativeToolTip": "Labyrinth\\Item.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-30T14:31:49.421Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T14:31:49.421Z"
             },
             {
               "$type": "Document",
@@ -87,7 +84,7 @@
               "RelativeDocumentMoniker": "Labyrinth\\GameManager.cpp",
               "ToolTip": "C:\\Users\\DPC\\Desktop\\MyGameProject\\MyGameProject\\Labyrinth\\GameManager.cpp",
               "RelativeToolTip": "Labyrinth\\GameManager.cpp",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAMwGAAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAMwGAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-24T12:30:53.696Z",
               "EditorCaption": ""
@@ -102,8 +99,7 @@
               "RelativeToolTip": "Labyrinth\\Labyrinth.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-27T04:04:56.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T04:04:56.985Z"
             },
             {
               "$type": "Document",
@@ -115,8 +111,7 @@
               "RelativeToolTip": "Labyrinth\\Stage.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-26T05:18:52.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-26T05:18:52.771Z"
             }
           ]
         }
