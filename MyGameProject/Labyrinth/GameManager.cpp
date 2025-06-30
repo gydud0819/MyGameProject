@@ -5,7 +5,7 @@ bool GameManager::isBufferInit = false;		// 버퍼 초기화도 딱 1번만 하�
 
 GameManager::~GameManager()
 {
-	// 진지하게하는건맞는데 무게 잡아서 근엄하게 해야하냐는건가 
+	 
 }
 
 bool GameManager::Play()	// 플레이 흐름을 관여하는 함수 <= 얘가 핵심 메인

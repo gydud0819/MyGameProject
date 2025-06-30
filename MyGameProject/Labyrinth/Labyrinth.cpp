@@ -2,7 +2,6 @@
 
 int main()
 {
-	HideCursor();
 	GameManager gm;
 	while (true)
 	{
