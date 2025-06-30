@@ -1,6 +1,6 @@
 #include "Item.h"
 
-// 상속으로 분리하기전 임시 코드 
+// 다형성으로 분리하기전 임시 코드 
 void Item::Collect(int itemType)
 {
 	if (itemType == TILE_ITEM1) heartCount++;

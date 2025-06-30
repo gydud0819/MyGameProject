@@ -6,6 +6,7 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 	{
 		for (int x = 0; x < map[y].size(); x++)
 		{
+			// 제한 시야 처리 과정 
 			// 외곽 벽 또는 아이템 여부를 판단 (항상 표시되어야 하므로 예외 처리)
 			isOuterWall = (x == 0 || x == map[0].size() - 1 || y == 0 || y == map.size() - 1);
 			isItem = (map[y][x] == TILE_ITEM1 || map[y][x] == TILE_ITEM2 || map[y][x] == TILE_ITEM3 || map[y][x] == TILE_ITEM4);
@@ -15,7 +16,7 @@ void Stage::RenderMap(const vector<vector<int>> map, Player& player, bool isReve
 			if (!isReveal && !isOuterWall && !isItem)	
 			{
 				// 현재 좌표와 플레이어 위치 간의 거리 차이 계산
-				int dx = abs(x - player.GetPos().posX);
+				int dx = abs(x - player.GetPos().posX); // x,y 거리를 계산해주는 함수
 				int dy = abs(y - player.GetPos().posY);
 
 				// 거리 차이가 1칸 이상이면(3x3 바깥이면) 출력 제외 -> 시야에서 제외됨

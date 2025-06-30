@@ -71,7 +71,7 @@ void GameManager::LoadStage()	// 맵 가져오기
 	RenderMap();
 }
 
-//맵 내부 랜턴 아이템 처리하는 코드
+//맵 내부를 밝혀주는 아이템 공개시간 코드
 void GameManager::Update()
 {
 	if (isRevealMap)
@@ -136,13 +136,13 @@ void GameManager::CheckStageClear(Item& item)
 	if (currentStageIndex == 0 && item.IsStage1Clear())
 	{
 		CountDown();
-		ClearBuffer();
-		FlipBuffer();
+		ClearBuffer();	 // 화면 버퍼 초기화
+		FlipBuffer();	// 초기화된 버퍼를 실제 화면에 반영 -> 까맣게 보임
 		Sleep(1000);  // 잠깐 정지
 
-		item.Reset();
-		currentStageIndex++;
-		LoadStage();
+		item.Reset();	// 아이템 cpp의 Reset함수로 가서 초기화
+		currentStageIndex++;	// 다음 스테이지로 늘리기
+		LoadStage();	// 다음 맵 가져오기
 	}
 	else if (currentStageIndex == 1 && item.IsStage2Clear())
 	{
