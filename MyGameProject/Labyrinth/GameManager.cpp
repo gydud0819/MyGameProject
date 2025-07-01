@@ -283,8 +283,8 @@ void GameManager::PlayerMove(Player& player, Item& item)
 		if (map[nextY][nextX] == TILE_ITEM3)
 		{
 			isRevealMap = true;
-			revealStartTime = chrono::steady_clock::now();	// 현재 시간을 가져오는 함수 근데 왜 안돼 
-			revealDuration = rand() % 3 + 3;  // 3~5초 == 5초간 맵 내부가 활성화된다는 멘트 추가하고 다시꺼질때 사라지게 하기 == 넣어야하나
+			revealStartTime = chrono::steady_clock::now();	// 현재 시간을 가져오는 함수
+			revealDuration = rand() % 3 + 3;  // 3~5초간 활성화 
 			map[nextY][nextX] = TILE_EMPTY;		// 먹고나서 빈칸 초기화 
 		}
 
